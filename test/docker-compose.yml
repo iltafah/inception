@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: my-nginx
+    build:
+      context: ./nginx/
+    container_name: nginx
+    ports:
+      - 8000:80
+    networks:
+      - net
+    volumes:
+      - ./index.php:/var/www/html/index.php
+
+  php-fpm:
+    image: php:fpm-alpine
+    container_name: php-fpm
+    ports:
+      - 9000
+    networks:
+      - net
+    volumes:
+      - ./index.php:/var/www/html/index.php
+
+  my-php-fpm:
+    image: my-php-fpm
+    build:
+      context: ./my-php-fpm/
+    container_name: my-php-fpm
+    ports:
+      - 9000
+    networks:
+      - net
+    volumes:
+      - ./index.php:/var/www/html/index.php
+
+networks:
+  net:

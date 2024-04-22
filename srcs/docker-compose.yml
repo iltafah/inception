@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+
+  nginx:
+    image: nginx-meow
+    build:
+      context: requirements/nginx/
+    container_name: nginx
+    ports:
+      - 443:443
+    volumes:
+      - WordPress:/var/www/html/
+    networks:
+      - uWu
+
+  wordpress:
+    image: wordpress-meow
+    build:
+      context: requirements/wordpress/
+    container_name: wordpress
+    ports:
+      - 9000:9000
+    volumes:
+      - WordPress:/var/www/html/
+    networks:
+      - uWu
+
+  mariadb:
+    image: mariadb-meow
+    build:
+      context: requirements/mariadb/
+    container_name: mariadb
+    ports:
+      - 3306:3306
+    # volumes:
+    #   - db:/etc
+    networks:
+      - uWu
+
+networks:
+  uWu:
+
+volumes:
+  WordPress:
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/iltafah/Desktop/Temp Volume
+      o: bind
+  db:
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/iltafah/Desktop/Temp Volume
+      o: bind
