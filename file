@@ -1,218 +1,1589 @@
-#1 [wordpress internal] load build definition from Dockerfile
-#1 transferring dockerfile: 32B done
-#1 DONE 0.0s
+waves index : 1
+waves index : 2
+waves index : 3
+waves index : 4
+waves index : 5
+waves index : 6
+waves index : 7
+waves index : 8
+waves index : 9
+waves index : 10
+waves index : 11
+waves index : 12
+waves index : 13
+waves index : 14
+waves index : 15
+waves index : 16
+waves index : 17
+waves index : 18
+waves index : 19
+waves index : 20
+waves index : 21
+waves index : 22
+waves index : 23
+waves index : 24
+waves index : 25
+waves index : 26
+waves index : 27
+waves index : 28
+waves index : 29
+waves index : 30
+waves index : 31
+waves index : 32
+waves index : 33
+waves index : 34
+waves index : 35
+#10 [nginx 1/9] FROM docker.io/library/alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+{Img arr:}
+> NADA : NADA
+> nginx : 9
+{===============}
+{start steps:}
+NADA
+1
+{===============}
+{end steps:}
+NADA
+1
+{===============}
+start : <<<<1>>>>>
+end : <<<<9>>>>>
 
-#2 [mariadb internal] load build definition from Dockerfile
-#2 transferring dockerfile: 32B done
-#2 DONE 0.0s
+spaces: 5
+waves index : 36
+waves index : 37
+waves index : 38
+waves index : 39
+waves index : 40
+waves index : 41
+waves index : 42
+#12 [nginx 2/9] RUN apk upgrade && apk update
+{Img arr:}
+> NADA : NADA
+> nginx : 9
+{===============}
+{start steps:}
+NADA
+2
+{===============}
+{end steps:}
+NADA
+2
+{===============}
+start : <<<<2>>>>>
+end : <<<<9>>>>>
 
-#3 [nginx internal] load build definition from Dockerfile
-#3 transferring dockerfile: 32B done
-#3 DONE 0.0s
+spaces: 10
+waves index : 43
+waves index : 44
+waves index : 45
+waves index : 46
+waves index : 47
+waves index : 48
+waves index : 49
+waves index : 50
+waves index : 51
+waves index : 52
+waves index : 53
+waves index : 54
+waves index : 55
+waves index : 56
+waves index : 57
+waves index : 58
+waves index : 59
+waves index : 60
+waves index : 61
+waves index : 62
+#13 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> nginx : 9
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+2
+3
+{===============}
+{end steps:}
+NADA
+2
+3
+{===============}
+start : <<<<5>>>>>
+end : <<<<16>>>>>
 
-#4 [mariadb internal] load .dockerignore
-#4 transferring context: 32B done
-#4 DONE 0.0s
+spaces: 14
+waves index : 63
+waves index : 64
+waves index : 65
+waves index : 66
+waves index : 67
+waves index : 68
+waves index : 69
+waves index : 70
+waves index : 71
+waves index : 72
+waves index : 73
+waves index : 74
+waves index : 75
+waves index : 76
+waves index : 77
+waves index : 78
+waves index : 79
+waves index : 80
+waves index : 81
+waves index : 82
+waves index : 83
+waves index : 84
+#14 [nginx 3/6] RUN apk add nginx && apk add openssl
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+3
+3
+{===============}
+{end steps:}
+NADA
+3
+3
+{===============}
+start : <<<<6>>>>>
+end : <<<<13>>>>>
 
-#5 [wordpress internal] load .dockerignore
-#5 transferring context: 2B done
-#5 DONE 0.0s
+spaces: 20
+waves index : 85
+waves index : 86
+waves index : 87
+waves index : 88
+waves index : 89
+waves index : 90
+waves index : 91
+waves index : 92
+waves index : 93
+waves index : 94
+waves index : 95
+waves index : 96
+waves index : 97
+#13 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+3
+3
+{===============}
+{end steps:}
+NADA
+3
+3
+{===============}
+start : <<<<6>>>>>
+end : <<<<13>>>>>
 
-#6 [nginx internal] load .dockerignore
-#6 transferring context: 32B done
-#6 DONE 0.0s
-
-#7 [mariadb internal] load metadata for docker.io/library/alpine:3.19
-#7 DONE 0.8s
-
-#8 [nginx internal] load build context
-#8 transferring context: 63B done
-#8 DONE 0.0s
-
-#9 [mariadb internal] load build context
-#9 transferring context: 59B done
-#9 DONE 0.0s
-
-#10 [wordpress 1/7] FROM docker.io/library/alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
-#10 CACHED
-
-#11 [wordpress internal] load build context
-#11 transferring context: 59B done
-#11 DONE 0.0s
-
-#12 [wordpress 2/7] RUN apk upgrade && apk update
-#12 0.240 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
-#12 0.674 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
-#12 1.094 Upgrading critical system libraries and apk-tools:
-#12 1.094 (1/1) Upgrading apk-tools (2.14.0-r5 -> 2.14.4-r0)
-#12 1.148 Executing busybox-1.36.1-r15.trigger
-#12 1.203 Continuing the upgrade transaction with new apk-tools:
-#12 1.208 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
-#12 1.579 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
-#12 1.956 (1/3) Upgrading ca-certificates-bundle (20230506-r0 -> 20240226-r0)
-#12 2.003 (2/3) Upgrading libcrypto3 (3.1.4-r5 -> 3.1.4-r6)
-#12 2.102 (3/3) Upgrading libssl3 (3.1.4-r5 -> 3.1.4-r6)
-#12 2.150 OK: 7 MiB in 15 packages
-#12 2.207 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
-#12 2.560 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
-#12 2.959 v3.19.1-440-gbcf32c0243b [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
-#12 2.959 v3.19.1-443-g7e4aa1a08e2 [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
-#12 2.959 OK: 22989 distinct packages available
-#12 DONE 3.1s
-
-#13 [nginx 3/6] RUN apk add nginx && apk add openssl
-#13 0.574 (1/3) Installing hiredis (1.2.0-r0)
-#13 0.780 (2/3) Installing pcre (8.45-r3)
-#13 0.915 (3/3) Installing nginx (1.24.0-r15)
-#13 1.013 Executing nginx-1.24.0-r15.pre-install
-#13 1.144 Executing nginx-1.24.0-r15.post-install
-#13 1.147 Executing busybox-1.36.1-r15.trigger
-#13 1.150 OK: 9 MiB in 18 packages
-#13 1.473 (1/1) Installing openssl (3.1.4-r6)
-#13 1.801 Executing busybox-1.36.1-r15.trigger
-#13 1.804 OK: 10 MiB in 19 packages
-#13 DONE 1.9s
-
-#14 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#0 0.551 (1/29) Installing ca-certificates (20240226-r0)
-#0 0.806 (2/29) Installing brotli-libs (1.1.0-r1)
-#0 0.926 (3/29) Installing c-ares (1.27.0-r0)
-#0 0.966 (4/29) Installing libunistring (1.1-r2)
-#0 1.068 (5/29) Installing libidn2 (2.3.4-r4)
-#0 1.113 (6/29) Installing nghttp2-libs (1.58.0-r0)
-#0 1.153 (7/29) Installing libcurl (8.5.0-r0)
-#0 1.206 (8/29) Installing curl (8.5.0-r0)
-#0 1.252 (9/29) Installing mariadb-common (10.11.6-r0)
-#0 1.312 (10/29) Installing libaio (0.3.113-r2)
-#0 1.349 (11/29) Installing libgcc (13.2.1_git20231014-r0)
-#0 1.390 (12/29) Installing xz-libs (5.4.5-r0)
-#0 1.433 (13/29) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#0 1.472 (14/29) Installing libncursesw (6.4_p20231125-r0)
-#0 1.528 (15/29) Installing skalibs (2.14.0.1-r0)
-#0 1.641 (16/29) Installing utmps-libs (0.1.2.2-r0)
-#0 1.678 (17/29) Installing linux-pam (1.5.3-r7)
-#0 1.731 (18/29) Installing pcre2 (10.42-r2)
-#0 1.781 (19/29) Installing libstdc++ (13.2.1_git20231014-r0)
-#0 1.849 (20/29) Installing libxml2 (2.11.7-r0)
-#14 1.909 (21/29) Installing zstd-libs (1.5.5-r8)
-#14 1.966 (22/29) Installing mariadb (10.11.6-r0)
-#14 2.012 Executing mariadb-10.11.6-r0.pre-install
-#14 ...
-
+spaces: 20
+waves index : 98
+waves index : 99
+waves index : 100
+waves index : 101
+waves index : 102
 #15 [nginx 4/6] RUN mkdir /var/www/html
-#15 DONE 0.2s
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+4
+3
+{===============}
+{end steps:}
+NADA
+4
+3
+{===============}
+start : <<<<7>>>>>
+end : <<<<13>>>>>
 
-#16 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
-#0 0.598 (1/25) Installing ca-certificates (20240226-r0)
-#0 0.887 (2/25) Installing brotli-libs (1.1.0-r1)
-#0 1.064 (3/25) Installing c-ares (1.27.0-r0)
-#0 1.125 (4/25) Installing libunistring (1.1-r2)
-#0 1.345 (5/25) Installing libidn2 (2.3.4-r4)
-#0 1.407 (6/25) Installing nghttp2-libs (1.58.0-r0)
-#0 1.463 (7/25) Installing libcurl (8.5.0-r0)
-#0 1.570 (8/25) Installing curl (8.5.0-r0)
-#0 1.648 (9/25) Installing php82-common (8.2.18-r0)
-#0 1.695 (10/25) Installing argon2-libs (20190702-r5)
-#0 1.738 (11/25) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#0 1.787 (12/25) Installing libncursesw (6.4_p20231125-r0)
-#0 1.858 (13/25) Installing libedit (20230828.3.1-r3)
-#0 1.913 (14/25) Installing pcre2 (10.42-r2)
-#0 2.013 (15/25) Installing xz-libs (5.4.5-r0)
-#0 2.075 (16/25) Installing libxml2 (2.11.7-r0)
-#0 2.222 (17/25) Installing php82 (8.2.18-r0)
-#16 ...
+spaces: 24
+waves index : 103
+waves index : 104
+waves index : 105
+#13 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+4
+3
+{===============}
+{end steps:}
+NADA
+4
+3
+{===============}
+start : <<<<7>>>>>
+end : <<<<13>>>>>
 
-#17 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
-#0 0.283 ....+...+......+......+..+.+......+...........+....+.....+.+.....+++++++++++++++++++++++++++++++++++++++*....+...+.+++++++++++++++++++++++++++++++++++++++*.+.......+..+......+....+...........+......+...+.+..+.............+......+........+...+.......+..+...+.+.....+.+.....+....+..+...+................+......+.....+.........+....+..+.......+..+......+....+...+.....+......+....++++++
-#0 0.313 .+............+..+++++++++++++++++++++++++++++++++++++++*..+............+++++++++++++++++++++++++++++++++++++++*..+.+..................+.................+.......+...+..+.+......+.........+..++++++
-#0 0.328 -----
-#17 DONE 0.4s
+spaces: 24
+waves index : 106
+waves index : 107
+waves index : 108
+waves index : 109
+waves index : 110
+#16 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+5
+3
+{===============}
+{end steps:}
+NADA
+5
+3
+{===============}
+start : <<<<8>>>>>
+end : <<<<13>>>>>
 
-#18 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
-#18 DONE 0.0s
+spaces: 27
+waves index : 111
+waves index : 112
+waves index : 113
+waves index : 114
+waves index : 115
+waves index : 116
+#17 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+6
+3
+{===============}
+{end steps:}
+NADA
+6
+3
+{===============}
+start : <<<<9>>>>>
+end : <<<<13>>>>>
 
-#19 [nginx] exporting to image
-#19 exporting layers 0.1s done
-#19 writing image sha256:5f2af1fa1a9938670a39d7e6a6aabdbba094e7447d348c774227dd872fde058a done
-#19 naming to docker.io/library/nginx
-#19 naming to docker.io/library/nginx done
-#19 DONE 0.1s
+spaces: 30
+waves index : 117
+waves index : 118
+waves index : 119
+#18 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+3
+{===============}
+{end steps:}
+NADA
+6
+3
+3
+{===============}
+start : <<<<12>>>>>
+end : <<<<22>>>>>
 
-#16 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
-#16 2.623 (18/25) Installing libacl (2.3.1-r4)
-#16 2.665 (19/25) Installing php82-fpm (8.2.18-r0)
-#16 2.986 (20/25) Installing oniguruma (6.9.9-r0)
-#16 3.081 (21/25) Installing php82-mbstring (8.2.18-r0)
-#16 3.203 (22/25) Installing php82-openssl (8.2.18-r0)
-#16 3.254 (23/25) Installing php82-mysqlnd (8.2.18-r0)
-#16 3.304 (24/25) Installing php82-mysqli (8.2.18-r0)
-#16 3.349 (25/25) Installing php82-phar (8.2.18-r0)
-#16 3.407 Executing busybox-1.36.1-r15.trigger
-#16 3.411 Executing ca-certificates-20240226-r0.trigger
-#16 3.459 OK: 34 MiB in 40 packages
-#16 DONE 3.7s
-
+spaces: 23
+waves index : 120
+waves index : 121
+waves index : 122
+waves index : 123
+waves index : 124
+waves index : 125
+waves index : 126
+waves index : 127
+waves index : 128
+waves index : 129
+waves index : 130
+waves index : 131
+waves index : 132
+waves index : 133
+waves index : 134
+waves index : 135
+waves index : 136
+waves index : 137
+waves index : 138
+waves index : 139
+waves index : 140
+waves index : 141
+waves index : 142
+waves index : 143
+waves index : 144
+waves index : 145
+waves index : 146
+waves index : 147
+waves index : 148
+waves index : 149
+waves index : 150
+waves index : 151
+waves index : 152
+waves index : 153
+waves index : 154
+waves index : 155
+waves index : 156
+waves index : 157
 #20 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
-#20 DONE 0.2s
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+4
+{===============}
+{end steps:}
+NADA
+6
+3
+4
+{===============}
+start : <<<<13>>>>>
+end : <<<<22>>>>>
 
-#14 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#14 3.841 (23/29) Installing libbz2 (1.0.8-r6)
-#14 3.879 (24/29) Installing perl (5.38.2-r0)
-#14 4.471 (25/29) Installing mariadb-client (10.11.6-r0)
-#14 4.903 (26/29) Installing ifupdown-ng (0.12.1-r4)
-#14 4.946 (27/29) Installing libcap2 (2.69-r1)
-#14 4.986 (28/29) Installing openrc (0.52.1-r2)
-#14 5.050 Executing openrc-0.52.1-r2.post-install
-#14 5.052 (29/29) Installing mariadb-openrc (10.11.6-r0)
-#14 5.092 Executing busybox-1.36.1-r15.trigger
-#14 5.097 Executing ca-certificates-20240226-r0.trigger
-#14 ...
-
+spaces: 25
+waves index : 158
+waves index : 159
+waves index : 160
 #21 [wordpress 5/9] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-#0 0.309   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-#0 0.310                                  Dload  Upload   Total   Spent    Left  Speed
-#0 0.311   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 77 6831k   77 5327k    0     0  6426k      0  0:00:01 --:--:--  0:00:01 6433k100 6831k  100 6831k    0     0  7666k      0 --:--:-- --:--:-- --:--:-- 7675k
-#21 DONE 1.3s
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+5
+{===============}
+{end steps:}
+NADA
+6
+3
+5
+{===============}
+start : <<<<14>>>>>
+end : <<<<22>>>>>
 
-#14 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#14 5.270 OK: 262 MiB in 44 packages
-#14 DONE 5.4s
+spaces: 27
+waves index : 161
+waves index : 162
+waves index : 163
+waves index : 164
+waves index : 165
+waves index : 166
+#22 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+6
+{===============}
+{end steps:}
+NADA
+6
+3
+6
+{===============}
+start : <<<<15>>>>>
+end : <<<<22>>>>>
 
-#22 [mariadb 4/7] COPY tools/exe.sh /tmp/
-#22 DONE 0.0s
+spaces: 29
+waves index : 167
+waves index : 168
+waves index : 169
+#13 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+6
+{===============}
+{end steps:}
+NADA
+6
+3
+6
+{===============}
+start : <<<<15>>>>>
+end : <<<<22>>>>>
 
-#23 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
-#23 DONE 0.3s
+spaces: 29
+waves index : 170
+waves index : 171
+waves index : 172
+waves index : 173
+waves index : 174
+waves index : 175
+#23 [wordpress 7/9] RUN mkdir -p /var/www/html/
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+7
+{===============}
+{end steps:}
+NADA
+6
+3
+7
+{===============}
+start : <<<<16>>>>>
+end : <<<<22>>>>>
 
-#24 [mariadb 5/7] RUN chmod +x /tmp/exe.sh
-#24 DONE 0.2s
+spaces: 31
+waves index : 176
+waves index : 177
+waves index : 178
+#24 [wordpress 8/9] COPY tools/exe.sh /tmp/
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+8
+{===============}
+{end steps:}
+NADA
+6
+3
+8
+{===============}
+start : <<<<17>>>>>
+end : <<<<22>>>>>
 
-#25 [wordpress 7/9] RUN mkdir -p /var/www/html/
-#25 DONE 0.2s
+spaces: 33
+waves index : 179
+waves index : 180
+waves index : 181
+#13 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+8
+{===============}
+{end steps:}
+NADA
+6
+3
+8
+{===============}
+start : <<<<17>>>>>
+end : <<<<22>>>>>
 
-#26 [mariadb 6/7] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
-#26 ...
+spaces: 33
+waves index : 182
+waves index : 183
+waves index : 184
+waves index : 185
+#25 [wordpress 9/9] RUN chmod +x /tmp/exe.sh
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+9
+{===============}
+{end steps:}
+NADA
+6
+3
+9
+{===============}
+start : <<<<18>>>>>
+end : <<<<22>>>>>
 
-#27 [wordpress 8/9] COPY tools/exe.sh /tmp/
-#27 DONE 0.0s
+spaces: 35
+waves index : 186
+waves index : 187
+waves index : 188
+#13 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+9
+{===============}
+{end steps:}
+NADA
+6
+3
+9
+{===============}
+start : <<<<18>>>>>
+end : <<<<22>>>>>
 
-#26 [mariadb 6/7] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
-#26 DONE 0.3s
+spaces: 35
+waves index : 189
+waves index : 190
+waves index : 191
+waves index : 192
+waves index : 193
+waves index : 194
+waves index : 195
+waves index : 196
+waves index : 197
+waves index : 198
+waves index : 199
+waves index : 200
+#13 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+3
+9
+{===============}
+{end steps:}
+NADA
+6
+3
+9
+{===============}
+start : <<<<18>>>>>
+end : <<<<22>>>>>
 
-#28 [wordpress 9/9] RUN chmod +x /tmp/exe.sh
-#28 DONE 0.3s
+spaces: 35
+waves index : 201
+waves index : 202
+waves index : 203
+waves index : 204
+waves index : 205
+waves index : 206
+waves index : 207
+#26 [mariadb 4/7] COPY tools/exe.sh /tmp/
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+4
+9
+{===============}
+{end steps:}
+NADA
+6
+4
+9
+{===============}
+start : <<<<19>>>>>
+end : <<<<22>>>>>
 
+spaces: 37
+waves index : 208
+waves index : 209
+waves index : 210
+#27 [mariadb 5/7] RUN chmod +x /tmp/exe.sh
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+5
+9
+{===============}
+{end steps:}
+NADA
+6
+5
+9
+{===============}
+start : <<<<20>>>>>
+end : <<<<22>>>>>
+
+spaces: 39
+waves index : 211
+waves index : 212
+waves index : 213
+#28 [mariadb 6/7] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+6
+9
+{===============}
+{end steps:}
+NADA
+6
+6
+9
+{===============}
+start : <<<<21>>>>>
+end : <<<<22>>>>>
+
+spaces: 41
+waves index : 214
+waves index : 215
+waves index : 216
 #29 [mariadb 7/7] RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
-#29 DONE 0.3s
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> mariadb : 7
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+6
+7
+9
+{===============}
+{end steps:}
+NADA
+6
+7
+9
+{===============}
+start : <<<<22>>>>>
+end : <<<<22>>>>>
 
-#19 [wordpress] exporting to image
-#19 exporting layers 0.2s done
-#19 writing image sha256:34c5f36bbda0131151e90678cf333ea68b2c70c5248f9bc5eb1b8f83b27c0d41 done
-#19 naming to docker.io/library/wordpress done
-#19 DONE 0.3s
+spaces: 49
+waves index : 217
+waves index : 218
+waves index : 219
+waves index : 220
+waves index : 221
+waves index : 222
+waves index : 223
+waves index : 224
+waves index : 1
+waves index : 2
+waves index : 3
+waves index : 4
+waves index : 5
+waves index : 6
+waves index : 7
+waves index : 8
+waves index : 9
+waves index : 10
+waves index : 11
+waves index : 12
+waves index : 13
+waves index : 14
+waves index : 15
+waves index : 16
+waves index : 17
+waves index : 18
+waves index : 19
+waves index : 20
+waves index : 21
+waves index : 22
+waves index : 23
+waves index : 24
+waves index : 25
+waves index : 26
+waves index : 27
+waves index : 28
+waves index : 29
+waves index : 30
+waves index : 31
+waves index : 32
+waves index : 33
+waves index : 34
+waves index : 35
+#10 [mariadb 1/6] FROM docker.io/library/alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+{Img arr:}
+> NADA : NADA
+> mariadb : 6
+{===============}
+{start steps:}
+NADA
+1
+{===============}
+{end steps:}
+NADA
+1
+{===============}
+start : <<<<1>>>>>
+end : <<<<6>>>>>
 
-#19 [mariadb] exporting to image
-#19 exporting layers 1.0s done
-#19 writing image sha256:a102ff2c67cecc05b33101319c086b96cef55b50570df469dd77b9b50c6256fe done
-#19 naming to docker.io/library/mariadb done
-#19 DONE 1.3s
+spaces: 7
+waves index : 36
+waves index : 37
+waves index : 38
+waves index : 39
+waves index : 40
+waves index : 41
+waves index : 42
+#12 [wordpress 2/6] RUN apk upgrade && apk update
+{Img arr:}
+> NADA : NADA
+> mariadb : 6
+> wordpress : 6
+{===============}
+{start steps:}
+NADA
+1
+2
+{===============}
+{end steps:}
+NADA
+1
+2
+{===============}
+start : <<<<3>>>>>
+end : <<<<12>>>>>
+
+spaces: 11
+waves index : 43
+waves index : 44
+waves index : 45
+waves index : 46
+waves index : 47
+waves index : 48
+waves index : 49
+waves index : 50
+waves index : 1
+waves index : 2
+waves index : 3
+waves index : 4
+waves index : 5
+waves index : 6
+waves index : 7
+waves index : 8
+waves index : 9
+waves index : 10
+waves index : 11
+waves index : 12
+waves index : 13
+waves index : 14
+waves index : 15
+waves index : 16
+waves index : 17
+waves index : 18
+waves index : 19
+waves index : 20
+waves index : 21
+waves index : 22
+waves index : 23
+waves index : 24
+waves index : 25
+waves index : 26
+waves index : 27
+waves index : 28
+waves index : 29
+waves index : 30
+waves index : 31
+waves index : 32
+waves index : 33
+waves index : 34
+waves index : 35
+#10 [wordpress 1/7] FROM docker.io/library/alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+{Img arr:}
+> NADA : NADA
+> wordpress : 7
+{===============}
+{start steps:}
+NADA
+1
+{===============}
+{end steps:}
+NADA
+1
+{===============}
+start : <<<<1>>>>>
+end : <<<<7>>>>>
+
+spaces: 6
+waves index : 36
+waves index : 37
+waves index : 38
+waves index : 39
+waves index : 40
+waves index : 41
+waves index : 42
+#12 [wordpress 2/7] RUN apk upgrade && apk update
+{Img arr:}
+> NADA : NADA
+> wordpress : 7
+{===============}
+{start steps:}
+NADA
+2
+{===============}
+{end steps:}
+NADA
+2
+{===============}
+start : <<<<2>>>>>
+end : <<<<7>>>>>
+
+spaces: 13
+waves index : 43
+waves index : 44
+waves index : 45
+waves index : 46
+waves index : 47
+waves index : 48
+waves index : 49
+waves index : 50
+waves index : 51
+waves index : 52
+waves index : 53
+waves index : 54
+waves index : 55
+waves index : 56
+waves index : 57
+waves index : 58
+waves index : 59
+waves index : 60
+waves index : 61
+waves index : 62
+#13 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+{===============}
+{start steps:}
+NADA
+3
+{===============}
+{end steps:}
+NADA
+3
+{===============}
+start : <<<<3>>>>>
+end : <<<<9>>>>>
+
+spaces: 16
+waves index : 63
+waves index : 64
+waves index : 65
+waves index : 66
+waves index : 67
+waves index : 68
+waves index : 69
+waves index : 70
+waves index : 71
+waves index : 72
+waves index : 73
+waves index : 74
+waves index : 75
+waves index : 76
+waves index : 77
+waves index : 78
+waves index : 79
+waves index : 80
+waves index : 81
+waves index : 82
+#14 [nginx 3/6] RUN apk add nginx && apk add openssl
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+{===============}
+{start steps:}
+NADA
+3
+3
+{===============}
+{end steps:}
+NADA
+3
+3
+{===============}
+start : <<<<6>>>>>
+end : <<<<15>>>>>
+
+spaces: 17
+waves index : 83
+waves index : 84
+waves index : 85
+waves index : 86
+waves index : 87
+waves index : 88
+waves index : 89
+waves index : 90
+waves index : 91
+waves index : 92
+waves index : 93
+waves index : 94
+waves index : 95
+#13 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+{===============}
+{start steps:}
+NADA
+3
+3
+{===============}
+{end steps:}
+NADA
+3
+3
+{===============}
+start : <<<<6>>>>>
+end : <<<<15>>>>>
+
+spaces: 17
+waves index : 96
+waves index : 97
+waves index : 98
+waves index : 99
+waves index : 100
+#15 [nginx 4/6] RUN mkdir /var/www/html
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+{===============}
+{start steps:}
+NADA
+3
+4
+{===============}
+{end steps:}
+NADA
+3
+4
+{===============}
+start : <<<<7>>>>>
+end : <<<<15>>>>>
+
+spaces: 20
+waves index : 101
+waves index : 102
+waves index : 103
+#13 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+{===============}
+{start steps:}
+NADA
+3
+4
+{===============}
+{end steps:}
+NADA
+3
+4
+{===============}
+start : <<<<7>>>>>
+end : <<<<15>>>>>
+
+spaces: 20
+waves index : 104
+waves index : 105
+waves index : 106
+waves index : 107
+waves index : 108
+#16 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+{===============}
+{start steps:}
+NADA
+3
+5
+{===============}
+{end steps:}
+NADA
+3
+5
+{===============}
+start : <<<<8>>>>>
+end : <<<<15>>>>>
+
+spaces: 23
+waves index : 109
+waves index : 110
+waves index : 111
+waves index : 112
+waves index : 113
+waves index : 114
+#17 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+{===============}
+{start steps:}
+NADA
+3
+6
+{===============}
+{end steps:}
+NADA
+3
+6
+{===============}
+start : <<<<9>>>>>
+end : <<<<15>>>>>
+
+spaces: 26
+waves index : 115
+waves index : 116
+waves index : 117
+#13 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+{===============}
+{start steps:}
+NADA
+3
+6
+{===============}
+{end steps:}
+NADA
+3
+6
+{===============}
+start : <<<<9>>>>>
+end : <<<<15>>>>>
+
+spaces: 26
+waves index : 118
+waves index : 119
+waves index : 120
+waves index : 121
+waves index : 122
+waves index : 123
+waves index : 124
+waves index : 125
+waves index : 126
+waves index : 127
+waves index : 128
+waves index : 129
+#13 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+{===============}
+{start steps:}
+NADA
+3
+6
+{===============}
+{end steps:}
+NADA
+3
+6
+{===============}
+start : <<<<9>>>>>
+end : <<<<15>>>>>
+
+spaces: 26
+waves index : 130
+waves index : 131
+waves index : 132
+waves index : 133
+waves index : 134
+waves index : 135
+waves index : 136
+#19 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+3
+6
+3
+{===============}
+{end steps:}
+NADA
+3
+6
+3
+{===============}
+start : <<<<12>>>>>
+end : <<<<22>>>>>
+
+spaces: 23
+waves index : 137
+waves index : 138
+waves index : 139
+waves index : 140
+waves index : 141
+waves index : 142
+waves index : 143
+waves index : 144
+waves index : 145
+waves index : 146
+waves index : 147
+waves index : 148
+waves index : 149
+waves index : 150
+waves index : 151
+waves index : 152
+waves index : 153
+waves index : 154
+waves index : 155
+waves index : 156
+waves index : 157
+waves index : 158
+waves index : 159
+waves index : 160
+waves index : 161
+waves index : 162
+#20 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+4
+6
+3
+{===============}
+{end steps:}
+NADA
+4
+6
+3
+{===============}
+start : <<<<13>>>>>
+end : <<<<22>>>>>
+
+spaces: 25
+waves index : 163
+waves index : 164
+waves index : 165
+#21 [wordpress 5/9] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+5
+6
+3
+{===============}
+{end steps:}
+NADA
+5
+6
+3
+{===============}
+start : <<<<14>>>>>
+end : <<<<22>>>>>
+
+spaces: 27
+waves index : 166
+waves index : 167
+waves index : 168
+waves index : 169
+waves index : 170
+waves index : 171
+#22 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+6
+6
+3
+{===============}
+{end steps:}
+NADA
+6
+6
+3
+{===============}
+start : <<<<15>>>>>
+end : <<<<22>>>>>
+
+spaces: 29
+waves index : 172
+waves index : 173
+waves index : 174
+#23 [wordpress 7/9] RUN mkdir -p /var/www/html/
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+7
+6
+3
+{===============}
+{end steps:}
+NADA
+7
+6
+3
+{===============}
+start : <<<<16>>>>>
+end : <<<<22>>>>>
+
+spaces: 31
+waves index : 175
+waves index : 176
+waves index : 177
+#24 [wordpress 8/9] COPY tools/exe.sh /tmp/
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+8
+6
+3
+{===============}
+{end steps:}
+NADA
+8
+6
+3
+{===============}
+start : <<<<17>>>>>
+end : <<<<22>>>>>
+
+spaces: 33
+waves index : 178
+waves index : 179
+waves index : 180
+#19 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+8
+6
+3
+{===============}
+{end steps:}
+NADA
+8
+6
+3
+{===============}
+start : <<<<17>>>>>
+end : <<<<22>>>>>
+
+spaces: 33
+waves index : 181
+waves index : 182
+waves index : 183
+waves index : 184
+waves index : 185
+waves index : 186
+#25 [wordpress 9/9] RUN chmod +x /tmp/exe.sh
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+9
+6
+3
+{===============}
+{end steps:}
+NADA
+9
+6
+3
+{===============}
+start : <<<<18>>>>>
+end : <<<<22>>>>>
+
+spaces: 35
+waves index : 187
+waves index : 188
+waves index : 189
+#19 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+9
+6
+3
+{===============}
+{end steps:}
+NADA
+9
+6
+3
+{===============}
+start : <<<<18>>>>>
+end : <<<<22>>>>>
+
+spaces: 35
+waves index : 190
+waves index : 191
+waves index : 192
+waves index : 193
+waves index : 194
+waves index : 195
+waves index : 196
+waves index : 197
+waves index : 198
+waves index : 199
+waves index : 200
+waves index : 201
+#19 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+9
+6
+3
+{===============}
+{end steps:}
+NADA
+9
+6
+3
+{===============}
+start : <<<<18>>>>>
+end : <<<<22>>>>>
+
+spaces: 35
+waves index : 202
+waves index : 203
+waves index : 204
+waves index : 205
+waves index : 206
+waves index : 207
+waves index : 208
+waves index : 209
+#26 [mariadb 4/7] COPY tools/exe.sh /tmp/
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+9
+6
+4
+{===============}
+{end steps:}
+NADA
+9
+6
+4
+{===============}
+start : <<<<19>>>>>
+end : <<<<22>>>>>
+
+spaces: 37
+waves index : 210
+waves index : 211
+waves index : 212
+#27 [mariadb 5/7] RUN chmod +x /tmp/exe.sh
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+9
+6
+5
+{===============}
+{end steps:}
+NADA
+9
+6
+5
+{===============}
+start : <<<<20>>>>>
+end : <<<<22>>>>>
+
+spaces: 39
+waves index : 213
+waves index : 214
+waves index : 215
+#28 [mariadb 6/7] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+9
+6
+6
+{===============}
+{end steps:}
+NADA
+9
+6
+6
+{===============}
+start : <<<<21>>>>>
+end : <<<<22>>>>>
+
+spaces: 41
+waves index : 216
+waves index : 217
+waves index : 218
+#29 [mariadb 7/7] RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
+{Img arr:}
+> NADA : NADA
+> wordpress : 9
+> nginx : 6
+> mariadb : 7
+{===============}
+{start steps:}
+NADA
+9
+6
+7
+{===============}
+{end steps:}
+NADA
+9
+6
+7
+{===============}
+start : <<<<22>>>>>
+end : <<<<22>>>>>
+
+spaces: 49
+waves index : 219
+waves index : 220
+waves index : 221
+waves index : 222
+waves index : 223
+waves index : 224
+waves index : 225
+waves index : 226
