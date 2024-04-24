@@ -3,10 +3,11 @@ version: "3.8"
 services:
 
   nginx:
-    image: nginx-meow
+    image: nginx
     build:
       context: requirements/nginx/
     container_name: nginx
+    restart: on-failure
     ports:
       - 443:443
     volumes:
@@ -15,10 +16,11 @@ services:
       - uWu
 
   wordpress:
-    image: wordpress-meow
+    image: wordpress
     build:
       context: requirements/wordpress/
     container_name: wordpress
+    restart: on-failure
     ports:
       - 9000:9000
     volumes:
@@ -27,10 +29,11 @@ services:
       - uWu
 
   mariadb:
-    image: mariadb-meow
+    image: mariadb
     build:
       context: requirements/mariadb/
     container_name: mariadb
+    restart: on-failure
     ports:
       - 3306:3306
     # volumes:
@@ -46,11 +49,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /Users/iltafah/Desktop/Temp Volume
+      device: /Users/iltafah/Desktop/Temp Volume/WordPress
       o: bind
-  db:
+  DB:
     driver: local
     driver_opts:
       type: none
-      device: /Users/iltafah/Desktop/Temp Volume
+      device: /Users/iltafah/Desktop/Temp Volume/DB
       o: bind

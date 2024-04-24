@@ -1,0 +1,218 @@
+#1 [wordpress internal] load build definition from Dockerfile
+#1 transferring dockerfile: 32B done
+#1 DONE 0.0s
+
+#2 [mariadb internal] load build definition from Dockerfile
+#2 transferring dockerfile: 32B done
+#2 DONE 0.0s
+
+#3 [nginx internal] load build definition from Dockerfile
+#3 transferring dockerfile: 32B done
+#3 DONE 0.0s
+
+#4 [mariadb internal] load .dockerignore
+#4 transferring context: 32B done
+#4 DONE 0.0s
+
+#5 [wordpress internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [nginx internal] load .dockerignore
+#6 transferring context: 32B done
+#6 DONE 0.0s
+
+#7 [mariadb internal] load metadata for docker.io/library/alpine:3.19
+#7 DONE 0.8s
+
+#8 [nginx internal] load build context
+#8 transferring context: 63B done
+#8 DONE 0.0s
+
+#9 [mariadb internal] load build context
+#9 transferring context: 59B done
+#9 DONE 0.0s
+
+#10 [wordpress 1/7] FROM docker.io/library/alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+#10 CACHED
+
+#11 [wordpress internal] load build context
+#11 transferring context: 59B done
+#11 DONE 0.0s
+
+#12 [wordpress 2/7] RUN apk upgrade && apk update
+#12 0.240 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#12 0.674 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#12 1.094 Upgrading critical system libraries and apk-tools:
+#12 1.094 (1/1) Upgrading apk-tools (2.14.0-r5 -> 2.14.4-r0)
+#12 1.148 Executing busybox-1.36.1-r15.trigger
+#12 1.203 Continuing the upgrade transaction with new apk-tools:
+#12 1.208 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#12 1.579 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#12 1.956 (1/3) Upgrading ca-certificates-bundle (20230506-r0 -> 20240226-r0)
+#12 2.003 (2/3) Upgrading libcrypto3 (3.1.4-r5 -> 3.1.4-r6)
+#12 2.102 (3/3) Upgrading libssl3 (3.1.4-r5 -> 3.1.4-r6)
+#12 2.150 OK: 7 MiB in 15 packages
+#12 2.207 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#12 2.560 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#12 2.959 v3.19.1-440-gbcf32c0243b [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
+#12 2.959 v3.19.1-443-g7e4aa1a08e2 [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
+#12 2.959 OK: 22989 distinct packages available
+#12 DONE 3.1s
+
+#13 [nginx 3/6] RUN apk add nginx && apk add openssl
+#13 0.574 (1/3) Installing hiredis (1.2.0-r0)
+#13 0.780 (2/3) Installing pcre (8.45-r3)
+#13 0.915 (3/3) Installing nginx (1.24.0-r15)
+#13 1.013 Executing nginx-1.24.0-r15.pre-install
+#13 1.144 Executing nginx-1.24.0-r15.post-install
+#13 1.147 Executing busybox-1.36.1-r15.trigger
+#13 1.150 OK: 9 MiB in 18 packages
+#13 1.473 (1/1) Installing openssl (3.1.4-r6)
+#13 1.801 Executing busybox-1.36.1-r15.trigger
+#13 1.804 OK: 10 MiB in 19 packages
+#13 DONE 1.9s
+
+#14 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+#0 0.551 (1/29) Installing ca-certificates (20240226-r0)
+#0 0.806 (2/29) Installing brotli-libs (1.1.0-r1)
+#0 0.926 (3/29) Installing c-ares (1.27.0-r0)
+#0 0.966 (4/29) Installing libunistring (1.1-r2)
+#0 1.068 (5/29) Installing libidn2 (2.3.4-r4)
+#0 1.113 (6/29) Installing nghttp2-libs (1.58.0-r0)
+#0 1.153 (7/29) Installing libcurl (8.5.0-r0)
+#0 1.206 (8/29) Installing curl (8.5.0-r0)
+#0 1.252 (9/29) Installing mariadb-common (10.11.6-r0)
+#0 1.312 (10/29) Installing libaio (0.3.113-r2)
+#0 1.349 (11/29) Installing libgcc (13.2.1_git20231014-r0)
+#0 1.390 (12/29) Installing xz-libs (5.4.5-r0)
+#0 1.433 (13/29) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#0 1.472 (14/29) Installing libncursesw (6.4_p20231125-r0)
+#0 1.528 (15/29) Installing skalibs (2.14.0.1-r0)
+#0 1.641 (16/29) Installing utmps-libs (0.1.2.2-r0)
+#0 1.678 (17/29) Installing linux-pam (1.5.3-r7)
+#0 1.731 (18/29) Installing pcre2 (10.42-r2)
+#0 1.781 (19/29) Installing libstdc++ (13.2.1_git20231014-r0)
+#0 1.849 (20/29) Installing libxml2 (2.11.7-r0)
+#14 1.909 (21/29) Installing zstd-libs (1.5.5-r8)
+#14 1.966 (22/29) Installing mariadb (10.11.6-r0)
+#14 2.012 Executing mariadb-10.11.6-r0.pre-install
+#14 ...
+
+#15 [nginx 4/6] RUN mkdir /var/www/html
+#15 DONE 0.2s
+
+#16 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+#0 0.598 (1/25) Installing ca-certificates (20240226-r0)
+#0 0.887 (2/25) Installing brotli-libs (1.1.0-r1)
+#0 1.064 (3/25) Installing c-ares (1.27.0-r0)
+#0 1.125 (4/25) Installing libunistring (1.1-r2)
+#0 1.345 (5/25) Installing libidn2 (2.3.4-r4)
+#0 1.407 (6/25) Installing nghttp2-libs (1.58.0-r0)
+#0 1.463 (7/25) Installing libcurl (8.5.0-r0)
+#0 1.570 (8/25) Installing curl (8.5.0-r0)
+#0 1.648 (9/25) Installing php82-common (8.2.18-r0)
+#0 1.695 (10/25) Installing argon2-libs (20190702-r5)
+#0 1.738 (11/25) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#0 1.787 (12/25) Installing libncursesw (6.4_p20231125-r0)
+#0 1.858 (13/25) Installing libedit (20230828.3.1-r3)
+#0 1.913 (14/25) Installing pcre2 (10.42-r2)
+#0 2.013 (15/25) Installing xz-libs (5.4.5-r0)
+#0 2.075 (16/25) Installing libxml2 (2.11.7-r0)
+#0 2.222 (17/25) Installing php82 (8.2.18-r0)
+#16 ...
+
+#17 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+#0 0.283 ....+...+......+......+..+.+......+...........+....+.....+.+.....+++++++++++++++++++++++++++++++++++++++*....+...+.+++++++++++++++++++++++++++++++++++++++*.+.......+..+......+....+...........+......+...+.+..+.............+......+........+...+.......+..+...+.+.....+.+.....+....+..+...+................+......+.....+.........+....+..+.......+..+......+....+...+.....+......+....++++++
+#0 0.313 .+............+..+++++++++++++++++++++++++++++++++++++++*..+............+++++++++++++++++++++++++++++++++++++++*..+.+..................+.................+.......+...+..+.+......+.........+..++++++
+#0 0.328 -----
+#17 DONE 0.4s
+
+#18 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
+#18 DONE 0.0s
+
+#19 [nginx] exporting to image
+#19 exporting layers 0.1s done
+#19 writing image sha256:5f2af1fa1a9938670a39d7e6a6aabdbba094e7447d348c774227dd872fde058a done
+#19 naming to docker.io/library/nginx
+#19 naming to docker.io/library/nginx done
+#19 DONE 0.1s
+
+#16 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+#16 2.623 (18/25) Installing libacl (2.3.1-r4)
+#16 2.665 (19/25) Installing php82-fpm (8.2.18-r0)
+#16 2.986 (20/25) Installing oniguruma (6.9.9-r0)
+#16 3.081 (21/25) Installing php82-mbstring (8.2.18-r0)
+#16 3.203 (22/25) Installing php82-openssl (8.2.18-r0)
+#16 3.254 (23/25) Installing php82-mysqlnd (8.2.18-r0)
+#16 3.304 (24/25) Installing php82-mysqli (8.2.18-r0)
+#16 3.349 (25/25) Installing php82-phar (8.2.18-r0)
+#16 3.407 Executing busybox-1.36.1-r15.trigger
+#16 3.411 Executing ca-certificates-20240226-r0.trigger
+#16 3.459 OK: 34 MiB in 40 packages
+#16 DONE 3.7s
+
+#20 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
+#20 DONE 0.2s
+
+#14 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+#14 3.841 (23/29) Installing libbz2 (1.0.8-r6)
+#14 3.879 (24/29) Installing perl (5.38.2-r0)
+#14 4.471 (25/29) Installing mariadb-client (10.11.6-r0)
+#14 4.903 (26/29) Installing ifupdown-ng (0.12.1-r4)
+#14 4.946 (27/29) Installing libcap2 (2.69-r1)
+#14 4.986 (28/29) Installing openrc (0.52.1-r2)
+#14 5.050 Executing openrc-0.52.1-r2.post-install
+#14 5.052 (29/29) Installing mariadb-openrc (10.11.6-r0)
+#14 5.092 Executing busybox-1.36.1-r15.trigger
+#14 5.097 Executing ca-certificates-20240226-r0.trigger
+#14 ...
+
+#21 [wordpress 5/9] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+#0 0.309   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#0 0.310                                  Dload  Upload   Total   Spent    Left  Speed
+#0 0.311   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 77 6831k   77 5327k    0     0  6426k      0  0:00:01 --:--:--  0:00:01 6433k100 6831k  100 6831k    0     0  7666k      0 --:--:-- --:--:-- --:--:-- 7675k
+#21 DONE 1.3s
+
+#14 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+#14 5.270 OK: 262 MiB in 44 packages
+#14 DONE 5.4s
+
+#22 [mariadb 4/7] COPY tools/exe.sh /tmp/
+#22 DONE 0.0s
+
+#23 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
+#23 DONE 0.3s
+
+#24 [mariadb 5/7] RUN chmod +x /tmp/exe.sh
+#24 DONE 0.2s
+
+#25 [wordpress 7/9] RUN mkdir -p /var/www/html/
+#25 DONE 0.2s
+
+#26 [mariadb 6/7] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+#26 ...
+
+#27 [wordpress 8/9] COPY tools/exe.sh /tmp/
+#27 DONE 0.0s
+
+#26 [mariadb 6/7] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+#26 DONE 0.3s
+
+#28 [wordpress 9/9] RUN chmod +x /tmp/exe.sh
+#28 DONE 0.3s
+
+#29 [mariadb 7/7] RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
+#29 DONE 0.3s
+
+#19 [wordpress] exporting to image
+#19 exporting layers 0.2s done
+#19 writing image sha256:34c5f36bbda0131151e90678cf333ea68b2c70c5248f9bc5eb1b8f83b27c0d41 done
+#19 naming to docker.io/library/wordpress done
+#19 DONE 0.3s
+
+#19 [mariadb] exporting to image
+#19 exporting layers 1.0s done
+#19 writing image sha256:a102ff2c67cecc05b33101319c086b96cef55b50570df469dd77b9b50c6256fe done
+#19 naming to docker.io/library/mariadb done
+#19 DONE 1.3s
