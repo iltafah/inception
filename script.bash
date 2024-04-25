@@ -46,11 +46,11 @@ restoreCurs=$(tput cnorm)
 
 function print_image_arr () {
 
-    echo {Img arr:} >> file
+    echo {Img arr:} >> debugFile
     for i in ${!img_arr[@]}; do
-        echo ">" ${img_arr[$i]} ":" ${end_steps_arr[$i]} >> file
+        echo ">" ${img_arr[$i]} ":" ${end_steps_arr[$i]} >> debugFile
     done
-    echo {===============} >> file
+    echo {===============} >> debugFile
     return 0;
 }
 
@@ -117,7 +117,7 @@ function dockerfile_loadbar () {
     
 
     while read line ; do 
-        echo $line >> debugFile
+        # echo $line >> debugFile
         if [[ "$line" =~ \[(.+)\ ([0-9])/([0-9])\] ]];
 	    then
             sleep 1 # For الجمالية
@@ -133,9 +133,9 @@ function dockerfile_loadbar () {
 	        ratio=$((100 / end))
             if [ $start -ne $end ]; then perc=$((start * ratio)); else perc=100; fi;
             pre_spaces=$(($perc * 49 / 100)) # 49 is the number of spaces between the whale and the ship
-            bar_count=$((100 / 5))
+            bar_count=$((100 / 10))
             bar_pos=$((perc / 5))
-            bar_spaces=$((bar_count - bar_pos))
+            bar_spaces=$((bar_count*2 - bar_pos))
             fill=$(printf  "▇%.0s" $(seq 1 $bar_pos))
             ship_spaces=$((49 - pre_spaces)) # expected spaces between the whale and the ship
 
@@ -147,7 +147,9 @@ function dockerfile_loadbar () {
             printf "${lineclr}${scyan}~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~^"; printf " ${sc1}\____________________.'\n";
             printf "${lineclr}${purp}Progress : ${blu}|${grn}${fill}${nc}%${bar_spaces}s${blu}|${nc}[${perc}]${red}%%${nc}\n"
 
-            printf "\n${lineclr}${white}${line}${nc}\n\n"
+            #just to move the prefix from the steps line which is `(#[0-9]+ )`
+            curr_step_line=`echo $line | sed -E 's/(^#[0-9]+\ )(.+)|.*/\2/'` # <<<= for example : #25 [wordpress 9/9] RUN uWu 
+            printf "\n${lineclr}${white}${curr_step_line}${nc}\n\n" # <<<= note new lines for separating
 
             for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
                 bar_count=$(( ${end_steps_arr[$indx]}  ))
@@ -157,16 +159,21 @@ function dockerfile_loadbar () {
                 printf "${lineclr}${yel}${img_arr[$indx]} : ${blu}|${grn}${fill}${nc}%${bar_spaces}s${blu}|${nc}[${start_steps_arr[$indx]}/${end_steps_arr[$indx]}]${red}${nc}\n"
             done
 
-            printf "${line1}${line1}${line1}"
 
             for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
                 printf "${line1}";
+                if [[ $perc -eq 100 ]];
+                then
+                    printf "${lineclr}";
+                fi;
             done
+
+            printf "${line1}${line1}${line1}"           # <<<<= just move the cursor above the separated lines so yeah it has to be hard coded
         
-        elif [[ "$line" =~ (failed to solve:)(.+:)(.+:.+) ]];
+        elif [[ "$line" =~ (failed to solve:)(.+:)(.+:.+)([0-9]+) ]];
         then
             printf "\n${white}${last_step}${nc}\n"
-            printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${nc}\n"
+            printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"
             for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
                 printf "${lineclr}\n"
             done
@@ -174,11 +181,11 @@ function dockerfile_loadbar () {
                 printf "${line1}"
             done
             printf "${restoreCurs}"
-            exit 0
+            exit 1
         fi;
 
         waves_index=$(($waves_index + 1))
-        if [ $(($waves_index % 4)) -eq 0 ]
+        if [ $(($waves_index % 2)) -eq 0 ]
         then
             printf "${line2}${lineclr}${scyan}~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~^"; printf " ${sc1}\____________________.'\n\n";
         else
@@ -193,4 +200,4 @@ function dockerfile_loadbar () {
 printf "${hideCurs}"
 dockerfile_loadbar
 printf "${restoreCurs}"
-if [[ $perc -eq 0 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon\n"; fi
+if [[ $perc -eq 0 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon${nc}\n"; exit 1; fi
