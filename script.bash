@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Vars, NADA is not a girl name btw
 img_arr=NADA
 start_steps_arr=NADA
 end_steps_arr=NADA
@@ -56,26 +57,26 @@ function print_image_arr () {
 function get_curr_steps () {
 
     # given_img=$1
-    echo {start steps:} >> file
+    # echo {start steps:} >> debugFile
     curr_steps=0
     for i in ${!start_steps_arr[@]}; do
-        echo ${start_steps_arr[$i]} >> file
+        # echo ${start_steps_arr[$i]} >> debugFile
         curr_steps=$(($curr_steps + ${start_steps_arr[$i]} ))    
     done
-    echo {===============} >> file
+    # echo {===============} >> debugFile
     return $curr_steps
 }
 
 function get_end_steps () {
 
     # given_img=$1
-    echo {end steps:} >> file
+    # echo {end steps:} >> debugFile
     end_steps=0
     for i in ${!start_steps_arr[@]}; do
-        echo ${start_steps_arr[$i]} >> file
+        # echo ${start_steps_arr[$i]} >> debugFile
         end_steps=$(($end_steps + ${end_steps_arr[$i]} ))    
     done
-    echo {===============} >> file
+    # echo {===============} >> debugFile
     return $end_steps
 }
 
@@ -88,8 +89,8 @@ function add_image () {
     for i in ${!img_arr[@]}; do
         if [[ $new_img == ${img_arr[$i]} ]]
         then
-            #Those focking shi2 r not stable, that's y I update them
-            #They r the reason for the waves in the ocean that make my poor whale back off
+            # Those focking shi2 r not stable, that's y I update them
+            # They r the reason for the waves in the ocean that make my poor whale back off
             start_steps_arr[$i]=$start_step
             end_steps_arr[$i]=$end_step
             return 1
@@ -106,62 +107,38 @@ function dockerfile_loadbar () {
 
     waves_index=0
 
-   printf "${scyan}               .                                                               ${sc6}_\____ \n";
-   printf "${scyan}              ':'                                                             ${sc5}|_===__\`.        ==/ \n";
-   printf "${sblue}|\"\/\"|     ____${scyan}:${sblue}___                                                           ${sc4}\/  '---\"\ _ _ _ _/\n";
-   printf "${sblue} \  /    .\`📦📦    ',                                                   ${sc3}______/_______/_|_|_|_|_| \n";
-   printf "${sblue} |  \___/  📦📦  O  |                                                 ${sc2}_|📦📦📦📦📦📦📦📦📦📦===.\" \n";                                                              
-   printf "${scyan}~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~ ${sc1}\____________________.'\n";               
-   printf "${purp}Progress : ${blu}|%s|[0]%%%2s\n"
+    printf "${scyan}               .                                                               ${sc6}_\____ \n";
+    printf "${scyan}              ':'                                                             ${sc5}|_===__\`.        ==/ \n";
+    printf "${sblue}|\"\/\"|     ____${scyan}:${sblue}___                                                           ${sc4}\/  '---\"\ _ _ _ _/\n";
+    printf "${sblue} \  /    .\`📦📦    ',                                                   ${sc3}______/_______/_|_|_|_|_| \n";
+    printf "${sblue} |  \___/  📦📦  O  |                                                 ${sc2}_|📦📦📦📦📦📦📦📦📦📦===.\" \n";                                                              
+    printf "${scyan}~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~ ${sc1}\____________________.'\n";               
+    printf "${purp}Progress : ${blu}|%s|[0]%%%2s\n"
     
-#docker build requirements/nginx -t nginx --no-cache --progress plain  2> >(while read line; do if [[ $line =~ \[([0-9])/([0-9])\] ]]; then echo ${BASH_REMATCH[1]}; fi; done)
 
-#    SUB='Step'
-#    docker build requirements/$1 -t $1 --no-cache --progress plain 2> >(while read line ;
-    # docker compose build  --no-cache --progress plain 2>/dev/null | while read line ; do 
     while read line ; do 
-        #line=$(echo ${line} | grep -o 'Step [0-9]*/[0-9]*')
-        #if [[ "$line" == *"$SUB"* ]];
-        #if [[ "$line" =~ \[([0-9])/([0-9])\] ]];
+        echo $line >> debugFile
         if [[ "$line" =~ \[(.+)\ ([0-9])/([0-9])\] ]];
 	    then
-            #start=$(echo ${line} |  grep -o "[0-9]*/[0-9]*" | grep -o '^[0-9]*')
-            #end=$(echo ${line} |  grep -o "[0-9]*$")
-           
+            sleep 1 # For الجمالية
+            last_step=$line
 
-echo $line >> file
-        # //firstly you will have to update the arr, if the image element doesn't exist
-        # //so let's implement our search function
-        # my_map+=( ${BASH_REMATCH[1]} )
-        add_image ${BASH_REMATCH[1]} ${BASH_REMATCH[2]} ${BASH_REMATCH[3]} #"${img_arr[@]}"
-        print_image_arr
-        get_curr_steps
-        start=$?
-        get_end_steps
-        end=$?
-#docker compose build  --no-cache --progress plain > >(declare -A my_map; while read line; do if [[ $line =~ \[(.+)([0-9])/([0-9])\] ]]; then my_map[${BASH_REMATCH[1]}]=${BASH_REMATCH[3]}; echo -n my_map[${BASH_REMATCH[1]}]; echo ${my_map[${BASH_REMATCH[1]}]};   fi; done)
-
-
-echo start : "<<<<$start>>>>>" >> file
-echo end : "<<<<$end>>>>>" >> file
-echo >> file
+            add_image ${BASH_REMATCH[1]} ${BASH_REMATCH[2]} ${BASH_REMATCH[3]} #"${img_arr[@]}"
+            # print_image_arr
+            get_curr_steps
+            start=$?
+            get_end_steps
+            end=$?
 
 	        ratio=$((100 / end))
-            if [ $start -ne $end ]
-            then
-                perc=$((start * ratio))
-            else
-                perc=100
-            fi;
-            # spaces=$((perc / 2))
+            if [ $start -ne $end ]; then perc=$((start * ratio)); else perc=100; fi;
             pre_spaces=$(($perc * 49 / 100)) # 49 is the number of spaces between the whale and the ship
-            echo spaces: $pre_spaces >> file
             bar_count=$((100 / 5))
             bar_pos=$((perc / 5))
             bar_spaces=$((bar_count - bar_pos))
             fill=$(printf  "▇%.0s" $(seq 1 $bar_pos))
-            #fill=$(printf  "|%.0s" $(seq 1 $bar_pos))
             ship_spaces=$((49 - pre_spaces)) # expected spaces between the whale and the ship
+
             printf "${line7}${lineclr}${scyan}%${pre_spaces}s               .";                                     printf "%${ship_spaces}s              ${sc6}_\____ \n";                                
             printf "${lineclr}${scyan}%${pre_spaces}s              ':'";                                            printf "%${ship_spaces}s            ${sc5}|_===__\`.        ==/ \n";                       
             printf "${lineclr}${sblue}%${pre_spaces}s|\"\/\"|     ____${scyan}:${sblue}___";                        printf "%${ship_spaces}s          ${sc4}\/  '---\"\ _ _ _ _/\n";              
@@ -169,6 +146,8 @@ echo >> file
             printf "${lineclr}%${pre_spaces}s${sblue} |  \___/  📦📦  O  |";                                        printf "%${ship_spaces}s${sc2}_|📦📦📦📦📦📦📦📦📦📦===.\" \n";                                         
             printf "${lineclr}${scyan}~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~^"; printf " ${sc1}\____________________.'\n";
             printf "${lineclr}${purp}Progress : ${blu}|${grn}${fill}${nc}%${bar_spaces}s${blu}|${nc}[${perc}]${red}%%${nc}\n"
+
+            printf "\n${lineclr}${white}${line}${nc}\n\n"
 
             for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
                 bar_count=$(( ${end_steps_arr[$indx]}  ))
@@ -178,35 +157,40 @@ echo >> file
                 printf "${lineclr}${yel}${img_arr[$indx]} : ${blu}|${grn}${fill}${nc}%${bar_spaces}s${blu}|${nc}[${start_steps_arr[$indx]}/${end_steps_arr[$indx]}]${red}${nc}\n"
             done
 
+            printf "${line1}${line1}${line1}"
+
             for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
                 printf "${line1}";
             done
-            
+        
+        elif [[ "$line" =~ (failed to solve:)(.+:)(.+:.+) ]];
+        then
+            printf "\n${white}${last_step}${nc}\n"
+            printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${nc}\n"
+            for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
+                printf "${lineclr}\n"
+            done
+            for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
+                printf "${line1}"
+            done
+            printf "${restoreCurs}"
+            exit 0
         fi;
 
         waves_index=$(($waves_index + 1))
-        echo waves index : $waves_index >> file
         if [ $(($waves_index % 4)) -eq 0 ]
         then
             printf "${line2}${lineclr}${scyan}~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~^"; printf " ${sc1}\____________________.'\n\n";
         else
             printf "${line2}${lineclr}${scyan}^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~"; printf " ${sc1}\____________________.'\n\n";
         fi
-done;
+    done;
 
 }
 
-# set -o pipefail
-# echo $?
-# echo ${PIPESTATUS[0]}
 
-# if [[ $? -ne 0 ]]
-# then
-#     echo "Bro go and turn on the Docker Deamon"
-#     exit
-# fi
-
+# Main() Func; Or Not?
 printf "${hideCurs}"
 dockerfile_loadbar
 printf "${restoreCurs}"
-if [[ $perc -eq 0 ]]; then printf "${red}Bro Go And Turn The Docker Deamon\n"; fi
+if [[ $perc -eq 0 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon\n"; fi

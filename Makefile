@@ -4,7 +4,7 @@ COMPOSE-FILE-PATH = ./srcs/docker-compose.yml
 # @docker compose -f $(COMPOSE-FILE-PATH) build --no-cache --progress plain 2>/dev/null | ./script.bash;
 
 build:
-	@docker compose -f $(COMPOSE-FILE-PATH) build --no-cache --progress plain 2>/dev/null | ./script.bash
+	@docker compose -f $(COMPOSE-FILE-PATH) build --no-cache --progress plain 2>&1 | ./script.bash
 # @if $? -ne 0 then echo "Bro go and turn on the Docker Deamon"; fi;
 
 start:
