@@ -5,6 +5,7 @@ start_steps_arr=NADA
 end_steps_arr=NADA
 start=0
 end=100
+exit_code=1
 
 nc='\033[0m'
 
@@ -195,7 +196,17 @@ done;
 
 }
 
+# set -o pipefail
+# echo $?
+# echo ${PIPESTATUS[0]}
+
+# if [[ $? -ne 0 ]]
+# then
+#     echo "Bro go and turn on the Docker Deamon"
+#     exit
+# fi
 
 printf "${hideCurs}"
 dockerfile_loadbar
 printf "${restoreCurs}"
+if [[ $perc -eq 0 ]]; then printf "${red}Bro Go And Turn The Docker Deamon\n"; fi
