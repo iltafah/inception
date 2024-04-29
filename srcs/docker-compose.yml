@@ -41,6 +41,30 @@ services:
     networks:
       - uWu
 
+  redis:
+    image: redis
+    build:
+      context: requirements/bonus/redis/
+    container_name: redis
+    restart: on-failure
+    ports:
+      - 6379:6379
+    networks:
+      - uWu
+
+  ftp:
+    image: ftp
+    build:
+      context: requirements/bonus/ftp/
+    container_name: ftp
+    restart: on-failure
+    ports:
+      - 21:21
+      - 41337:41337
+    networks:
+      - uWu
+      
+
 networks:
   uWu:
 

@@ -16,6 +16,7 @@ COMPOSE_FILE_PATH = ./srcs/docker-compose.yml
 
 # ERR?=5
 
+#WHEN RUNNING IT ONLY WITH ONE SERVICE IT WON'T WORK
 up:
 # @echo $$?
 # @err=`cat .env.mk | grep ERR | cut -d "=" -f2-`; echo $$err; if [[ $$err -eq 1337 ]]; then echo a; make build 2>/dev/null; echo b; fi;
@@ -49,6 +50,7 @@ restart:
 
 clean:
 	@docker compose -f $(COMPOSE_FILE_PATH) down -v --rmi all
+	@rm -rf /Users/iltafah/Desktop/Temp\ Volume/WordPress/WordPress
 
 re:
 	@make clean

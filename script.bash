@@ -117,13 +117,17 @@ function dockerfile_loadbar () {
     
 
     while read line ; do 
-        # echo $line >> debugFile
-        if [[ "$line" =~ \[(.+)\ ([0-9])/([0-9])\] ]];
+        echo $line >> debugFile
+        if [[ "$line" =~ \[(.*)\ *([0-9])/([0-9])\] ]];
 	    then
             sleep 1 # For الجمالية
             last_step=$line
+            img_name=${BASH_REMATCH[1]}
+            curr_step=${BASH_REMATCH[2]}
+            last_step=${BASH_REMATCH[3]}
+            if [[ $img_name == "" ]]; then img_name="uWu"; fi;
 
-            add_image ${BASH_REMATCH[1]} ${BASH_REMATCH[2]} ${BASH_REMATCH[3]} #"${img_arr[@]}"
+            add_image $img_name $curr_step $last_step #"${img_arr[@]}"
             # print_image_arr
             get_curr_steps
             start=$?
@@ -149,6 +153,12 @@ function dockerfile_loadbar () {
 
             #just to move the prefix from the steps line which is `(#[0-9]+ )`
             curr_step_line=`echo $line | sed -E 's/(^#[0-9]+\ )(.+)|.*/\2/'` # <<<= for example : #25 [wordpress 9/9] RUN uWu 
+            curr_step_line_len=${#line}
+            if [[ $curr_step_line_len -gt  50 ]];
+            then
+                curr_step_line=${curr_step_line:0:50}
+                curr_step_line+="..."
+            fi
             printf "\n${lineclr}${white}${curr_step_line}${nc}\n\n" # <<<= note new lines for separating
 
             for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
@@ -170,6 +180,20 @@ function dockerfile_loadbar () {
 
             printf "${line1}${line1}${line1}"           # <<<<= just move the cursor above the separated lines so yeah it has to be hard coded
         
+
+        #I THINK I'll Have to save the lines too of a given step so I can know where the error
+# > [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar:
+# #22 0.276 Usage: mv [-finT] SOURCE DEST
+# #22 0.276 or: mv [-fin] SOURCE... { -t DIRECTORY | DIRECTORY }
+# #22 0.276
+# #22 0.276 Rename SOURCE to DEST, or move SOURCEs to DIRECTORY
+# #22 0.276
+# #22 0.276 -f Don't prompt before overwriting
+# #22 0.276 -i Interactive, prompt before overwrite
+# #22 0.276 -n Don't overwrite an existing file
+# #22 0.276 -T Refuse to move if DEST is a directory
+# #22 0.276 -t DIR Move all SOURCEs into DIR
+
         elif [[ "$line" =~ (failed to solve:)(.+:)(.+:.+)([0-9]+) ]];
         then
             printf "\n${white}${last_step}${nc}\n"
