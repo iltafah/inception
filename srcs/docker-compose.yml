@@ -63,6 +63,42 @@ services:
       - 41337:41337
     networks:
       - uWu
+
+  adminer:
+    image: adminer
+    build:
+      context: requirements/bonus/adminer/
+    container_name: adminer
+    restart: on-failure
+    ports:
+      - 8080:8080
+    networks:
+      - uWu
+
+  portainer:
+    image: portainer
+    build:
+      context: requirements/bonus/portainer/
+    container_name: portainer
+    restart: on-failure
+    ports:
+      - 4242:4242
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock  # docker context ls
+      # - "portainer_data:/data"
+    networks:
+      - uWu
+
+  static-site:
+    image: static-site
+    build:
+      context: requirements/bonus/static-site/
+    container_name: static-site
+    restart: on-failure
+    ports:
+      - 80:80
+    networks:
+      - uWu
       
 
 networks:
@@ -81,3 +117,10 @@ volumes:
       type: none
       device: /Users/iltafah/Desktop/Temp Volume/DB
       o: bind
+  # portainer_data:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: /Users/iltafah/Desktop/Temp Volume/Portainer
+  #     o: bind
+  

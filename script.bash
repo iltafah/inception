@@ -121,7 +121,7 @@ function dockerfile_loadbar () {
         if [[ "$line" =~ \[(.*)\ *([0-9])/([0-9])\] ]];
 	    then
             sleep 1 # For الجمالية
-            last_step=$line
+            last_step_line=$line
             img_name=${BASH_REMATCH[1]}
             curr_step=${BASH_REMATCH[2]}
             last_step=${BASH_REMATCH[3]}
@@ -196,7 +196,7 @@ function dockerfile_loadbar () {
 
         elif [[ "$line" =~ (failed to solve:)(.+:)(.+:.+)([0-9]+) ]];
         then
-            printf "\n${white}${last_step}${nc}\n"
+            printf "\n${white}${last_step_line}${nc}\n"
             printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"
             for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
                 printf "${lineclr}\n"
@@ -224,4 +224,5 @@ function dockerfile_loadbar () {
 printf "${hideCurs}"
 dockerfile_loadbar
 printf "${restoreCurs}"
+#unable to prepare context: path "requirements/bonus/adminer/" not found
 if [[ $perc -eq 0 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon${nc}\n"; exit 1; fi
