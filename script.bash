@@ -115,10 +115,27 @@ function dockerfile_loadbar () {
     printf "${scyan}~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~ ${sc1}\____________________.'\n";               
     printf "${purp}Progress : ${blu}|%s|[0]%%%2s\n"
     
+    imgs_count=0
+    imgs=`cat $1 | grep "image:"`;
+    if [[ $? -ne 0 ]]; then printf "${red}docker compose file path is not right${nc}\n"; exit 1; fi
+
+
+    while IFS= read -r line
+    do
+        if [[ "$line" =~ (#+)*\ +(image:)\ +(.+) ]];
+        then
+            if [[ ${BASH_REMATCH[1]} != "#" ]];
+            then
+                imgs_count=$(($imgs_count + 1))
+                add_image ${BASH_REMATCH[3]} 0 5 #(img_name, curr_step, end_step) # ^-^ Hard Coded, The whole script is Hard Coded
+            fi
+        fi
+    done <<< "$imgs"
+
 
     while read line ; do 
         echo $line >> debugFile
-        if [[ "$line" =~ \[(.*)\ *([0-9])/([0-9])\] ]];
+        if [[ "$line" =~ \[(.*)\ *([0-9])/([0-9])\] && perc -ne 100 ]];
 	    then
             sleep 1 # For الجمالية
             last_step_line=$line
@@ -137,10 +154,11 @@ function dockerfile_loadbar () {
 	        ratio=$((100 / end))
             if [ $start -ne $end ]; then perc=$((start * ratio)); else perc=100; fi;
             pre_spaces=$(($perc * 49 / 100)) # 49 is the number of spaces between the whale and the ship
-            bar_count=$((100 / 10))
-            bar_pos=$((perc / 5))
-            bar_spaces=$((bar_count*2 - bar_pos))
-            fill=$(printf  "▇%.0s" $(seq 1 $bar_pos))
+            bar_count=$((100 / 5)) # 20 bar ▇ to draw
+            bar_pos=$(($perc * $bar_count /100))
+            bar_spaces=$((bar_count - bar_pos))
+            fill=$(printf  "|%.0s" $(seq $bar_count $(($bar_count - $bar_pos)) ) ) #this shi2 adds one more |, but no problem
+            # fill=$(printf  "▇%.0s" $(seq 1 $bar_pos))
             ship_spaces=$((49 - pre_spaces)) # expected spaces between the whale and the ship
 
             printf "${line7}${lineclr}${scyan}%${pre_spaces}s               .";                                     printf "%${ship_spaces}s              ${sc6}_\____ \n";                                
@@ -151,7 +169,7 @@ function dockerfile_loadbar () {
             printf "${lineclr}${scyan}~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~~^~^~^~^~^~^~^~^~^~^~^"; printf " ${sc1}\____________________.'\n";
             printf "${lineclr}${purp}Progress : ${blu}|${grn}${fill}${nc}%${bar_spaces}s${blu}|${nc}[${perc}]${red}%%${nc}\n"
 
-            #just to move the prefix from the steps line which is `(#[0-9]+ )`
+            #just to remove the prefix from the steps line which is `(#[0-9]+ )`
             curr_step_line=`echo $line | sed -E 's/(^#[0-9]+\ )(.+)|.*/\2/'` # <<<= for example : #25 [wordpress 9/9] RUN uWu 
             curr_step_line_len=${#line}
             if [[ $curr_step_line_len -gt  50 ]];
@@ -179,34 +197,34 @@ function dockerfile_loadbar () {
             done
 
             printf "${line1}${line1}${line1}"           # <<<<= just move the cursor above the separated lines so yeah it has to be hard coded
-        
 
-        #I THINK I'll Have to save the lines too of a given step so I can know where the error
-# > [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar:
-# #22 0.276 Usage: mv [-finT] SOURCE DEST
-# #22 0.276 or: mv [-fin] SOURCE... { -t DIRECTORY | DIRECTORY }
-# #22 0.276
-# #22 0.276 Rename SOURCE to DEST, or move SOURCEs to DIRECTORY
-# #22 0.276
-# #22 0.276 -f Don't prompt before overwriting
-# #22 0.276 -i Interactive, prompt before overwrite
-# #22 0.276 -n Don't overwrite an existing file
-# #22 0.276 -T Refuse to move if DEST is a directory
-# #22 0.276 -t DIR Move all SOURCEs into DIR
-
-        elif [[ "$line" =~ (failed to solve:)(.+:)(.+:.+)([0-9]+) ]];
+        elif [[ "$line" =~ ^(?!\#)(.+:)(.+) ]];
         then
             printf "\n${white}${last_step_line}${nc}\n"
-            printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"
-            for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
-                printf "${lineclr}\n"
-            done
-            for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
-                printf "${line1}"
-            done
+            printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${nc}\n"
+            # for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
+            #     printf "${lineclr}\n"
+            # done
+            # for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
+            #     printf "${line1}"
+            # done
             printf "${restoreCurs}"
             exit 1
         fi;
+
+        # elif [[ "$line" =~ (failed to solve:)(.+:)(.+:.+)([0-9]+) ]];
+        # then
+        #     printf "\n${white}${last_step_line}${nc}\n"
+        #     printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"
+        #     for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
+        #         printf "${lineclr}\n"
+        #     done
+        #     for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
+        #         printf "${line1}"
+        #     done
+        #     printf "${restoreCurs}"
+        #     exit 1
+        # fi;
 
         waves_index=$(($waves_index + 1))
         if [ $(($waves_index % 2)) -eq 0 ]
@@ -221,8 +239,13 @@ function dockerfile_loadbar () {
 
 
 # Main() Func; Or Not?
+if [ -z "$1" ]; then printf "${red}Please pass docker compose file path as an argument${nc}\n"; exit 1; fi
 printf "${hideCurs}"
-dockerfile_loadbar
+dockerfile_loadbar $1
 printf "${restoreCurs}"
 #unable to prepare context: path "requirements/bonus/adminer/" not found
-if [[ $perc -eq 0 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon${nc}\n"; exit 1; fi
+if [[ $perc -eq 0 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon\nOr\nI am Dump and the script is not treating some specific case${nc}\n"; exit 1; fi
+
+
+
+# if [[ "$line" =~ ^(?!\#)(.+:)(.+) ]]; then echo "[${BASH_REMATCH[1]}]"; elif [[ 1 ]]; then echo uwu; fi;  echo meow

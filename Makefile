@@ -34,7 +34,7 @@ up:
 # @make create 2>/dev/null
 
 build:
-	@(docker compose -f $(COMPOSE_FILE_PATH) build --no-cache --progress plain 2>&1 | ./script.bash) || echo "ERR=42" > .env.mk
+	@(docker compose -f $(COMPOSE_FILE_PATH) build --no-cache --progress plain 2>&1 | ./script.bash $(COMPOSE_FILE_PATH)) || echo "ERR=42" > .env.mk
 
 create:
 	@docker compose -f $(COMPOSE_FILE_PATH) up -d
