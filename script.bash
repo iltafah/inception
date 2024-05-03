@@ -132,7 +132,7 @@ function dockerfile_loadbar () {
         fi
     done <<< "$imgs"
 
-
+    echo $line > debugFile
     while read line ; do 
         echo $line >> debugFile
         if [[ "$line" =~ \[(.*)\ *([0-9])/([0-9])\] && perc -ne 100 ]];
@@ -157,7 +157,7 @@ function dockerfile_loadbar () {
             bar_count=$((100 / 5)) # 20 bar ▇ to draw
             bar_pos=$(($perc * $bar_count /100))
             bar_spaces=$((bar_count - bar_pos))
-            fill=$(printf  "|%.0s" $(seq $bar_count $(($bar_count - $bar_pos)) ) ) #this shi2 adds one more |, but no problem
+            fill=$(printf  "▇%.0s" $(seq $bar_count $(($bar_count - $bar_pos)) ) ) #this shi2 adds one more |, but no problem
             # fill=$(printf  "▇%.0s" $(seq 1 $bar_pos))
             ship_spaces=$((49 - pre_spaces)) # expected spaces between the whale and the ship
 
@@ -198,10 +198,10 @@ function dockerfile_loadbar () {
 
             printf "${line1}${line1}${line1}"           # <<<<= just move the cursor above the separated lines so yeah it has to be hard coded
 
-        elif [[ "$line" =~ ^(?!\#)(.+:)(.+) ]];
+        elif [[ ! "$line" =~ ^\# && "$line" =~ ^([^:]+:)([^:]+:*)([^:]+:)*(\ *[0-9]+)* ]];
         then
             printf "\n${white}${last_step_line}${nc}\n"
-            printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${nc}\n"
+            printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"
             # for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
             #     printf "${lineclr}\n"
             # done
