@@ -78,6 +78,9 @@ services:
       - 41337:41337
     networks:
       - uWu
+    environment:
+      FTP_USER: ${SUPER_USER}
+      FTP_USER_PASS: ${SUPER_USER_PASS}
 
   adminer:
     image: adminer
@@ -103,6 +106,8 @@ services:
       # - "portainer_data:/data"
     networks:
       - uWu
+    environment:
+      ADMIN_PASS: ${SUPER_USER_PASS}
 
   static-site:
     image: static-site

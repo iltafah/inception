@@ -198,7 +198,9 @@ function dockerfile_loadbar () {
 
                 printf "${line1}${line1}${line1}"           # <<<<= just move the cursor above the separated lines so yeah it has to be hard coded
 
-        elif [[ ! "$line" =~ ^\# && ! "$line" =~ ^"Use 'docker scan'" && "$line" =~ ^([^:]+:*)([^:]+:*)*([^:]+:)*(\ *[0-9]+)* ]];   # I am MR HARD CODER >.<
+
+#fuck this shi2 "------" it considers as error :3
+        elif [[ ! "$line" =~ ^\# && ! "$line" =~ ^"Use 'docker scan'" && ! "$line" =~ "------" && "$line" =~ ^([^:]+:)([^:]+:*)*([^:]+:)*(\ *[0-9]+)* ]];   # I am MR HARD CODER >.<
         then
             printf "\n${white}${last_step_line}${nc}\n"
             printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"

@@ -3,8 +3,13 @@ FROM alpine:3.19
 RUN apk upgrade && apk update
 RUN apk add openrc vim lftp vsftpd
 
-RUN adduser -D tofaha
-RUN echo tofaha:1337 | chpasswd
+ARG FTP_USER
+ENV FTP_USER=${FTP_USER}
+
+RUN echo $FTP_USER
+
+RUN adduser -D $FTP_USER
+RUN echo $FTP_USER:$FTP_USER_PASS | chpasswd
 
 RUN \
         echo "listen=YES" > /etc/vsftpd/vsftpd.conf; \
