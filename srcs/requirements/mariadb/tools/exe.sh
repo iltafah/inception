@@ -5,8 +5,8 @@ rc-service mariadb setup
 rc-service mariadb start
 
 mariadb -e "CREATE DATABASE wordpress";
-mariadb -e "CREATE USER 'tofa7a'@'%.srcs_uWu' IDENTIFIED BY '1337'";
-mariadb -e "GRANT ALL PRIVILEGES ON *.* TO 'tofa7a'@'%.srcs_uWu'";
+mariadb -e "CREATE USER '${DB_USER}'@'%.${DOCKER_NETWORK}' IDENTIFIED BY '${DB_PASS}'";
+mariadb -e "GRANT ALL PRIVILEGES ON *.* TO 'tofa7a'@'%.${DOCKER_NETWORK}'";
 mariadb -e "FLUSH PRIVILEGES";
 
 rc-service mariadb stop

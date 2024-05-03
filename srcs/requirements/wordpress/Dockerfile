@@ -1,23 +1,16 @@
 FROM alpine:3.19
 
-# RUN apk add sudo
-
-# RUN addgroup -S tofaha && adduser -S tofaha -G tofaha
-# RUN echo "tofaha ALL=(ALL) ALL" > /etc/sudoers.d/tofaha && chmod 0440 /etc/sudoers.d/tofaha
-
-# RUN addgroup -S tofaha && adduser -S tofaha -G tofaha
-# USER tofaha:tofaha
-# USER www-data
-
 RUN apk upgrade && apk update
 RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+
 RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
+
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
+
 RUN mkdir -p /var/www/html/
 COPY tools/exe.sh /tmp/
 RUN chmod +x /tmp/exe.sh
-
 
 ENTRYPOINT ["/tmp/exe.sh"]
 

@@ -27,6 +27,16 @@ services:
       - WordPress:/var/www/html/
     networks:
       - uWu
+    environment:
+      DB_HOST: mariadb
+      DB_NAME: wordpress
+      DB_USER: ${SUPER_USER}
+      DB_PASS: ${SUPER_USER_PASS}
+      ADMIN_USER: ${SUPER_USER}
+      ADMIN_PASS: ${SUPER_USER_PASS}
+      AUTHOR_USER: ${SECONDRY_USER}
+      AUTHOR_PASS: ${SECONDRY_USER_PASS}
+        
 
   mariadb:
     image: mariadb
@@ -40,6 +50,11 @@ services:
     #   - db:/etc
     networks:
       - uWu
+    environment:
+      DB_NAME: wordpress
+      DB_USER: ${SUPER_USER}
+      DB_PASS: ${SUPER_USER_PASS}
+      DOCKER_NETWORK: ${DOCKER_COMPOSE_NETWORK_NAME}
 
   redis:
     image: redis
@@ -99,7 +114,6 @@ services:
       - 80:80
     networks:
       - uWu
-      
 
 networks:
   uWu:
