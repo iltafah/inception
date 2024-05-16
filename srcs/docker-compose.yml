@@ -78,9 +78,9 @@ services:
       - 41337:41337
     networks:
       - uWu
-    environment:
-      FTP_USER: ${SUPER_USER}
-      FTP_USER_PASS: ${SUPER_USER_PASS}
+    # environment:
+    #   FTP_USER: ${SUPER_USER}
+    #   FTP_USER_PASS: ${SUPER_USER_PASS}
 
   adminer:
     image: adminer
