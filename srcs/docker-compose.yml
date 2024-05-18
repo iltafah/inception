@@ -71,6 +71,9 @@ services:
     image: ftp
     build:
       context: requirements/bonus/ftp/
+      args:
+        FTP_USER: tofaha
+        FTP_USER_PASS: 1337
     container_name: ftp
     restart: on-failure
     ports:
