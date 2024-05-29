@@ -16,7 +16,7 @@ COMPOSE_FILE_PATH = ./srcs/docker-compose.yml
 
 # ERR?=5
 
-#WHEN RUNNING IT ONLY WITH ONE SERVICE IT WON'T WORK
+#WHEN RUNNING IT ONLY WITH ONE SERVICE IT WON'T WORK - Well Not any more :3
 up:
 # @echo $$?
 # @err=`cat .env.mk | grep ERR | cut -d "=" -f2-`; echo $$err; if [[ $$err -eq 1337 ]]; then echo a; make build 2>/dev/null; echo b; fi;

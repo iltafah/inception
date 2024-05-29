@@ -3,545 +3,544 @@
 #1 transferring dockerfile: 32B done
 #1 DONE 0.0s
 
-#2 [redis internal] load build definition from Dockerfile
-#2 transferring dockerfile: 31B done
+#2 [wordpress internal] load build definition from Dockerfile
+#2 transferring dockerfile: 32B done
 #2 DONE 0.0s
 
-#3 [mariadb internal] load build definition from Dockerfile
+#3 [ftp internal] load build definition from Dockerfile
 #3 transferring dockerfile: 32B done
 #3 DONE 0.0s
 
-#4 [ftp internal] load build definition from Dockerfile
-#4 transferring dockerfile: 32B done
+#4 [redis internal] load build definition from Dockerfile
+#4 transferring dockerfile: 31B done
 #4 DONE 0.0s
 
-#5 [adminer internal] load build definition from Dockerfile
+#5 [nginx internal] load build definition from Dockerfile
 #5 transferring dockerfile: 32B done
 #5 DONE 0.0s
 
-#6 [wordpress internal] load build definition from Dockerfile
+#6 [mariadb internal] load build definition from Dockerfile
 #6 transferring dockerfile: 32B done
 #6 DONE 0.0s
 
-#7 [nginx internal] load build definition from Dockerfile
-#7 transferring dockerfile: 32B done
+#7 [portainer internal] load build definition from Dockerfile
+#7 transferring dockerfile: 587B done
 #7 DONE 0.0s
 
-#8 [portainer internal] load build definition from Dockerfile
-#8 transferring dockerfile: 603B done
+#8 [adminer internal] load build definition from Dockerfile
+#8 transferring dockerfile: 32B done
 #8 DONE 0.0s
 
 #9 [static-site internal] load .dockerignore
 #9 transferring context: 32B done
 #9 DONE 0.0s
 
-#10 [ftp internal] load .dockerignore
-#10 transferring context: 32B done
+#10 [wordpress internal] load .dockerignore
+#10 transferring context: 2B done
 #10 DONE 0.0s
 
-#11 [redis internal] load .dockerignore
+#11 [ftp internal] load .dockerignore
 #11 transferring context: 32B done
 #11 DONE 0.0s
 
-#12 [nginx internal] load .dockerignore
+#12 [redis internal] load .dockerignore
 #12 transferring context: 32B done
 #12 DONE 0.0s
 
-#13 [mariadb internal] load .dockerignore
+#13 [portainer internal] load .dockerignore
 #13 transferring context: 32B done
 #13 DONE 0.0s
 
-#14 [portainer internal] load .dockerignore
+#14 [nginx internal] load .dockerignore
 #14 transferring context: 32B done
 #14 DONE 0.0s
 
-#15 [adminer internal] load .dockerignore
+#15 [mariadb internal] load .dockerignore
 #15 transferring context: 32B done
 #15 DONE 0.0s
 
-#16 [wordpress internal] load .dockerignore
-#16 transferring context: 2B done
+#16 [adminer internal] load .dockerignore
+#16 transferring context: 32B done
 #16 DONE 0.0s
 
-#17 [static-site internal] load metadata for docker.io/library/alpine:3.19
-#17 DONE 0.8s
+#17 [nginx internal] load metadata for docker.io/library/alpine:3.19
+#17 DONE 1.6s
 
 #18 [wordpress internal] load build context
 #18 transferring context: 59B done
 #18 DONE 0.0s
 
-#19 [nginx internal] load build context
-#19 transferring context: 63B done
+#19 [mariadb internal] load build context
+#19 transferring context: 59B done
 #19 DONE 0.0s
 
-#20 [mariadb internal] load build context
-#20 transferring context: 59B done
+#20 [nginx internal] load build context
+#20 transferring context: 63B done
 #20 DONE 0.0s
 
-#21 [redis 1/5] FROM docker.io/library/alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+#21 [wordpress 1/6] FROM docker.io/library/alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
 #21 CACHED
 
 #22 [static-site internal] load build context
 #22 transferring context: 1.11kB done
 #22 DONE 0.0s
 
-#23 [redis 2/5] RUN apk upgrade && apk update
-#23 0.257 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
-#23 0.648 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
-#23 1.097 Upgrading critical system libraries and apk-tools:
-#23 1.097 (1/1) Upgrading apk-tools (2.14.0-r5 -> 2.14.4-r0)
-#23 1.176 Executing busybox-1.36.1-r15.trigger
-#23 1.235 Continuing the upgrade transaction with new apk-tools:
-#23 1.240 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
-#23 1.576 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
-#23 2.055 (1/6) Upgrading busybox (1.36.1-r15 -> 1.36.1-r16)
-#23 2.130 Executing busybox-1.36.1-r16.post-upgrade
-#23 2.138 (2/6) Upgrading busybox-binsh (1.36.1-r15 -> 1.36.1-r16)
-#23 2.175 (3/6) Upgrading ca-certificates-bundle (20230506-r0 -> 20240226-r0)
-#23 2.221 (4/6) Upgrading libcrypto3 (3.1.4-r5 -> 3.1.4-r6)
-#23 2.378 (5/6) Upgrading libssl3 (3.1.4-r5 -> 3.1.4-r6)
-#23 2.428 (6/6) Upgrading ssl_client (1.36.1-r15 -> 1.36.1-r16)
-#23 2.466 Executing busybox-1.36.1-r16.trigger
-#23 2.469 OK: 7 MiB in 15 packages
-#23 2.525 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
-#23 2.973 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
-#23 3.604 v3.19.1-563-g8bddc1ced29 [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
-#23 3.604 v3.19.1-562-g6c9819f277a [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
-#23 3.604 OK: 22992 distinct packages available
-#23 DONE 3.8s
+#23 [redis 2/6] RUN apk upgrade && apk update
+#23 0.424 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#23 0.951 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#23 1.431 Upgrading critical system libraries and apk-tools:
+#23 1.431 (1/1) Upgrading apk-tools (2.14.0-r5 -> 2.14.4-r0)
+#23 1.487 Executing busybox-1.36.1-r15.trigger
+#23 1.622 Continuing the upgrade transaction with new apk-tools:
+#23 1.628 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#23 2.002 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#23 2.470 (1/6) Upgrading busybox (1.36.1-r15 -> 1.36.1-r18)
+#23 2.558 Executing busybox-1.36.1-r18.post-upgrade
+#23 2.570 (2/6) Upgrading busybox-binsh (1.36.1-r15 -> 1.36.1-r18)
+#23 2.615 (3/6) Upgrading ca-certificates-bundle (20230506-r0 -> 20240226-r0)
+#23 2.716 (4/6) Upgrading libcrypto3 (3.1.4-r5 -> 3.1.5-r0)
+#23 2.845 (5/6) Upgrading libssl3 (3.1.4-r5 -> 3.1.5-r0)
+#23 2.905 (6/6) Upgrading ssl_client (1.36.1-r15 -> 1.36.1-r18)
+#23 3.001 Executing busybox-1.36.1-r18.trigger
+#23 3.005 OK: 7 MiB in 15 packages
+#23 3.064 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#23 3.457 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#23 3.824 v3.19.1-577-gb3ea1811daf [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
+#23 3.824 v3.19.1-578-g8b830b8367b [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
+#23 3.824 OK: 23030 distinct packages available
+#23 DONE 4.1s
 
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 0.967 (1/29) Installing ca-certificates (20240226-r0)
-#24 1.290 (2/29) Installing brotli-libs (1.1.0-r1)
+#24 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
+#24 1.021 (1/16) Installing php82-common (8.2.19-r0)
+#24 1.229 (2/16) Installing argon2-libs (20190702-r5)
+#24 1.279 (3/16) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#24 1.354 (4/16) Installing libncursesw (6.4_p20231125-r0)
 #24 ...
 
-#25 [portainer 3/5] RUN apk add apache2-utils
-#0 0.763 (1/5) Installing libuuid (2.39.3-r0)
-#0 0.954 (2/5) Installing apr (1.7.4-r0)
-#0 1.061 (3/5) Installing libexpat (2.6.2-r0)
-#0 1.114 (4/5) Installing apr-util (1.6.3-r1)
-#0 1.225 (5/5) Installing apache2-utils (2.4.59-r0)
-#0 1.301 Executing busybox-1.36.1-r16.trigger
-#0 1.306 OK: 8 MiB in 20 packages
-#25 DONE 1.4s
+#25 [redis 3/3] RUN apk add redis
+#0 0.909 (1/1) Installing redis (7.2.4-r0)
+#0 1.185 Executing redis-7.2.4-r0.pre-install
+#0 1.390 Executing redis-7.2.4-r0.post-install
+#0 1.394 Executing busybox-1.36.1-r18.trigger
+#0 1.416 OK: 11 MiB in 16 packages
+#25 DONE 1.6s
 
-#26 [redis 3/3] RUN apk add redis
-#0 0.720 (1/1) Installing redis (7.2.4-r0)
-#0 1.018 Executing redis-7.2.4-r0.pre-install
-#0 1.269 Executing redis-7.2.4-r0.post-install
-#0 1.274 Executing busybox-1.36.1-r16.trigger
-#0 1.280 OK: 11 MiB in 16 packages
-#26 DONE 1.4s
+#24 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
+#24 1.448 (5/16) Installing libedit (20230828.3.1-r3)
+#24 1.502 (6/16) Installing pcre2 (10.42-r2)
+#24 ...
 
-#27 [redis] exporting to image
-#27 exporting layers 0.1s done
-#27 writing image sha256:374a5e8ff3dc5f1d66fadf02e6942b9acc1faf809b5763c884b9fb0275fd481e done
-#27 naming to docker.io/library/redis done
-#27 DONE 0.1s
+#26 [redis] exporting to image
+#26 exporting layers 0.1s done
+#26 writing image sha256:318f7b37cf8d6b60945825c7ae09c18705e48a805624468f5bb1a43db74e8b28 done
+#26 naming to docker.io/library/redis done
+#26 DONE 0.1s
 
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 1.476 (3/29) Installing c-ares (1.27.0-r0)
-#24 1.527 (4/29) Installing libunistring (1.1-r2)
-#24 1.740 (5/29) Installing libidn2 (2.3.4-r4)
-#24 1.816 (6/29) Installing nghttp2-libs (1.58.0-r0)
-#24 1.894 (7/29) Installing libcurl (8.5.0-r0)
-#24 2.020 (8/29) Installing curl (8.5.0-r0)
-#24 2.080 (9/29) Installing mariadb-common (10.11.6-r0)
+#24 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
+#24 1.599 (7/16) Installing xz-libs (5.4.5-r0)
+#24 1.673 (8/16) Installing libxml2 (2.11.8-r0)
+#24 1.820 (9/16) Installing php82 (8.2.19-r0)
+#24 ...
+
+#27 [portainer 3/5] RUN apk add apache2-utils
+#0 1.263 (1/5) Installing libuuid (2.39.3-r0)
+#0 1.462 (2/5) Installing apr (1.7.4-r0)
+#0 1.573 (3/5) Installing libexpat (2.6.2-r0)
+#0 1.628 (4/5) Installing apr-util (1.6.3-r1)
+#0 1.698 (5/5) Installing apache2-utils (2.4.59-r0)
+#0 1.767 Executing busybox-1.36.1-r18.trigger
+#0 1.790 OK: 8 MiB in 20 packages
+#27 DONE 1.9s
+
+#24 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
+#24 2.118 (10/16) Installing php82-openssl (8.2.19-r0)
+#24 2.166 (11/16) Installing php82-mysqlnd (8.2.19-r0)
+#24 2.207 (12/16) Installing php82-mysqli (8.2.19-r0)
+#24 2.251 (13/16) Installing php82-session (8.2.19-r0)
+#24 2.294 (14/16) Installing libunistring (1.1-r2)
+#24 2.481 (15/16) Installing libidn2 (2.3.4-r4)
+#24 2.563 (16/16) Installing wget (1.21.4-r0)
 #24 ...
 
 #28 [nginx 3/6] RUN apk add nginx && apk add openssl
-#0 0.668 (1/2) Installing pcre (8.45-r3)
-#0 0.921 (2/2) Installing nginx (1.24.0-r16)
-#0 0.974 Executing nginx-1.24.0-r16.pre-install
-#0 1.052 Executing nginx-1.24.0-r16.post-install
-#0 1.057 Executing busybox-1.36.1-r16.trigger
-#0 1.061 OK: 9 MiB in 17 packages
-#0 1.536 (1/1) Installing openssl (3.1.4-r6)
-#0 2.029 Executing busybox-1.36.1-r16.trigger
-#0 2.036 OK: 10 MiB in 18 packages
-#28 DONE 2.2s
+#0 1.089 (1/2) Installing pcre (8.45-r3)
+#0 1.420 (2/2) Installing nginx (1.24.0-r16)
+#0 1.519 Executing nginx-1.24.0-r16.pre-install
+#0 1.604 Executing nginx-1.24.0-r16.post-install
+#0 1.607 Executing busybox-1.36.1-r18.trigger
+#0 1.626 OK: 9 MiB in 17 packages
+#0 2.124 (1/1) Installing openssl (3.1.5-r0)
+#0 2.408 Executing busybox-1.36.1-r18.trigger
+#0 2.418 OK: 10 MiB in 18 packages
+#28 DONE 2.7s
 
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 2.245 (10/29) Installing libaio (0.3.113-r2)
-#24 2.282 (11/29) Installing libgcc (13.2.1_git20231014-r0)
-#24 2.345 (12/29) Installing xz-libs (5.4.5-r0)
-#24 2.413 (13/29) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#24 ...
+#24 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
+#24 2.646 Executing busybox-1.36.1-r18.trigger
+#24 2.673 OK: 21 MiB in 31 packages
+#24 DONE 2.9s
 
-#29 [nginx 4/6] RUN mkdir /var/www/html
-#29 DONE 0.3s
+#29 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+#0 0.973 (1/25) Installing ca-certificates (20240226-r0)
+#0 1.371 (2/25) Installing brotli-libs (1.1.0-r1)
+#0 1.526 (3/25) Installing c-ares (1.27.0-r0)
+#0 1.598 (4/25) Installing libunistring (1.1-r2)
+#0 1.803 (5/25) Installing libidn2 (2.3.4-r4)
+#0 1.858 (6/25) Installing nghttp2-libs (1.58.0-r0)
+#0 1.924 (7/25) Installing libcurl (8.5.0-r0)
+#0 2.032 (8/25) Installing curl (8.5.0-r0)
+#0 2.095 (9/25) Installing php82-common (8.2.19-r0)
+#0 2.142 (10/25) Installing argon2-libs (20190702-r5)
+#0 2.186 (11/25) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#0 2.234 (12/25) Installing libncursesw (6.4_p20231125-r0)
+#0 2.301 (13/25) Installing libedit (20230828.3.1-r3)
+#0 2.374 (14/25) Installing pcre2 (10.42-r2)
+#0 2.479 (15/25) Installing xz-libs (5.4.5-r0)
+#0 2.562 (16/25) Installing libxml2 (2.11.8-r0)
+#0 2.689 (17/25) Installing php82 (8.2.19-r0)
+#29 ...
 
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 2.486 (14/29) Installing libncursesw (6.4_p20231125-r0)
-#24 2.580 (15/29) Installing skalibs (2.14.0.1-r0)
-#24 2.674 (16/29) Installing utmps-libs (0.1.2.2-r0)
-#24 ...
+#30 [nginx 4/6] RUN mkdir /var/www/html
+#30 DONE 0.4s
 
-#30 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
-#0 0.845 (1/16) Installing php82-common (8.2.19-r0)
-#0 1.085 (2/16) Installing argon2-libs (20190702-r5)
-#0 1.136 (3/16) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#0 1.187 (4/16) Installing libncursesw (6.4_p20231125-r0)
-#0 1.298 (5/16) Installing libedit (20230828.3.1-r3)
-#0 1.352 (6/16) Installing pcre2 (10.42-r2)
-#0 1.466 (7/16) Installing xz-libs (5.4.5-r0)
-#0 1.525 (8/16) Installing libxml2 (2.11.8-r0)
-#0 1.650 (9/16) Installing php82 (8.2.19-r0)
-#0 2.043 (10/16) Installing php82-openssl (8.2.19-r0)
-#0 2.100 (11/16) Installing php82-mysqlnd (8.2.19-r0)
-#0 2.166 (12/16) Installing php82-mysqli (8.2.19-r0)
-#0 2.225 (13/16) Installing php82-session (8.2.19-r0)
-#0 2.273 (14/16) Installing libunistring (1.1-r2)
-#0 2.421 (15/16) Installing libidn2 (2.3.4-r4)
-#0 2.505 (16/16) Installing wget (1.21.4-r0)
-#0 2.599 Executing busybox-1.36.1-r16.trigger
-#0 2.604 OK: 21 MiB in 31 packages
-#30 DONE 2.7s
+#29 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+#29 3.098 (18/25) Installing libacl (2.3.1-r4)
+#29 3.144 (19/25) Installing php82-fpm (8.2.19-r0)
+#29 ...
 
-#31 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
-#0 0.195 ......+.+........+......+.+++++++++++++++++++++++++++++++++++++++*.............+.+++++++++++++++++++++++++++++++++++++++*..+............+.......+..+....+..+...+......+...+.+..+.......+..+...+.+..............+.......+...+.....+.+............+..+...+..........+..................+.........+..+.+...+..............+.............+...+.........+..++++++
-#0 0.217 .+.........+.....+....+..+.+..+.+.........+......+..+...+.........+.+..+...+..........+++++++++++++++++++++++++++++++++++++++*...+++++++++++++++++++++++++++++++++++++++*.......+.+........+.+......+...+...........+..........+.........+.....+..........+.........+.....+.+.....+.+........+...+...+....+..+...+...+.......+..+......+...+....+......+.........+..+......+....+...+...+.........+...+.....+.+.....+.......+...+......+.....+......+.........................+...+....................+.+.........+.........+..+.........+.+........+.+..............+...+.........+.+...+.....+....+..+.+..............+...+.......+...+...+..............+.+.........+.........+......+...+..+......+....+...+.................+......+............+.+............++++++
-#0 0.272 -----
-#31 DONE 0.3s
+#31 [adminer 4/5] RUN mkdir -p /var/www/html/
+#31 DONE 0.4s
 
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 2.711 (17/29) Installing linux-pam (1.5.3-r7)
-#24 2.797 (18/29) Installing pcre2 (10.42-r2)
-#24 ...
+#32 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+#0 0.375 .+..+...............+...+++++++++++++++++++++++++++++++++++++++*..........+...+.....+.+...........+.........+.+++++++++++++++++++++++++++++++++++++++*..........+...+.+...........+.......+.....+...+.........+...+..........+.....+.+..............+.............+.....+...+............+...+.+....................+......+.........+...+.......+......+..............+..........+.........+..+....+.....+...+...+.........+......+...+....+............+..............+.......+..+...+.......+..+.+...+.....+..............................+.+...+...+...+..+.........+...+...+.......+..+....+..+....+.........+......+.....+....+.....+......+...+......+....+...+............+...............+..+.+.........+.....+......+.......+...+...+............+........+.+.....+...+..........+........+.........+......+...+....+.....+...+....+...............+........+.+......+...+......+...........+....+.....+....+...+..+...+.......+...........+.........+...+....+.........+............+.........+.....+...+......+......+...+...+....+...........+...+.+...........+...............+.............+..+...+.+..............+....+.................+...............+..........+......+............+.....+.+......+...+........+...+.......+.....+....+...............+......+...+......+.....+.........+.+...+..+.+...+..+.......+..+...+...............+.+..+...+.........+...+..................+.+.........+.....+.+...++++++
+#32 0.569 .+......+...+++++++++++++++++++++++++++++++++++++++*.........+..+++++++++++++++++++++++++++++++++++++++*.................+.+..+.............+.........+...+...+.....+.......+..+.+..+...+....+...+........+......+....+.....+................+.....+...+..........+......+.........+..+...+.............+.....+............+......+.......+.....+...+......+......+....+.........+.........+.....+.+............+..+.......++++++
+#32 0.643 -----
+#32 DONE 0.7s
 
-#32 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
-#32 DONE 0.0s
+#29 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+#29 3.546 (20/25) Installing oniguruma (6.9.9-r0)
+#29 3.623 (21/25) Installing php82-mbstring (8.2.19-r0)
+#29 ...
 
-#27 [nginx] exporting to image
-#27 exporting layers 0.0s done
-#27 writing image sha256:96eae65bc0db1cdf9b59c923956b504ef43fb4aef37ce64f63d465eab039fa62 done
-#27 naming to docker.io/library/nginx done
-#27 DONE 0.1s
+#33 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
+#33 DONE 0.0s
 
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 2.886 (19/29) Installing libstdc++ (13.2.1_git20231014-r0)
-#24 ...
+#26 [nginx] exporting to image
+#26 exporting layers 0.1s done
+#26 writing image sha256:6999d20f4a9a4c036c5235d82c03e64b222775b30f76a4dcfce76df9a41fedfe done
+#26 naming to docker.io/library/nginx done
+#26 DONE 0.1s
 
-#33 [adminer 4/5] RUN mkdir -p /var/www/html/
-#33 DONE 0.3s
-
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 3.093 (20/29) Installing libxml2 (2.11.8-r0)
-#24 ...
+#29 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+#29 3.832 (22/25) Installing php82-openssl (8.2.19-r0)
+#29 3.897 (23/25) Installing php82-mysqlnd (8.2.19-r0)
+#29 3.954 (24/25) Installing php82-mysqli (8.2.19-r0)
+#29 4.005 (25/25) Installing php82-phar (8.2.19-r0)
+#29 ...
 
 #34 [ftp 3/6] RUN apk add openrc vim lftp vsftpd
-#0 0.688 (1/17) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#0 0.873 (2/17) Installing libncursesw (6.4_p20231125-r0)
-#0 0.979 (3/17) Installing readline (8.2.1-r2)
-#0 1.034 (4/17) Installing libgcc (13.2.1_git20231014-r0)
-#0 1.084 (5/17) Installing libstdc++ (13.2.1_git20231014-r0)
-#0 1.316 (6/17) Installing lftp (4.9.2-r6)
-#0 1.458 (7/17) Installing ifupdown-ng (0.12.1-r4)
-#0 1.500 (8/17) Installing libcap2 (2.69-r1)
-#0 1.538 (9/17) Installing openrc (0.52.1-r2)
-#0 1.614 Executing openrc-0.52.1-r2.post-install
-#0 1.617 (10/17) Installing vim-common (9.0.2127-r0)
-#0 2.494 (11/17) Installing xxd (9.0.2127-r0)
-#0 2.550 (12/17) Installing vim (9.0.2127-r0)
-#0 2.779 (13/17) Installing skalibs (2.14.0.1-r0)
-#0 2.829 (14/17) Installing utmps-libs (0.1.2.2-r0)
-#0 2.871 (15/17) Installing linux-pam (1.5.3-r7)
-#0 2.941 (16/17) Installing vsftpd (3.0.5-r2)
-#0 3.001 Executing vsftpd-3.0.5-r2.pre-install
-#0 3.013 (17/17) Installing vsftpd-openrc (3.0.5-r2)
-#0 3.057 Executing busybox-1.36.1-r16.trigger
-#0 3.071 OK: 47 MiB in 32 packages
-#34 DONE 3.2s
+#0 1.124 (1/17) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#0 1.340 (2/17) Installing libncursesw (6.4_p20231125-r0)
+#0 1.448 (3/17) Installing readline (8.2.1-r2)
+#0 1.527 (4/17) Installing libgcc (13.2.1_git20231014-r0)
+#0 1.587 (5/17) Installing libstdc++ (13.2.1_git20231014-r0)
+#0 1.824 (6/17) Installing lftp (4.9.2-r6)
+#0 2.002 (7/17) Installing ifupdown-ng (0.12.1-r4)
+#0 2.050 (8/17) Installing libcap2 (2.69-r1)
+#0 2.135 (9/17) Installing openrc (0.52.1-r2)
+#0 2.225 Executing openrc-0.52.1-r2.post-install
+#0 2.228 (10/17) Installing vim-common (9.0.2127-r0)
+#0 3.215 (11/17) Installing xxd (9.0.2127-r0)
+#0 3.254 (12/17) Installing vim (9.0.2127-r0)
+#0 3.529 (13/17) Installing skalibs (2.14.0.1-r0)
+#0 3.585 (14/17) Installing utmps-libs (0.1.2.2-r0)
+#0 3.627 (15/17) Installing linux-pam (1.5.3-r7)
+#0 3.818 (16/17) Installing vsftpd (3.0.5-r2)
+#0 3.868 Executing vsftpd-3.0.5-r2.pre-install
+#0 3.885 (17/17) Installing vsftpd-openrc (3.0.5-r2)
+#0 3.923 Executing busybox-1.36.1-r18.trigger
+#0 3.945 OK: 47 MiB in 32 packages
+#34 DONE 4.1s
 
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 3.202 (21/29) Installing zstd-libs (1.5.5-r8)
-#24 3.281 (22/29) Installing mariadb (10.11.6-r0)
-#24 ...
+#29 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+#29 4.072 Executing busybox-1.36.1-r18.trigger
+#29 4.078 Executing ca-certificates-20240226-r0.trigger
+#29 4.152 OK: 34 MiB in 40 packages
+#29 DONE 4.3s
 
-#35 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
-#0 0.725 (1/25) Installing ca-certificates (20240226-r0)
-#0 0.982 (2/25) Installing brotli-libs (1.1.0-r1)
-#0 1.106 (3/25) Installing c-ares (1.27.0-r0)
-#0 1.153 (4/25) Installing libunistring (1.1-r2)
-#0 1.322 (5/25) Installing libidn2 (2.3.4-r4)
-#0 1.385 (6/25) Installing nghttp2-libs (1.58.0-r0)
-#0 1.449 (7/25) Installing libcurl (8.5.0-r0)
-#0 1.508 (8/25) Installing curl (8.5.0-r0)
-#0 1.556 (9/25) Installing php82-common (8.2.19-r0)
-#0 1.600 (10/25) Installing argon2-libs (20190702-r5)
-#0 1.641 (11/25) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#0 1.689 (12/25) Installing libncursesw (6.4_p20231125-r0)
-#0 1.758 (13/25) Installing libedit (20230828.3.1-r3)
-#0 1.821 (14/25) Installing pcre2 (10.42-r2)
-#0 1.932 (15/25) Installing xz-libs (5.4.5-r0)
-#0 2.007 (16/25) Installing libxml2 (2.11.8-r0)
-#0 2.111 (17/25) Installing php82 (8.2.19-r0)
-#0 2.401 (18/25) Installing libacl (2.3.1-r4)
-#0 2.474 (19/25) Installing php82-fpm (8.2.19-r0)
-#0 2.763 (20/25) Installing oniguruma (6.9.9-r0)
-#0 2.824 (21/25) Installing php82-mbstring (8.2.19-r0)
-#0 2.946 (22/25) Installing php82-openssl (8.2.19-r0)
-#0 3.012 (23/25) Installing php82-mysqlnd (8.2.19-r0)
-#0 3.066 (24/25) Installing php82-mysqli (8.2.19-r0)
-#0 3.110 (25/25) Installing php82-phar (8.2.19-r0)
-#0 3.174 Executing busybox-1.36.1-r16.trigger
-#0 3.180 Executing ca-certificates-20240226-r0.trigger
-#0 3.244 OK: 34 MiB in 40 packages
-#35 DONE 3.3s
+#35 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
+#35 ...
 
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 3.331 Executing mariadb-10.11.6-r0.pre-install
-#24 ...
+#36 [ftp 4/6] RUN adduser -D tofa7a
+#36 DONE 0.4s
 
-#36 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
-#36 DONE 0.5s
+#37 [ftp 5/6] RUN echo tofa7a:1337 | chpasswd
+#37 ...
 
-#37 [ftp 4/6] RUN adduser -D tofaha
+#35 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
+#35 DONE 0.4s
+
+#37 [ftp 5/6] RUN echo tofa7a:1337 | chpasswd
+#37 0.409 chpasswd: password for 'tofa7a' changed
 #37 DONE 0.5s
 
 #38 [adminer 5/5] RUN wget "http://www.adminer.org/latest.php" -O /var/www/html/adminer.php
-#0 0.231 --2024-05-18 19:00:26-- http://www.adminer.org/latest.php
-#0 0.231 Resolving www.adminer.org (www.adminer.org)... 95.168.218.179, 2a01:28:ca:112::1:907
-#0 0.233 Connecting to www.adminer.org (www.adminer.org)|95.168.218.179|:80... connected.
-#0 0.310 HTTP request sent, awaiting response... 301 Moved Permanently
-#0 0.391 Location: https://www.adminer.org/latest.php [following]
-#0 0.391 --2024-05-18 19:00:26-- https://www.adminer.org/latest.php
-#0 0.413 Connecting to www.adminer.org (www.adminer.org)|95.168.218.179|:443... connected.
-#0 0.652 HTTP request sent, awaiting response... 302 Found
-#0 0.742 Location: static/download/4.8.1/adminer-4.8.1.php [following]
-#0 0.742 --2024-05-18 19:00:27-- https://www.adminer.org/static/download/4.8.1/adminer-4.8.1.php
-#0 0.742 Reusing existing connection to www.adminer.org:443.
-#0 0.742 HTTP request sent, awaiting response... 200 OK
-#0 0.830 Length: 476603 (465K) [application/octet-stream]
-#0 0.830 Saving to: '/var/www/html/adminer.php'
+#0 0.431 --2024-05-29 15:58:49-- http://www.adminer.org/latest.php
+#0 0.431 Resolving www.adminer.org (www.adminer.org)... 95.168.218.179, 2a01:28:ca:112::1:907
+#0 0.944 Connecting to www.adminer.org (www.adminer.org)|95.168.218.179|:80... connected.
+#0 1.016 HTTP request sent, awaiting response... 301 Moved Permanently
+#0 1.102 Location: https://www.adminer.org/latest.php [following]
+#0 1.102 --2024-05-29 15:58:49-- https://www.adminer.org/latest.php
+#0 1.137 Connecting to www.adminer.org (www.adminer.org)|95.168.218.179|:443... connected.
+#0 1.377 HTTP request sent, awaiting response... 302 Found
+#0 1.453 Location: static/download/4.8.1/adminer-4.8.1.php [following]
+#0 1.453 --2024-05-29 15:58:50-- https://www.adminer.org/static/download/4.8.1/adminer-4.8.1.php
+#0 1.453 Reusing existing connection to www.adminer.org:443.
+#0 1.453 HTTP request sent, awaiting response... 200 OK
+#0 1.524 Length: 476603 (465K) [application/octet-stream]
+#0 1.525 Saving to: '/var/www/html/adminer.php'
+#0 1.597
+#0 1.597 0K .......... .......... .......... .......... .......... 10% 341K 1s
+#38 1.671 50K .......... .......... .......... .......... .......... 21% 738K 1s
+#38 1.740 100K .......... .......... .......... .......... .......... 32% 2.81M 0s
+#38 1.756 150K .......... .......... .......... .......... .......... 42% 4.30M 0s
+#38 1.768 200K .......... .......... .......... .......... .......... 53% 1.01M 0s
+#38 1.816 250K .......... .......... .......... .......... .......... 64% 3.37M 0s
+#38 1.834 300K .......... .......... .......... .......... .......... 75% 1.03M 0s
+#38 1.878 350K .......... .......... .......... .......... .......... 85% 4.54M 0s
+#38 1.893 400K .......... .......... .......... .......... .......... 96% 2.56M 0s
+#38 1.908 450K .......... ..... 100% 16.4M=0.4s
+#38 1.910
+#38 1.910 2024-05-29 15:58:50 (1.18 MB/s) - '/var/www/html/adminer.php' saved [476603/476603]
+#38 1.910
+#38 DONE 2.0s
 
-#38 ...
+#26 [adminer] exporting to image
+#26 ...
 
-#39 [ftp 5/6] RUN echo tofaha:1337 | chpasswd
-#0 0.256 chpasswd: password for 'tofaha' changed
-#39 DONE 0.3s
+#39 [ftp 6/6] RUN echo "listen=YES" > /etc/vsftpd/vsftpd.conf; echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "write_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "anonymous_enable=NO" >> /etc/vsftpd/vsftpd.conf; echo "chroot_local_user=YES" >> /etc/vsftpd/vsftpd.conf; echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf; echo "seccomp_sandbox=NO" >> /etc/vsftpd/vsftpd.conf; echo "pasv_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "pasv_min_port=41337" >> /etc/vsftpd/vsftpd.conf; echo "pasv_max_port=41337" >> /etc/vsftpd/vsftpd.conf;
+#39 DONE 0.4s
 
-#38 [adminer 5/5] RUN wget "http://www.adminer.org/latest.php" -O /var/www/html/adminer.php
-#38 0.977
-#38 0.977 0K .......... .......... .......... .......... .......... 10% 190K 2s
-#38 1.093 50K .......... .......... .......... .......... ......
-#38 ...
+#26 [adminer] exporting to image
+#26 exporting layers 0.1s done
+#26 writing image sha256:8db450c6598aa257e1ac4f597c5c28ceb1b61f2448be392f6f63e3a6f2d88f42 done
+#26 naming to docker.io/library/adminer done
+#26 exporting layers 0.4s done
+#26 writing image sha256:67564bbfd3fab1b44265b7977e80686936b284df4f4c0ca036458df014a5f50b done
+#26 naming to docker.io/library/ftp done
+#26 DONE 0.7s
 
-#40 [ftp 6/6] RUN echo "listen=YES" > /etc/vsftpd/vsftpd.conf; echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "write_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "anonymous_enable=NO" >> /etc/vsftpd/vsftpd.conf; echo "chroot_local_user=YES" >> /etc/vsftpd/vsftpd.conf; echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf; echo "seccomp_sandbox=NO" >> /etc/vsftpd/vsftpd.conf; echo "pasv_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "pasv_min_port=41337" >> /etc/vsftpd/vsftpd.conf; echo "pasv_max_port=41337" >> /etc/vsftpd/vsftpd.conf;
-#40 DONE 0.3s
-
-#38 [adminer 5/5] RUN wget "http://www.adminer.org/latest.php" -O /var/www/html/adminer.php
-#38 1.093 50K .......... .......... .......... .......... .......... 21% 384K 1s
-#38 1.223 100K .......... .......... .......... .......... .......... 32% 541K 1s
-#38 1.315 150K .......... .......... .......... .......... .......... 42% 654K 1s
-#38 1.394 200K .......... .......... .......... .......... .......... 53% 644K 1s
-#38 1.469 250K .......... .......... .......... .......... .......... 64% 675K 0s
-#38 1.544 300K .......... .......... .......... ......
-#38 ...
-
-#27 [ftp] exporting to image
-#27 exporting layers 0.3s done
-#27 writing image sha256:28be6a624f192dace356b8907fee901bffedbc60d935a7b27079c158e35c215f done
-#27 naming to docker.io/library/ftp done
-#27 DONE 0.4s
-
-#38 [adminer 5/5] RUN wget "http://www.adminer.org/latest.php" -O /var/www/html/adminer.php
-#38 1.544 300K .......... .......... .......... .......... .......... 75% 670K 0s
-#38 1.618 350K .......... .......... .......... .......... .......... 85% 3.85M 0s
-#38 1.733 400K .......... .......... .......... .......... .......... 96% 287K 0s
-#38 1.805 450K .......... ..... 100% 56.3M=1.0s
-#38 1.806
-#38 1.806 2024-05-18 19:00:28 (477 KB/s) - '/var/www/html/adminer.php' saved [476603/476603]
-#38 1.806
-#38 DONE 1.9s
-
-#41 [wordpress 5/9] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-#0 0.231 % Total % Received % Xferd Average Speed Time Time Time Current
-#0 0.233 Dload Upload Total Spent Left Speed
-#0 0.234  0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 1 6831k 1 127k 0 0 330k 0 0:00:20 --:--:-- 0:00:20 330k
-#41 ...
-
-#27 [adminer] exporting to image
-#27 exporting layers 0.1s done
-#27 writing image sha256:ba0f30dffe78b825e6f65928ac16d4b6c4d6fa3fe75d388f6a46226e4b71c7ec done
-#27 naming to docker.io/library/adminer done
-#27 DONE 0.5s
-
-#42 [static-site 3/6] RUN apk add npm apache2
-#0 0.958 (1/18) Installing libuuid (2.39.3-r0)
-#0 1.233 (2/18) Installing apr (1.7.4-r0)
-#0 1.348 (3/18) Installing libexpat (2.6.2-r0)
-#0 1.428 (4/18) Installing apr-util (1.6.3-r1)
-#0 1.499 (5/18) Installing pcre2 (10.42-r2)
-#0 1.630 (6/18) Installing apache2 (2.4.59-r0)
-#0 1.694 Executing apache2-2.4.59-r0.pre-install
-#0 1.937 (7/18) Installing ca-certificates (20240226-r0)
-#0 2.038 (8/18) Installing libgcc (13.2.1_git20231014-r0)
-#0 2.093 (9/18) Installing libstdc++ (13.2.1_git20231014-r0)
-#0 2.406 (10/18) Installing ada-libs (2.7.4-r0)
-#0 2.509 (11/18) Installing brotli-libs (1.1.0-r1)
-#0 2.697 (12/18) Installing c-ares (1.27.0-r0)
-#0 2.758 (13/18) Installing icu-data-en (74.1-r0)
-#0 2.958 Executing icu-data-en-74.1-r0.post-install
-#0 2.960 Makefile README.md debugFile script.bash srcs test
-#0 2.960 Makefile README.md debugFile script.bash srcs test If you need ICU with non-English locales and legacy charset support, install
-#0 2.960 Makefile README.md debugFile script.bash srcs test package icu-data-full.
-#0 2.960 Makefile README.md debugFile script.bash srcs test
-#0 2.960 (14/18) Installing icu-libs (74.1-r0)
-#0 3.258 (15/18) Installing nghttp2-libs (1.58.0-r0)
-#0 3.307 (16/18) Installing libuv (1.47.0-r0)
-#0 3.445 (17/18) Installing nodejs-current (21.7.2-r0)
-#42 ...
+#40 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+#0 1.196 (1/29) Installing ca-certificates (20240226-r0)
+#0 1.592 (2/29) Installing brotli-libs (1.1.0-r1)
+#0 1.733 (3/29) Installing c-ares (1.27.0-r0)
+#0 1.854 (4/29) Installing libunistring (1.1-r2)
+#0 2.047 (5/29) Installing libidn2 (2.3.4-r4)
+#0 2.768 (6/29) Installing nghttp2-libs (1.58.0-r0)
+#0 2.819 (7/29) Installing libcurl (8.5.0-r0)
+#0 2.925 (8/29) Installing curl (8.5.0-r0)
+#0 2.987 (9/29) Installing mariadb-common (10.11.6-r0)
+#0 3.144 (10/29) Installing libaio (0.3.113-r2)
+#0 3.181 (11/29) Installing libgcc (13.2.1_git20231014-r0)
+#0 3.223 (12/29) Installing xz-libs (5.4.5-r0)
+#0 3.275 (13/29) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#0 3.333 (14/29) Installing libncursesw (6.4_p20231125-r0)
+#0 3.403 (15/29) Installing skalibs (2.14.0.1-r0)
+#0 3.461 (16/29) Installing utmps-libs (0.1.2.2-r0)
+#0 3.505 (17/29) Installing linux-pam (1.5.3-r7)
+#0 3.602 (18/29) Installing pcre2 (10.42-r2)
+#0 3.718 (19/29) Installing libstdc++ (13.2.1_git20231014-r0)
+#0 3.933 (20/29) Installing libxml2 (2.11.8-r0)
+#0 4.052 (21/29) Installing zstd-libs (1.5.5-r8)
+#0 4.149 (22/29) Installing mariadb (10.11.6-r0)
+#0 4.213 Executing mariadb-10.11.6-r0.pre-install
+#40 ...
 
 #41 [wordpress 5/9] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-#0 0.234  0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 1 6831k 1 127k 0 0 330k 0 0:00:20 --:--:-- 0:00:20 330k 86 6831k 86 5935k 0 0 4291k 0 0:00:01 0:00:01 --:--:-- 4291k100 6831k 100 6831k 0 0 4456k 0 0:00:01 0:00:01 --:--:-- 4456k
-#41 DONE 1.8s
+#0 0.320 % Total % Received % Xferd Average Speed Time Time Time Current
+#0 0.320 Dload Upload Total Spent Left Speed
+#0 0.320  0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 14 6831k 14 975k 0 0 1451k 0 0:00:04 --:--:-- 0:00:04 1451k 92 6831k 92 6287k 0 0 3760k 0 0:00:01 0:00:01 --:--:-- 3760k100 6831k 100 6831k 0 0 3925k 0 0:00:01 0:00:01 --:--:-- 3926k
+#41 DONE 2.2s
 
-#43 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
-#43 DONE 0.4s
-
-#42 [static-site 3/6] RUN apk add npm apache2
-#42 5.868 (18/18) Installing npm (10.2.5-r0)
-#42 6.243 Executing busybox-1.36.1-r16.trigger
+#42 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
 #42 ...
 
-#44 [wordpress 7/9] RUN mkdir -p /var/www/html/
-#44 DONE 0.3s
+#43 [static-site 3/7] RUN apk add npm apache2
+#0 1.287 (1/18) Installing libuuid (2.39.3-r0)
+#0 1.535 (2/18) Installing apr (1.7.4-r0)
+#0 1.630 (3/18) Installing libexpat (2.6.2-r0)
+#0 1.688 (4/18) Installing apr-util (1.6.3-r1)
+#0 1.747 (5/18) Installing pcre2 (10.42-r2)
+#0 1.840 (6/18) Installing apache2 (2.4.59-r0)
+#0 1.900 Executing apache2-2.4.59-r0.pre-install
+#0 2.057 (7/18) Installing ca-certificates (20240226-r0)
+#0 2.210 (8/18) Installing libgcc (13.2.1_git20231014-r0)
+#0 2.252 (9/18) Installing libstdc++ (13.2.1_git20231014-r0)
+#0 2.476 (10/18) Installing ada-libs (2.7.4-r0)
+#0 2.566 (11/18) Installing brotli-libs (1.1.0-r1)
+#0 2.678 (12/18) Installing c-ares (1.27.0-r0)
+#0 2.724 (13/18) Installing icu-data-en (74.1-r0)
+#0 2.929 Executing icu-data-en-74.1-r0.post-install
+#0 2.933 Makefile README.md debugFile script.bash srcs test
+#0 2.933 Makefile README.md debugFile script.bash srcs test If you need ICU with non-English locales and legacy charset support, install
+#0 2.933 Makefile README.md debugFile script.bash srcs test package icu-data-full.
+#0 2.933 Makefile README.md debugFile script.bash srcs test
+#0 2.935 (14/18) Installing icu-libs (74.1-r0)
+#0 3.176 (15/18) Installing nghttp2-libs (1.58.0-r0)
+#0 3.227 (16/18) Installing libuv (1.47.0-r0)
+#0 3.283 (17/18) Installing nodejs-current (21.7.2-r0)
+#0 6.335 (18/18) Installing npm (10.2.5-r0)
+#0 6.777 Executing busybox-1.36.1-r18.trigger
+#0 6.784 Executing ca-certificates-20240226-r0.trigger
+#0 6.874 OK: 83 MiB in 33 packages
+#43 DONE 7.2s
 
-#45 [wordpress 8/9] COPY tools/exe.sh /tmp/
-#45 DONE 0.0s
+#44 [static-site 4/7] WORKDIR /var/www/localhost/htdocs
+#44 DONE 0.0s
 
-#42 [static-site 3/6] RUN apk add npm apache2
-#42 6.248 Executing ca-certificates-20240226-r0.trigger
-#42 6.310 OK: 83 MiB in 33 packages
-#42 DONE 6.4s
+#42 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
+#42 DONE 0.5s
 
-#46 [static-site 4/6] WORKDIR /var/www/localhost/htdocs
-#46 DONE 0.0s
+#45 [static-site 5/7] COPY ./tools .
+#45 DONE 0.1s
 
-#47 [static-site 5/6] COPY ./tools .
+#46 [wordpress 7/9] RUN mkdir -p /var/www/html/
+#46 DONE 0.4s
+
+#47 [wordpress 8/9] COPY tools/exe.sh /tmp/
 #47 DONE 0.0s
 
-#48 [wordpress 9/9] RUN chmod +x /tmp/exe.sh
-#48 DONE 0.2s
+#48 [static-site 6/7] RUN chmod 755 .
+#48 DONE 0.4s
 
-#27 [wordpress] exporting to image
-#27 exporting layers 0.2s done
-#27 writing image sha256:843ed59cb588629ed781f5b47627c70ade8806fa567fc6ff1ccc432ab3697df3 done
-#27 naming to docker.io/library/wordpress done
-#27 DONE 0.7s
+#49 [static-site 7/7] RUN npm install vanilla-tilt@1.8.1
+#49 ...
 
-#49 [static-site 6/6] RUN npm install vanilla-tilt@1.8.1
-#49 1.443
-#49 1.443 added 1 package in 928ms
-#49 DONE 1.5s
+#50 [wordpress 9/9] RUN chmod +x /tmp/exe.sh
+#50 DONE 0.4s
 
-#27 [static-site] exporting to image
-#27 exporting layers 0.5s done
-#27 writing image sha256:feb96dd614a2f1f120b7d602ccf3f1854f33f06634da46f89efeaf4e4616d590 done
-#27 naming to docker.io/library/static-site done
-#27 DONE 1.2s
+#26 [wordpress] exporting to image
+#26 exporting layers 0.2s done
+#26 writing image sha256:49389f5febe19b93f371c21f413cff5a18da05ab7b33e2387e4f5f97c463762a done
+#26 naming to docker.io/library/wordpress done
+#26 DONE 1.0s
 
-#24 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
-#24 8.474 (23/29) Installing libbz2 (1.0.8-r6)
-#24 8.522 (24/29) Installing perl (5.38.2-r0)
-#24 9.312 (25/29) Installing mariadb-client (10.11.6-r0)
-#24 10.04 (26/29) Installing ifupdown-ng (0.12.1-r4)
-#24 10.11 (27/29) Installing libcap2 (2.69-r1)
-#24 10.19 (28/29) Installing openrc (0.52.1-r2)
-#24 10.28 Executing openrc-0.52.1-r2.post-install
-#24 10.28 (29/29) Installing mariadb-openrc (10.11.6-r0)
-#24 10.34 Executing busybox-1.36.1-r16.trigger
-#24 10.35 Executing ca-certificates-20240226-r0.trigger
-#24 10.40 OK: 262 MiB in 44 packages
-#24 DONE 10.7s
+#51 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
+#0 0.320 Connecting to github.com (140.82.121.3:443)
+#0 0.997 Connecting to objects.githubusercontent.com (185.199.111.133:443)
+#0 1.667 saving to 'portainer-2.19.5-linux-amd64.tar.gz'
+#0 1.805 portainer-2.19.5-lin 0% | | 281k 0:04:59 ETA
+#0 2.801 portainer-2.19.5-lin 7% |** | 6377k 0:00:24 ETA
+#0 3.801 portainer-2.19.5-lin 13% |**** | 10.9M 0:00:19 ETA
+#0 4.802 portainer-2.19.5-lin 19% |****** | 16.1M 0:00:16 ETA
+#0 5.802 portainer-2.19.5-lin 29% |********* | 23.8M 0:00:12 ETA
+#51 6.801 portainer-2.19.5-lin 39% |************ | 32.8M 0:00:09 ETA
+#51 7.802 portainer-2.19.5-lin 52% |**************** | 43.1M 0:00:06 ETA
+#51 ...
 
-#50 [mariadb 4/7] COPY tools/exe.sh /tmp/
-#50 DONE 0.0s
+#49 [static-site 7/7] RUN npm install vanilla-tilt@1.8.1
+#49 2.375
+#49 2.375 added 1 package in 2s
+#49 DONE 2.5s
 
-#51 [mariadb 5/7] RUN chmod +x /tmp/exe.sh
-#51 DONE 0.2s
+#26 [static-site] exporting to image
+#26 exporting layers 0.6s done
+#26 writing image sha256:839a927f426c373fe85ba914df1612a1fcf3ab556591f08f5545bf19fde676af done
+#26 naming to docker.io/library/static-site done
+#26 DONE 1.6s
 
-#52 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
-#0 0.293 Connecting to github.com (140.82.121.4:443)
-#0 0.830 Connecting to objects.githubusercontent.com (185.199.110.133:443)
-#0 1.453 saving to 'portainer-2.19.5-linux-amd64.tar.gz'
-#0 1.979 portainer-2.19.5-lin 0% | | 744k 0:01:52 ETA
-#0 2.982 portainer-2.19.5-lin 3% |* | 2677k 0:01:01 ETA
-#0 3.976 portainer-2.19.5-lin 9% |*** | 7957k 0:00:28 ETA
-#0 4.976 portainer-2.19.5-lin 18% |***** | 15.3M 0:00:17 ETA
-#0 5.977 portainer-2.19.5-lin 32% |********** | 26.5M 0:00:10 ETA
-#0 6.975 portainer-2.19.5-lin 46% |************** | 38.1M 0:00:06 ETA
-#0 7.975 portainer-2.19.5-lin 64% |******************** | 53.0M 0:00:03 ETA
-#0 8.976 portainer-2.19.5-lin 85% |*************************** | 70.3M 0:00:01 ETA
-#0 9.498 portainer-2.19.5-lin 100% |********************************| 82.4M 0:00:00 ETA
-#0 9.498 'portainer-2.19.5-linux-amd64.tar.gz' saved
-#0 9.501 portainer/
-#52 ...
+#40 [mariadb 3/7] RUN apk add curl mariadb mariadb-client openrc
+#40 10.53 (23/29) Installing libbz2 (1.0.8-r6)
+#40 10.57 (24/29) Installing perl (5.38.2-r0)
+#40 12.20 (25/29) Installing mariadb-client (10.11.6-r0)
+#40 13.03 (26/29) Installing ifupdown-ng (0.12.1-r4)
+#40 13.08 (27/29) Installing libcap2 (2.69-r1)
+#40 13.12 (28/29) Installing openrc (0.52.1-r2)
+#40 13.20 Executing openrc-0.52.1-r2.post-install
+#40 13.20 (29/29) Installing mariadb-openrc (10.11.6-r0)
+#40 13.24 Executing busybox-1.36.1-r18.trigger
+#40 13.26 Executing ca-certificates-20240226-r0.trigger
+#40 13.40 OK: 262 MiB in 44 packages
+#40 DONE 13.9s
 
-#53 [mariadb 6/7] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+#52 [mariadb 4/7] COPY tools/exe.sh /tmp/
+#52 DONE 0.0s
+
+#51 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
+#51 8.801 portainer-2.19.5-lin 63% |******************** | 52.2M 0:00:04 ETA
+#51 9.922 portainer-2.19.5-lin 73% |*********************** | 60.3M 0:00:03 ETA
+#51 10.80 portainer-2.19.5-lin 84% |************************** | 69.3M 0:00:01 ETA
+#51 11.77 portainer-2.19.5-lin 100% |********************************| 82.4M 0:00:00 ETA
+#51 11.77 'portainer-2.19.5-linux-amd64.tar.gz' saved
+#51 11.84 portainer/
+#51 ...
+
+#53 [mariadb 5/7] RUN chmod +x /tmp/exe.sh
 #53 DONE 0.3s
 
-#52 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
-#52 ...
+#54 [mariadb 6/7] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+#54 DONE 0.3s
 
-#54 [mariadb 7/7] RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
-#54 DONE 0.2s
+#55 [mariadb 7/7] RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
+#55 ...
 
-#27 [mariadb] exporting to image
-#27 exporting layers 1.2s done
-#27 writing image sha256:7df95d273f386ac2557942fc7dec741e18ef107e7db313f9df0b5d10e95bdf66 done
-#27 naming to docker.io/library/mariadb done
-#27 DONE 2.4s
+#51 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
+#51 15.34 portainer/helm
+#51 15.34 portainer/docker
+#51 15.34 portainer/portainer
+#51 15.34 portainer/mustache-templates/
+#51 15.34 portainer/mustache-templates/upgrade-docker.yml.mustache
+#51 15.34 portainer/docker-compose
+#51 15.34 portainer/kubectl
+#51 15.34 portainer/public/
+#51 15.34 portainer/public/060b2710bdbbe3dfe48b.svg
+#51 15.34 portainer/public/c2c179f41199d25e0055.png
+#51 15.34 portainer/public/2b3c7053dcd54989a6f5.png
+#51 15.34 portainer/public/51906a7e4bd0e1d9e771.png
+#51 15.34 portainer/public/d3a18c5002453f58c8b9.png
+#51 15.34 portainer/public/19c2b168a8d85994e14e.png
+#51 15.34 portainer/public/6d50eaeb9f128c130ed9.xml
+#51 15.34 portainer/public/main.7d6053e1c574421c1788.css
+#51 15.34 portainer/public/main.7d6053e1c574421c1788.css.map
+#51 15.34 portainer/public/vendor.c6c227160a59d929ec43.js.LICENSE.txt
+#51 15.34 portainer/public/runtime.942fa683274b3d3c26cf.js
+#51 15.34 portainer/public/7e697c5bab4f819328df.svg
+#51 15.34 portainer/public/63a301f0574f1a696ce6.png
+#51 15.34 portainer/public/index.html
+#51 15.34 portainer/public/main.712d6f30396f42406a3d.js.LICENSE.txt
+#51 15.34 portainer/public/63c1259abd88a9d2cebc.svg
+#51 15.34 portainer/public/main.712d6f30396f42406a3d.js.map
+#51 15.34 portainer/public/vendor.c6c227160a59d929ec43.js.map
+#51 15.34 portainer/public/vendor.b4533442c1cbb18b98a1.css.map
+#51 15.46 portainer/public/locales/
+#51 15.46 portainer/public/locales/en/
+#51 15.46 portainer/public/locales/en/translation.json
+#51 15.46 portainer/public/timeout.html
+#51 15.46 portainer/public/main.712d6f30396f42406a3d.js
+#51 15.46 portainer/public/runtime.942fa683274b3d3c26cf.js.map
+#51 15.46 portainer/public/9d07a3ace464cfd6e27c.png
+#51 15.46 portainer/public/112a479c093f4729251d.png
+#51 15.46 portainer/public/vendor.b4533442c1cbb18b98a1.css
+#51 15.46 portainer/public/vendor.c6c227160a59d929ec43.js
+#51 15.46 portainer/public/2dcfc527d067d4ae3424.png
+#51 DONE 15.7s
 
-#52 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
-#52 11.80 portainer/helm
-#52 11.80 portainer/docker
-#52 11.80 portainer/portainer
-#52 11.80 portainer/mustache-templates/
-#52 11.80 portainer/mustache-templates/upgrade-docker.yml.mustache
-#52 11.80 portainer/docker-compose
-#52 11.80 portainer/kubectl
-#52 11.80 portainer/public/
-#52 11.80 portainer/public/060b2710bdbbe3dfe48b.svg
-#52 11.80 portainer/public/c2c179f41199d25e0055.png
-#52 11.80 portainer/public/2b3c7053dcd54989a6f5.png
-#52 11.80 portainer/public/51906a7e4bd0e1d9e771.png
-#52 11.80 portainer/public/d3a18c5002453f58c8b9.png
-#52 11.80 portainer/public/19c2b168a8d85994e14e.png
-#52 11.80 portainer/public/6d50eaeb9f128c130ed9.xml
-#52 11.80 portainer/public/main.7d6053e1c574421c1788.css
-#52 11.80 portainer/public/main.7d6053e1c574421c1788.css.map
-#52 11.80 portainer/public/vendor.c6c227160a59d929ec43.js.LICENSE.txt
-#52 11.80 portainer/public/runtime.942fa683274b3d3c26cf.js
-#52 11.80 portainer/public/7e697c5bab4f819328df.svg
-#52 11.80 portainer/public/63a301f0574f1a696ce6.png
-#52 11.80 portainer/public/index.html
-#52 11.80 portainer/public/main.712d6f30396f42406a3d.js.LICENSE.txt
-#52 11.80 portainer/public/63c1259abd88a9d2cebc.svg
-#52 11.80 portainer/public/main.712d6f30396f42406a3d.js.map
-#52 11.80 portainer/public/vendor.c6c227160a59d929ec43.js.map
-#52 11.80 portainer/public/vendor.b4533442c1cbb18b98a1.css.map
-#52 11.86 portainer/public/locales/
-#52 11.86 portainer/public/locales/en/
-#52 11.86 portainer/public/locales/en/translation.json
-#52 11.86 portainer/public/timeout.html
-#52 11.86 portainer/public/main.712d6f30396f42406a3d.js
-#52 11.86 portainer/public/runtime.942fa683274b3d3c26cf.js.map
-#52 11.86 portainer/public/9d07a3ace464cfd6e27c.png
-#52 11.86 portainer/public/112a479c093f4729251d.png
-#52 11.86 portainer/public/vendor.b4533442c1cbb18b98a1.css
-#52 11.86 portainer/public/vendor.c6c227160a59d929ec43.js
-#52 11.86 portainer/public/2dcfc527d067d4ae3424.png
-#52 DONE 11.9s
+#55 [mariadb 7/7] RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
+#55 DONE 3.1s
 
-#55 [portainer 5/5] RUN echo -n "uWu1337uWu,BecausePortainerRequiresStrongPass" > /tmp/portainer_password
-#55 DONE 0.2s
+#26 [mariadb] exporting to image
+#26 exporting layers
+#26 ...
 
-#27 [portainer] exporting to image
-#27 exporting layers 1.2s done
-#27 writing image sha256:5978139ee30380a143a0d14a297b333cd119fa5b68cb75f7265df7056da668be done
-#27 naming to docker.io/library/portainer done
-#27 DONE 3.6s
+#56 [portainer 5/5] RUN echo -n "uWu1337uWu,BecausePortainerRequiresStrongPass" > /tmp/portainer_password
+#56 DONE 1.0s
+
+#26 [portainer] exporting to image
+#26 exporting layers 2.3s done
+#26 writing image sha256:1b657fe9f5dbda20cf1963b5615a5eff7588d50c7d10bff11e3e3764a69d11b0 done
+#26 naming to docker.io/library/mariadb done
+#26 exporting layers 2.2s done
+#26 writing image sha256:b16504636f8da2bc9770eebb656d1cde60eeefc2374fd6b407509718bb2cd793 done
+#26 naming to docker.io/library/portainer done
+#26 DONE 4.8s
 
 Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them

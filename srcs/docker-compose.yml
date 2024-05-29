@@ -72,8 +72,8 @@ services:
     build:
       context: requirements/bonus/ftp/
       args:
-        FTP_USER: tofaha
-        FTP_USER_PASS: 1337
+        FTP_USER: ${SUPER_USER}
+        FTP_USER_PASS: ${SUPER_USER_PASS}
     container_name: ftp
     restart: on-failure
     ports:
@@ -100,6 +100,8 @@ services:
     image: portainer
     build:
       context: requirements/bonus/portainer/
+      args:
+        ADMIN_PASS: ${PORTAINER_ADMIN_SUPER_PASS}
     container_name: portainer
     restart: on-failure
     ports:
@@ -109,8 +111,8 @@ services:
       # - "portainer_data:/data"
     networks:
       - uWu
-    environment:
-      ADMIN_PASS: ${SUPER_USER_PASS}
+    # environment:
+    #   ADMIN_PASS: ${PORTAINER_ADMIN_SUPER_PASS}
 
   static-site:
     image: static-site

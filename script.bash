@@ -200,12 +200,12 @@ function dockerfile_loadbar () {
 
 
 #fuck this shi2 "------" it considers as error :3
-        elif [[ ! "$line" =~ ^\# && ! "$line" =~ ^"Use 'docker scan'" && ! "$line" =~ "------" && "$line" =~ ^([^:]+:)([^:]+:*)*([^:]+:)*(\ *[0-9]+)* ]];   # I am MR HARD CODER >.<
-        then
-            printf "\n${white}${last_step_line}${nc}\n"
-            printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"
-            printf "${restoreCurs}"
-            exit 1
+        # elif [[ ! "$line" =~ ^\# && ! "$line" =~ ^"Use 'docker scan'" && ! "$line" =~ "------" && "$line" =~ ^([^:]+:)([^:]+:*)*([^:]+:)*(\ *[0-9]+)* ]];   # I am MR HARD CODER >.<
+        # then
+        #     printf "\n${white}${last_step_line}${nc}\n"
+        #     printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"
+        #     printf "${restoreCurs}"
+        #     exit 1
         fi;
 
 
