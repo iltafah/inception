@@ -156,12 +156,20 @@ function dockerfile_loadbar () {
                 pre_spaces=$(($perc * 49 / 100)) # 49 is the number of spaces between the whale and the ship
                 bar_count=$((100 / 5)) # 20 bar ▇ to draw
                 bar_pos=$(($perc * $bar_count /100))
+                if [ $bar_pos -eq 0 ]; then bar_pos=1; fi;  #iwa ach 4adir hardcode l4aleb lah
                 bar_spaces=$((bar_count - bar_pos))
-                bar_to_fill=$(($bar_count - $bar_pos))
-                fill=$(printf  "▇%.0s" $(seq $bar_count $bar_to_fill ) ) #this shi2 adds one more |, but no problem
-                # fill=$(printf  "▇%.0s" $(seq 1 $bar_pos))
+                # bar_to_fill=$(($bar_count - $bar_pos))
+                # fill=$(printf  "▇%.0s" $(seq $bar_count $bar_to_fill ) ) #this shi2 adds one more |, but no problem
+                fill=$(printf  "▇%.0s" `(seq 1 $bar_pos)`) # those `` because of the fish shell doesn't support $() here for some reason
                 ship_spaces=$((49 - pre_spaces)) # expected spaces between the whale and the ship
-
+# echo ratio : $ratio >> debugFile
+# echo perc : $perc >> debugFile
+# echo pre_spaces : $pre_spaces >> debugFile
+# echo bar_count : $bar_count >> debugFile
+# echo bar_pos : $bar_pos >> debugFile
+# echo bar_spaces : $bar_spaces >> debugFile
+# echo fill : $fill >> debugFile
+# echo ship_spaces : $ship_spaces >> debugFile
                 printf "${line7}${lineclr}${scyan}%${pre_spaces}s               .";                                     printf "%${ship_spaces}s              ${sc6}_\____ \n";                                
                 printf "${lineclr}${scyan}%${pre_spaces}s              ':'";                                            printf "%${ship_spaces}s            ${sc5}|_===__\`.        ==/ \n";                       
                 printf "${lineclr}${sblue}%${pre_spaces}s|\"\/\"|     ____${scyan}:${sblue}___";                        printf "%${ship_spaces}s          ${sc4}\/  '---\"\ _ _ _ _/\n";              
