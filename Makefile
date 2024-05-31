@@ -23,7 +23,7 @@ up:
 	@echo "ERR=1337" > .env.mk
 	@make build
 	@err=`cat .env.mk | grep ERR | cut -d "=" -f2-`;\
-		if [[ $$err -eq 1337 ]];\
+		if [ $$err -eq 1337 ];\
 		then\
 			make create;\
 		fi;

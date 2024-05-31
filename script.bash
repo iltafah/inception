@@ -157,7 +157,8 @@ function dockerfile_loadbar () {
                 bar_count=$((100 / 5)) # 20 bar ▇ to draw
                 bar_pos=$(($perc * $bar_count /100))
                 bar_spaces=$((bar_count - bar_pos))
-                fill=$(printf  "▇%.0s" $(seq $bar_count $(($bar_count - $bar_pos)) ) ) #this shi2 adds one more |, but no problem
+                bar_to_fill=$(($bar_count - $bar_pos))
+                fill=$(printf  "▇%.0s" $(seq $bar_count $bar_to_fill ) ) #this shi2 adds one more |, but no problem
                 # fill=$(printf  "▇%.0s" $(seq 1 $bar_pos))
                 ship_spaces=$((49 - pre_spaces)) # expected spaces between the whale and the ship
 
