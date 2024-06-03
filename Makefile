@@ -50,7 +50,8 @@ restart:
 
 clean:
 	@docker compose -f $(COMPOSE_FILE_PATH) down -v --rmi all
-	@rm -rf /Users/iltafah/Desktop/Temp\ Volume/WordPress/WordPress
+	@rm -rf /Users/iltafah/Desktop/Temp\ Volume/WordPress/*
+	@rm -rf /Users/iltafah/Desktop/Temp\ Volume/DB/*
 
 re:
 	@make clean

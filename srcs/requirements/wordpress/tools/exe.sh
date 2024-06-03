@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ ! -d '/var/www/html/wordpress' ]; then
-    mkdir -p /var/www/html/wordpress
+if [ ! -e /var/www/html/wordpress/index.php ]; then
+    # mkdir -p /var/www/html/wordpress
     cd /var/www/html/wordpress
     wp core download
     wp config create --dbname=${DB_NAME} --dbuser=${DB_USER} --dbpass=${DB_PASS} --dbhost=${DB_HOST}

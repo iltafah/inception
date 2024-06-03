@@ -7,11 +7,11 @@ services:
     build:
       context: requirements/nginx/
     container_name: nginx
-    restart: on-failure
+    restart: always
     ports:
       - 443:443
     volumes:
-      - WordPress:/var/www/html/
+      - WordPress:/var/www/html/wordpress
     networks:
       - uWu
 
@@ -20,11 +20,14 @@ services:
     build:
       context: requirements/wordpress/
     container_name: wordpress
-    restart: on-failure
+    restart: always
+    depends_on:
+      mariadb:
+        condition: service_healthy
     ports:
       - 9000:9000
     volumes:
-      - WordPress:/var/www/html/
+      - WordPress:/var/www/html/wordpress
     networks:
       - uWu
     environment:
@@ -36,18 +39,18 @@ services:
       ADMIN_PASS: ${SUPER_USER_PASS}
       AUTHOR_USER: ${SECONDRY_USER}
       AUTHOR_PASS: ${SECONDRY_USER_PASS}
-        
 
   mariadb:
     image: mariadb
     build:
       context: requirements/mariadb/
     container_name: mariadb
-    restart: on-failure
+    restart: always
     ports:
       - 3306:3306
-    # volumes:
-    #   - db:/etc
+    volumes:
+      # - /var/lib/mysql
+      - DB:/var/lib/mysql
     networks:
       - uWu
     environment:
@@ -55,13 +58,17 @@ services:
       DB_USER: ${SUPER_USER}
       DB_PASS: ${SUPER_USER_PASS}
       DOCKER_NETWORK: ${DOCKER_COMPOSE_NETWORK_NAME}
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 42s
+      retries: 3
 
   redis:
     image: redis
     build:
       context: requirements/bonus/redis/
     container_name: redis
-    restart: on-failure
+    restart: always
     ports:
       - 6379:6379
     networks:
@@ -75,7 +82,7 @@ services:
         FTP_USER: ${SUPER_USER}
         FTP_USER_PASS: ${SUPER_USER_PASS}
     container_name: ftp
-    restart: on-failure
+    restart: always
     ports:
       - 21:21
       - 41337:41337
@@ -90,7 +97,7 @@ services:
     build:
       context: requirements/bonus/adminer/
     container_name: adminer
-    restart: on-failure
+    restart: always
     ports:
       - 8080:8080
     networks:
@@ -103,7 +110,7 @@ services:
       args:
         ADMIN_PASS: ${PORTAINER_ADMIN_SUPER_PASS}
     container_name: portainer
-    restart: on-failure
+    restart: always
     ports:
       - 4242:4242
     volumes:
@@ -119,7 +126,7 @@ services:
     build:
       context: requirements/bonus/static-site/
     container_name: static-site
-    restart: on-failure
+    restart: always
     ports:
       - 80:80
     networks:
@@ -133,18 +140,11 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /Users/iltafah/Desktop/Temp Volume/WordPress
+      device: ${WordPressVolumePath}
       o: bind
   DB:
     driver: local
     driver_opts:
       type: none
-      device: /Users/iltafah/Desktop/Temp Volume/DB
+      device: ${MariaDbVolumePath}
       o: bind
-  # portainer_data:
-  #   driver: local
-  #   driver_opts:
-  #     type: none
-  #     device: /Users/iltafah/Desktop/Temp Volume/Portainer
-  #     o: bind
-  
