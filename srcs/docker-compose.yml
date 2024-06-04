@@ -8,6 +8,8 @@ services:
       context: requirements/nginx/
     container_name: nginx
     restart: always
+    depends_on:
+      - wordpress
     ports:
       - 443:443
     volumes:
@@ -88,9 +90,6 @@ services:
       - 41337:41337
     networks:
       - uWu
-    # environment:
-    #   FTP_USER: ${SUPER_USER}
-    #   FTP_USER_PASS: ${SUPER_USER_PASS}
 
   adminer:
     image: adminer
@@ -115,11 +114,8 @@ services:
       - 4242:4242
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock  # docker context ls
-      # - "portainer_data:/data"
     networks:
       - uWu
-    # environment:
-    #   ADMIN_PASS: ${PORTAINER_ADMIN_SUPER_PASS}
 
   static-site:
     image: static-site

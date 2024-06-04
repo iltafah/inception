@@ -11,7 +11,7 @@ exit_code=1
 nc='\033[0m'
 
 # Bold High Intensity
-blc='\033[1;90m'      # Black
+blc='\033[1;90m'      # Black, I am no sure exactly where I'll use it
 red='\033[1;91m'        # Red
 grn='\033[1;92m'      # Green
 yel='\033[1;93m'     # Yellow
@@ -43,6 +43,8 @@ line6=$(tput cuu 6)
 line7=$(tput cuu 7)
 hideCurs=$(tput civis)
 restoreCurs=$(tput cnorm)
+clearTerminal=$(tput cl)
+moveCursToTerminalEdge=$(tput cm 0 0)
 
 function print_image_arr () {
 
@@ -132,6 +134,7 @@ function dockerfile_loadbar () {
         fi
     done <<< "$imgs"
 
+
     echo $line > debugFile
     while read line ; do 
         echo $line >> debugFile
@@ -142,7 +145,7 @@ function dockerfile_loadbar () {
                 img_name=${BASH_REMATCH[1]}
                 curr_step=${BASH_REMATCH[2]}
                 last_step=${BASH_REMATCH[3]}
-                if [[ $img_name == "" ]]; then img_name="uWu"; fi;
+                if [[ $img_name == "" ]]; then img_name=${img_arr[1]}; fi;
 
                 add_image $img_name $curr_step $last_step #"${img_arr[@]}"
                 # print_image_arr
@@ -170,6 +173,7 @@ function dockerfile_loadbar () {
 # echo bar_spaces : $bar_spaces >> debugFile
 # echo fill : $fill >> debugFile
 # echo ship_spaces : $ship_spaces >> debugFile
+                # printf "${clearTerminal}"
                 printf "${line7}${lineclr}${scyan}%${pre_spaces}s               .";                                     printf "%${ship_spaces}s              ${sc6}_\____ \n";                                
                 printf "${lineclr}${scyan}%${pre_spaces}s              ':'";                                            printf "%${ship_spaces}s            ${sc5}|_===__\`.        ==/ \n";                       
                 printf "${lineclr}${sblue}%${pre_spaces}s|\"\/\"|     ____${scyan}:${sblue}___";                        printf "%${ship_spaces}s          ${sc4}\/  '---\"\ _ _ _ _/\n";              
@@ -192,7 +196,8 @@ function dockerfile_loadbar () {
                     bar_count=$(( ${end_steps_arr[$indx]}  ))
                     bar_pos=$(( ${start_steps_arr[$indx]}  ))
                     bar_spaces=$((bar_count - bar_pos))
-                    fill=$(printf  ".%.0s" $(seq 1 $bar_pos))
+                    if [[ $bar_pos -ne 0 ]]; then fill=$(printf  ".%.0s" $(seq 1 $bar_pos)); else fill=""; fi;
+                    
                     printf "${lineclr}${yel}${img_arr[$indx]} : ${blu}|${grn}${fill}${nc}%${bar_spaces}s${blu}|${nc}[${start_steps_arr[$indx]}/${end_steps_arr[$indx]}]${red}${nc}\n"
                 done
 
@@ -210,11 +215,12 @@ function dockerfile_loadbar () {
 
 #fuck this shi2 "------" it considers as error :3
         # elif [[ ! "$line" =~ ^\# && ! "$line" =~ ^"Use 'docker scan'" && ! "$line" =~ "------" && "$line" =~ ^([^:]+:)([^:]+:*)*([^:]+:)*(\ *[0-9]+)* ]];   # I am MR HARD CODER >.<
-        # then
-        #     printf "\n${white}${last_step_line}${nc}\n"
-        #     printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"
-        #     printf "${restoreCurs}"
-        #     exit 1
+        elif [[ "$line" =~ ^(failed to solve:)(.+:)(.+) ]];   # I am MR HARD CODER >.<
+        then
+            printf "\n${white}${last_step_line}${nc}\n"
+            printf "${lineclr}${red}${BASH_REMATCH[1]}${yel}${BASH_REMATCH[2]}${cyan}${BASH_REMATCH[3]}${red}${BASH_REMATCH[4]}${nc}\n"
+            printf "${restoreCurs}"
+            exit 1
         fi;
 
 
@@ -235,5 +241,5 @@ if [ -z "$1" ]; then printf "${red}Please pass docker compose file path as an ar
 printf "${hideCurs}"
 dockerfile_loadbar $1
 printf "${restoreCurs}"
-if [[ $perc -eq 0 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon\nOr\nI am Dump and the script is not treating some specific case${nc}\n"; exit 1; fi
+if [[ $perc -ne 100 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon\nOr\nI am Dump and the script is not treating some specific cases\n${yel}Check Docker Compose Syntax or run your commands manually to know where the error is${nc}\n"; exit 1; fi
 

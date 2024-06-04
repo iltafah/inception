@@ -8,7 +8,7 @@
 # my-target:
 #     @$(call my_func,"example.com",8000)
 
-
+include $(PWD)/srcs/.env
 COMPOSE_FILE_PATH = ./srcs/docker-compose.yml
 
 # IMG_BUILT ?= 0
@@ -34,7 +34,7 @@ up:
 # @make create 2>/dev/null
 
 build:
-	@(docker compose -f $(COMPOSE_FILE_PATH) build --no-cache --progress plain 2>&1 | ./script.bash $(COMPOSE_FILE_PATH)) || echo "ERR=42" > .env.mk
+	@(docker compose -f $(COMPOSE_FILE_PATH) build --no-cache --progress plain 2>&1 | ./WhaleScript.bash $(COMPOSE_FILE_PATH)) || echo "ERR=42" > .env.mk
 
 create:
 	@docker compose -f $(COMPOSE_FILE_PATH) up -d
@@ -48,10 +48,13 @@ stop:
 restart:
 	@docker compose -f $(COMPOSE_FILE_PATH) restart
 
+down:
+	@docker compose -f $(COMPOSE_FILE_PATH) down
+
 clean:
-	@docker compose -f $(COMPOSE_FILE_PATH) down -v --rmi all
-	@rm -rf /Users/iltafah/Desktop/Temp\ Volume/WordPress/*
-	@rm -rf /Users/iltafah/Desktop/Temp\ Volume/DB/*
+	@docker compose -f $(COMPOSE_FILE_PATH) down --remove-orphans -v --rmi all
+	@find $(WordPressVolumePath) -mindepth 1 -delete
+	@find $(MariaDbVolumePath) -mindepth 1 -delete
 
 re:
 	@make clean

@@ -1,14 +1,19 @@
 #!/bin/sh
 
-openrc && touch /run/openrc/softlevel
-rc-service mariadb setup
+# openrc && touch /run/openrc/softlevel
+# rc-service mariadb setup
 # /etc/init.d/mariadb setup
+# sleep 20
 rc-service mariadb start
 
-mariadb -e "CREATE DATABASE wordpress";
-mariadb -e "CREATE USER '${DB_USER}'@'%.${DOCKER_NETWORK}' IDENTIFIED BY '${DB_PASS}'";
-mariadb -e "GRANT ALL PRIVILEGES ON *.* TO 'tofa7a'@'%.${DOCKER_NETWORK}'";
-mariadb -e "FLUSH PRIVILEGES";
+# exitCode=$(mariadb -e "use wordpress")
+
+if [ ! -d /var/lib/mysql/wordpress ]; then
+    mariadb -e "CREATE DATABASE wordpress";
+    mariadb -e "CREATE USER '${DB_USER}'@'%.${DOCKER_NETWORK}' IDENTIFIED BY '${DB_PASS}'";
+    mariadb -e "GRANT ALL PRIVILEGES ON *.* TO 'tofa7a'@'%.${DOCKER_NETWORK}'";
+    mariadb -e "FLUSH PRIVILEGES";
+fi
 
 rc-service mariadb stop
 
