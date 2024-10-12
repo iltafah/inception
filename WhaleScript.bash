@@ -59,13 +59,13 @@ function print_image_arr () {
 function get_curr_steps () {
 
     # given_img=$1
-    # echo {start steps:} >> debugFile
+    echo {start steps:} >> debugFile
     curr_steps=0
     for i in ${!start_steps_arr[@]}; do
-        # echo ${start_steps_arr[$i]} >> debugFile
+        echo ${start_steps_arr[$i]} >> debugFile
         curr_steps=$(($curr_steps + ${start_steps_arr[$i]} ))    
     done
-    # echo {===============} >> debugFile
+    echo {===============} >> debugFile
     return $curr_steps
 }
 
@@ -135,10 +135,10 @@ function dockerfile_loadbar () {
     done <<< "$imgs"
 
 
-    echo $line > debugFile
+echo $line > debugFile
     while read line ; do 
-        echo $line >> debugFile
-        if [[ "$line" =~ \[(.*)\ *([0-9])/([0-9])\] && perc -ne 100 ]];
+echo $line >> debugFile
+        if [[ "$line" =~ \[(.+)\ +([0-9]+)/([0-9]+)\] && perc -ne 100 ]];
 	    then
                 sleep 1 # For الجمالية
                 last_step_line=$line
@@ -147,8 +147,9 @@ function dockerfile_loadbar () {
                 last_step=${BASH_REMATCH[3]}
                 if [[ $img_name == "" ]]; then img_name=${img_arr[1]}; fi;
 
+echo image name : $img_name , currStep : $curr_step, lastStep: $last_step >> debugFile
                 add_image $img_name $curr_step $last_step #"${img_arr[@]}"
-                # print_image_arr
+print_image_arr
                 get_curr_steps
                 start=$?
                 get_end_steps
@@ -165,14 +166,14 @@ function dockerfile_loadbar () {
                 # fill=$(printf  "▇%.0s" $(seq $bar_count $bar_to_fill ) ) #this shi2 adds one more |, but no problem
                 fill=$(printf  "▇%.0s" `(seq 1 $bar_pos)`) # those `` because of the fish shell doesn't support $() here for some reason
                 ship_spaces=$((49 - pre_spaces)) # expected spaces between the whale and the ship
-# echo ratio : $ratio >> debugFile
-# echo perc : $perc >> debugFile
-# echo pre_spaces : $pre_spaces >> debugFile
-# echo bar_count : $bar_count >> debugFile
-# echo bar_pos : $bar_pos >> debugFile
-# echo bar_spaces : $bar_spaces >> debugFile
-# echo fill : $fill >> debugFile
-# echo ship_spaces : $ship_spaces >> debugFile
+echo ratio : $ratio >> debugFile
+echo perc : $perc >> debugFile
+echo pre_spaces : $pre_spaces >> debugFile
+echo bar_count : $bar_count >> debugFile
+echo bar_pos : $bar_pos >> debugFile
+echo bar_spaces : $bar_spaces >> debugFile
+echo fill : $fill >> debugFile
+echo ship_spaces : $ship_spaces >> debugFile
                 # printf "${clearTerminal}"
                 printf "${line7}${lineclr}${scyan}%${pre_spaces}s               .";                                     printf "%${ship_spaces}s              ${sc6}_\____ \n";                                
                 printf "${lineclr}${scyan}%${pre_spaces}s              ':'";                                            printf "%${ship_spaces}s            ${sc5}|_===__\`.        ==/ \n";                       
@@ -198,6 +199,7 @@ function dockerfile_loadbar () {
                     bar_spaces=$((bar_count - bar_pos))
                     if [[ $bar_pos -ne 0 ]]; then fill=$(printf  ".%.0s" $(seq 1 $bar_pos)); else fill=""; fi;
                     
+echo ${img_arr[$indx]} : ${start_steps_arr[$indx]} , ${end_steps_arr[$indx]} >> debugFile
                     printf "${lineclr}${yel}${img_arr[$indx]} : ${blu}|${grn}${fill}${nc}%${bar_spaces}s${blu}|${nc}[${start_steps_arr[$indx]}/${end_steps_arr[$indx]}]${red}${nc}\n"
                 done
 
@@ -241,5 +243,5 @@ if [ -z "$1" ]; then printf "${red}Please pass docker compose file path as an ar
 printf "${hideCurs}"
 dockerfile_loadbar $1
 printf "${restoreCurs}"
-if [[ $perc -ne 100 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon\nOr\nI am Dump and the script is not treating some specific cases\n${yel}Check Docker Compose Syntax or run your commands manually to know where the error is${nc}\n"; exit 1; fi
+if [[ $perc -ne 100 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon\nOr\nI am Dumb and the script is not treating some specific cases\n${yel}Check Docker Compose Syntax or run your commands manually to know where the error is${nc}\n"; exit 1; fi
 

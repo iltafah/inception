@@ -1,25 +1,15 @@
-# define my_func
-#     $(eval $@_PROTOCOL = "https:")
-#     $(eval $@_HOSTNAME = $(1))
-#     $(eval $@_PORT = $(2))
-#     echo "${$@_PROTOCOL}//${$@_HOSTNAME}:${$@_PORT}/"
-# endef
-
-# my-target:
-#     @$(call my_func,"example.com",8000)
 
 include $(PWD)/srcs/.env
 COMPOSE_FILE_PATH = ./srcs/docker-compose.yml
 
-# IMG_BUILT ?= 0
-# EXIT_AND_DNT_PRINT_MAKEFILE_ERROR =  || if [[ $? -ne 0 ]]; then echo meow; ERR = 1 ; echo ERR = $(ERR) && exit 0; fi
-
-# ERR?=5
 
 #WHEN RUNNING IT ONLY WITH ONE SERVICE IT WON'T WORK - Well Not any more :3
 up:
-# @echo $$?
-# @err=`cat .env.mk | grep ERR | cut -d "=" -f2-`; echo $$err; if [[ $$err -eq 1337 ]]; then echo a; make build 2>/dev/null; echo b; fi;
+	@echo 'Creating Wordpress & MariaDb volumes:'
+	@mkdir -p $(MariaDbVolumePath)
+	@echo "Mariadb Volume has been created: $(MariaDbVolumePath)"
+	@mkdir -p $(WordPressVolumePath)
+	@echo "WordPress Volume has been created: $(WordPressVolumePath)"
 	@echo "ERR=1337" > .env.mk
 	@make build
 	@err=`cat .env.mk | grep ERR | cut -d "=" -f2-`;\
@@ -28,10 +18,6 @@ up:
 			make create;\
 		fi;
 	@rm .env.mk
-# @make build 2>/dev/null || echo uwu
-# @echod geijrog
-# @echo $$?
-# @make create 2>/dev/null
 
 build:
 	@(docker compose -f $(COMPOSE_FILE_PATH) build --no-cache --progress plain 2>&1 | ./WhaleScript.bash $(COMPOSE_FILE_PATH)) || echo "ERR=42" > .env.mk
@@ -53,8 +39,8 @@ down:
 
 clean:
 	@docker compose -f $(COMPOSE_FILE_PATH) down --remove-orphans -v --rmi all
-	@find $(WordPressVolumePath) -mindepth 1 -delete
-	@find $(MariaDbVolumePath) -mindepth 1 -delete
+	@rm -rf $(WordPressVolumePath)
+	@rm -rf $(MariaDbVolumePath)
 
 re:
 	@make clean

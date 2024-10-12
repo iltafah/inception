@@ -1,4 +1,4 @@
-version: "3.8"
+#version: "3.8"
 
 services:
 
@@ -41,6 +41,7 @@ services:
       ADMIN_PASS: ${SUPER_USER_PASS}
       AUTHOR_USER: ${SECONDRY_USER}
       AUTHOR_PASS: ${SECONDRY_USER_PASS}
+      Domain_Name: ${DomainName}
 
   mariadb:
     image: mariadb
@@ -123,6 +124,8 @@ services:
       context: requirements/bonus/static-site/
     container_name: static-site
     restart: always
+    environment:
+      BASE_URL: ${DomainName}
     ports:
       - 80:80
     networks:

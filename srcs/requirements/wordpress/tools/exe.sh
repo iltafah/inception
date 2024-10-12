@@ -9,7 +9,7 @@ if [ ! -e /var/www/html/wordpress/index.php ]; then
     sed -i "69i\define('WP_REDIS_HOST', 'redis');/*" /var/www/html/wordpress/wp-config.php
     sed -i "69i\*/define('WP_REDIS_PORT', 6379);" /var/www/html/wordpress/wp-config.php
 
-    wp core install --url=localhost --title="uWu" --admin_user=${ADMIN_USER} --admin_password=${ADMIN_PASS} --admin_email=tofa7a@uwu.co
+    wp core install --url=${Domain_Name} --title="uWu" --admin_user=${ADMIN_USER} --admin_password=${ADMIN_PASS} --admin_email=tofa7a@uwu.co
     wp user create ${AUTHOR_USER} evaluator@42.fr --role=author --user_pass=${AUTHOR_PASS}
     wp theme install innometrics-marketing --activate
     wp plugin install redis-cache --activate

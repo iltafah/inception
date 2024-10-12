@@ -1,41 +1,41 @@
 
-#1 [ftp internal] load build definition from Dockerfile
-#1 transferring dockerfile: 32B done
+#1 [redis internal] load build definition from Dockerfile
+#1 transferring dockerfile: 31B done
 #1 DONE 0.0s
 
-#2 [wordpress internal] load build definition from Dockerfile
+#2 [nginx internal] load build definition from Dockerfile
 #2 transferring dockerfile: 32B done
 #2 DONE 0.0s
 
-#3 [nginx internal] load build definition from Dockerfile
+#3 [static-site internal] load build definition from Dockerfile
 #3 transferring dockerfile: 32B done
 #3 DONE 0.0s
 
-#4 [portainer internal] load build definition from Dockerfile
+#4 [adminer internal] load build definition from Dockerfile
 #4 transferring dockerfile: 32B done
 #4 DONE 0.0s
 
-#5 [static-site internal] load build definition from Dockerfile
+#5 [wordpress internal] load build definition from Dockerfile
 #5 transferring dockerfile: 32B done
 #5 DONE 0.0s
 
-#6 [redis internal] load build definition from Dockerfile
-#6 transferring dockerfile: 31B done
+#6 [mariadb internal] load build definition from Dockerfile
+#6 transferring dockerfile: 32B done
 #6 DONE 0.0s
 
-#7 [mariadb internal] load build definition from Dockerfile
+#7 [portainer internal] load build definition from Dockerfile
 #7 transferring dockerfile: 32B done
 #7 DONE 0.0s
 
-#8 [adminer internal] load build definition from Dockerfile
+#8 [ftp internal] load build definition from Dockerfile
 #8 transferring dockerfile: 32B done
 #8 DONE 0.0s
 
-#9 [ftp internal] load .dockerignore
+#9 [redis internal] load .dockerignore
 #9 transferring context: 32B done
 #9 DONE 0.0s
 
-#10 [adminer internal] load .dockerignore
+#10 [static-site internal] load .dockerignore
 #10 transferring context: 32B done
 #10 DONE 0.0s
 
@@ -43,256 +43,2751 @@
 #11 transferring context: 32B done
 #11 DONE 0.0s
 
-#12 [mariadb internal] load .dockerignore
+#12 [portainer internal] load .dockerignore
 #12 transferring context: 32B done
 #12 DONE 0.0s
 
-#13 [redis internal] load .dockerignore
-#13 transferring context: 32B done
+#13 [wordpress internal] load .dockerignore
+#13 transferring context: 2B done
 #13 DONE 0.0s
 
-#14 [portainer internal] load .dockerignore
+#14 [mariadb internal] load .dockerignore
 #14 transferring context: 32B done
 #14 DONE 0.0s
 
-#15 [static-site internal] load .dockerignore
+#15 [adminer internal] load .dockerignore
 #15 transferring context: 32B done
 #15 DONE 0.0s
 
-#16 [wordpress internal] load .dockerignore
-#16 transferring context: 2B done
+#16 [ftp internal] load .dockerignore
+#16 transferring context: 32B done
 #16 DONE 0.0s
 
-#17 [ftp internal] load metadata for docker.io/library/alpine:3.19
-#17 DONE 1.5s
+#17 [redis internal] load metadata for docker.io/library/alpine:3.19
+#17 DONE 0.7s
 
-#18 [wordpress internal] load build context
-#18 transferring context: 59B done
+#18 [nginx internal] load build context
+#18 transferring context: 63B done
 #18 DONE 0.0s
 
 #19 [static-site internal] load build context
 #19 transferring context: 1.11kB done
 #19 DONE 0.0s
 
-#20 [mariadb internal] load build context
+#20 [wordpress internal] load build context
 #20 transferring context: 59B done
 #20 DONE 0.0s
 
-#21 [nginx internal] load build context
-#21 transferring context: 63B done
+#21 [mariadb internal] load build context
+#21 transferring context: 59B done
 #21 DONE 0.0s
 
-#22 [mariadb 1/5] FROM docker.io/library/alpine:3.19@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+#22 [nginx 1/6] FROM docker.io/library/alpine:3.19@sha256:ae65dbf8749a7d4527648ccee1fa3deb6bfcae34cbc30fc67aa45c44dcaa90ee
+image name : nginx , currStep : 1, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 5
+> mariadb : 5
+> redis : 5
+> ftp : 5
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+1
+0
+0
+0
+0
+0
+0
+0
+{===============}
+ratio : 2
+perc : 2
+pre_spaces : 0
+bar_count : 20
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 49
+nginx : 1 , 6
+wordpress : 0 , 5
+mariadb : 0 , 5
+redis : 0 , 5
+ftp : 0 , 5
+adminer : 0 , 5
+portainer : 0 , 5
+static-site : 0 , 5
 #22 CACHED
 
-#23 [nginx 2/5] RUN apk upgrade && apk update
-#23 0.271 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
-#23 0.751 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
-#23 1.249 Upgrading critical system libraries and apk-tools:
-#23 1.249 (1/1) Upgrading apk-tools (2.14.0-r5 -> 2.14.4-r0)
-#23 1.302 Executing busybox-1.36.1-r15.trigger
-#23 1.364 Continuing the upgrade transaction with new apk-tools:
-#23 1.368 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
-#23 1.698 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
-#23 2.066 (1/6) Upgrading busybox (1.36.1-r15 -> 1.36.1-r18)
-#23 2.123 Executing busybox-1.36.1-r18.post-upgrade
-#23 2.132 (2/6) Upgrading busybox-binsh (1.36.1-r15 -> 1.36.1-r18)
-#23 2.169 (3/6) Upgrading ca-certificates-bundle (20230506-r0 -> 20240226-r0)
-#23 2.214 (4/6) Upgrading libcrypto3 (3.1.4-r5 -> 3.1.5-r0)
-#23 2.316 (5/6) Upgrading libssl3 (3.1.4-r5 -> 3.1.5-r0)
-#23 2.363 (6/6) Upgrading ssl_client (1.36.1-r15 -> 1.36.1-r18)
-#23 2.400 Executing busybox-1.36.1-r18.trigger
-#23 2.404 OK: 7 MiB in 15 packages
-#23 2.470 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
-#23 2.850 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
-#23 3.258 v3.19.1-579-g751a2e41b25 [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
-#23 3.258 v3.19.1-585-g7822f110838 [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
-#23 3.258 OK: 23030 distinct packages available
-#23 DONE 3.6s
+#23 [ftp 2/6] RUN apk upgrade && apk update
+image name : ftp , currStep : 2, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 5
+> mariadb : 5
+> redis : 5
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+1
+0
+0
+0
+2
+0
+0
+0
+{===============}
+ratio : 2
+perc : 6
+pre_spaces : 2
+bar_count : 20
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 47
+nginx : 1 , 6
+wordpress : 0 , 5
+mariadb : 0 , 5
+redis : 0 , 5
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 0 , 5
+static-site : 0 , 5
+#23 0.190 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#23 0.660 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#23 1.160 OK: 7 MiB in 15 packages
+#23 1.235 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#23 1.617 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#23 2.035 v3.19.4-71-g3d39e616f07 [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
+#23 2.035 v3.19.4-71-g3d39e616f07 [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
+#23 2.035 OK: 23030 distinct packages available
+#23 DONE 2.3s
 
-#24 [portainer 3/5] RUN apk add apache2-utils
-#24 0.904 (1/5) Installing libuuid (2.39.3-r0)
-#24 1.094 (2/5) Installing apr (1.7.4-r0)
-#24 1.184 (3/5) Installing libexpat (2.6.2-r0)
-#24 1.229 (4/5) Installing apr-util (1.6.3-r1)
-#24 1.279 (5/5) Installing apache2-utils (2.4.59-r0)
-#24 1.331 Executing busybox-1.36.1-r18.trigger
-#24 1.350 OK: 8 MiB in 20 packages
-#24 DONE 2.1s
+#24 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+image name : wordpress , currStep : 3, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 5
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+1
+3
+0
+0
+2
+0
+0
+0
+{===============}
+ratio : 2
+perc : 12
+pre_spaces : 5
+bar_count : 20
+bar_pos : 2
+bar_spaces : 18
+fill : ▇▇
+ship_spaces : 44
+nginx : 1 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 0 , 5
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 0 , 5
+static-site : 0 , 5
+#24 0.901 (1/25) Installing ca-certificates (20240226-r0)
+#24 1.215 (2/25) Installing brotli-libs (1.1.0-r1)
+#24 ...
 
-#25 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
-#25 ...
+#25 [redis 3/3] RUN apk add redis
+image name : redis , currStep : 3, lastStep: 3
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+1
+3
+0
+3
+2
+0
+0
+0
+{===============}
+ratio : 2
+perc : 18
+pre_spaces : 8
+bar_count : 20
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 41
+nginx : 1 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 0 , 5
+static-site : 0 , 5
+#0 0.803 (1/1) Installing redis (7.2.4-r1)
+#0 1.093 Executing redis-7.2.4-r1.pre-install
+#0 1.296 Executing redis-7.2.4-r1.post-install
+#0 1.298 Executing busybox-1.36.1-r19.trigger
+#0 1.306 OK: 11 MiB in 16 packages
+#25 DONE 1.4s
 
-#26 [redis 3/3] RUN apk add redis
-#0 1.502 (1/1) Installing redis (7.2.4-r0)
-#0 1.761 Executing redis-7.2.4-r0.pre-install
-#0 2.212 Executing redis-7.2.4-r0.post-install
-#0 2.232 Executing busybox-1.36.1-r18.trigger
-#0 2.247 OK: 11 MiB in 16 packages
-#26 DONE 2.4s
+#26 [redis] exporting to image
+#26 exporting layers 0.0s done
+#26 writing image sha256:e623d201566b2036e4ba1990fbab6cdaa69ca6a69c4601580a18821fc75dee9b done
+#26 naming to docker.io/library/redis done
+#26 DONE 0.0s
 
-#27 [redis] exporting to image
-#27 exporting layers 0.1s done
-#27 writing image sha256:f181a0e0a57b13c08e89744596866a2fea4d7634b911a703587d4b13d4736ebf done
-#27 naming to docker.io/library/redis done
-#27 DONE 0.1s
+#24 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+image name : wordpress , currStep : 3, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+1
+3
+0
+3
+2
+0
+0
+0
+{===============}
+ratio : 2
+perc : 18
+pre_spaces : 8
+bar_count : 20
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 41
+nginx : 1 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 0 , 5
+static-site : 0 , 5
+#24 1.422 (3/25) Installing c-ares (1.27.0-r0)
+#24 1.488 (4/25) Installing libunistring (1.1-r2)
+#24 ...
 
-#25 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
-#25 0.482 Connecting to github.com (140.82.121.3:443)
-#25 ...
+#27 [portainer 3/5] RUN apk add apache2-utils
+image name : portainer , currStep : 3, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+1
+3
+0
+3
+2
+0
+3
+0
+{===============}
+ratio : 2
+perc : 24
+pre_spaces : 11
+bar_count : 20
+bar_pos : 4
+bar_spaces : 16
+fill : ▇▇▇▇
+ship_spaces : 38
+nginx : 1 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 0 , 5
+#0 1.023 (1/5) Installing libuuid (2.39.3-r0)
+#0 1.205 (2/5) Installing apr (1.7.5-r0)
+#0 1.356 (3/5) Installing libexpat (2.6.3-r0)
+#0 1.427 (4/5) Installing apr-util (1.6.3-r1)
+#0 1.513 (5/5) Installing apache2-utils (2.4.62-r0)
+#0 1.601 Executing busybox-1.36.1-r19.trigger
+#0 1.624 OK: 8 MiB in 20 packages
+#27 DONE 1.7s
+
+#24 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+image name : wordpress , currStep : 3, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+1
+3
+0
+3
+2
+0
+3
+0
+{===============}
+ratio : 2
+perc : 24
+pre_spaces : 11
+bar_count : 20
+bar_pos : 4
+bar_spaces : 16
+fill : ▇▇▇▇
+ship_spaces : 38
+nginx : 1 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 0 , 5
+#24 1.689 (5/25) Installing libidn2 (2.3.4-r4)
+#24 1.748 (6/25) Installing nghttp2-libs (1.58.0-r0)
+#24 1.805 (7/25) Installing libcurl (8.9.1-r1)
+#24 ...
 
 #28 [nginx 3/6] RUN apk add nginx && apk add openssl
-#0 0.891 (1/2) Installing pcre (8.45-r3)
-#0 1.224 (2/2) Installing nginx (1.24.0-r16)
-#0 1.281 Executing nginx-1.24.0-r16.pre-install
-#0 1.404 Executing nginx-1.24.0-r16.post-install
-#0 1.412 Executing busybox-1.36.1-r18.trigger
-#0 1.422 OK: 9 MiB in 17 packages
-#0 2.284 (1/1) Installing openssl (3.1.5-r0)
-#0 2.692 Executing busybox-1.36.1-r18.trigger
-#0 2.697 OK: 10 MiB in 18 packages
-#28 DONE 2.8s
+image name : nginx , currStep : 3, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+3
+3
+0
+3
+2
+0
+3
+0
+{===============}
+ratio : 2
+perc : 28
+pre_spaces : 13
+bar_count : 20
+bar_pos : 5
+bar_spaces : 15
+fill : ▇▇▇▇▇
+ship_spaces : 36
+nginx : 3 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 0 , 5
+#0 0.705 (1/2) Installing pcre (8.45-r3)
+#0 0.957 (2/2) Installing nginx (1.24.0-r16)
+#0 1.019 Executing nginx-1.24.0-r16.pre-install
+#0 1.102 Executing nginx-1.24.0-r16.post-install
+#0 1.106 Executing busybox-1.36.1-r19.trigger
+#0 1.114 OK: 9 MiB in 17 packages
+#0 1.521 (1/1) Installing openssl (3.1.7-r0)
+#0 1.836 Executing busybox-1.36.1-r19.trigger
+#0 1.841 OK: 10 MiB in 18 packages
+#28 DONE 1.9s
 
-#29 [mariadb 3/8] RUN apk add curl mariadb mariadb-client openrc
-#0 1.237 (1/29) Installing ca-certificates (20240226-r0)
-#0 1.548 (2/29) Installing brotli-libs (1.1.0-r1)
-#0 1.687 (3/29) Installing c-ares (1.27.0-r0)
-#0 1.741 (4/29) Installing libunistring (1.1-r2)
-#0 2.076 (5/29) Installing libidn2 (2.3.4-r4)
-#0 2.192 (6/29) Installing nghttp2-libs (1.58.0-r0)
-#0 2.251 (7/29) Installing libcurl (8.5.0-r0)
-#0 2.343 (8/29) Installing curl (8.5.0-r0)
-#0 2.424 (9/29) Installing mariadb-common (10.11.6-r0)
-#0 2.553 (10/29) Installing libaio (0.3.113-r2)
-#0 2.590 (11/29) Installing libgcc (13.2.1_git20231014-r0)
-#0 2.633 (12/29) Installing xz-libs (5.4.5-r0)
-#0 2.690 (13/29) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#0 2.739 (14/29) Installing libncursesw (6.4_p20231125-r0)
-#0 2.813 (15/29) Installing skalibs (2.14.0.1-r0)
-#0 2.864 (16/29) Installing utmps-libs (0.1.2.2-r0)
-#0 2.900 (17/29) Installing linux-pam (1.5.3-r7)
-#0 2.960 (18/29) Installing pcre2 (10.42-r2)
-#29 3.066 (19/29) Installing libstdc++ (13.2.1_git20231014-r0)
-#29 ...
+#24 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+image name : wordpress , currStep : 3, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+3
+3
+0
+3
+2
+0
+3
+0
+{===============}
+ratio : 2
+perc : 28
+pre_spaces : 13
+bar_count : 20
+bar_pos : 5
+bar_spaces : 15
+fill : ▇▇▇▇▇
+ship_spaces : 36
+nginx : 3 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 0 , 5
+#24 1.900 (8/25) Installing curl (8.9.1-r1)
+#24 2.023 (9/25) Installing php82-common (8.2.20-r0)
+#24 2.071 (10/25) Installing argon2-libs (20190702-r5)
+#24 2.116 (11/25) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#24 2.166 (12/25) Installing libncursesw (6.4_p20231125-r0)
+#24 ...
 
-#30 [nginx 4/6] RUN mkdir /var/www/html
+#29 [nginx 4/6] RUN mkdir /var/www/html
+image name : nginx , currStep : 4, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+4
+3
+0
+3
+2
+0
+3
+0
+{===============}
+ratio : 2
+perc : 30
+pre_spaces : 14
+bar_count : 20
+bar_pos : 6
+bar_spaces : 14
+fill : ▇▇▇▇▇▇
+ship_spaces : 35
+nginx : 4 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 0 , 5
+#29 DONE 0.3s
+
+#24 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+image name : wordpress , currStep : 3, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+4
+3
+0
+3
+2
+0
+3
+0
+{===============}
+ratio : 2
+perc : 30
+pre_spaces : 14
+bar_count : 20
+bar_pos : 6
+bar_spaces : 14
+fill : ▇▇▇▇▇▇
+ship_spaces : 35
+nginx : 4 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 0 , 5
+#24 2.243 (13/25) Installing libedit (20230828.3.1-r3)
+#24 2.299 (14/25) Installing pcre2 (10.42-r2)
+#24 2.385 (15/25) Installing xz-libs (5.4.5-r0)
+#24 2.446 (16/25) Installing libxml2 (2.11.8-r0)
+#24 ...
+
+#30 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+image name : nginx , currStep : 5, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+5
+3
+0
+3
+2
+0
+3
+0
+{===============}
+ratio : 2
+perc : 32
+pre_spaces : 15
+bar_count : 20
+bar_pos : 6
+bar_spaces : 14
+fill : ▇▇▇▇▇▇
+ship_spaces : 34
+nginx : 5 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 0 , 5
+#0 0.201 .+........+.+............+........+.+..................+..+...+.+......+...+..+...+.+..+...+.......+...+..+...................+.....+...+...+.......+...+..+...+...............+...+.......+.........+...+.....+..........+...+++++++++++++++++++++++++++++++++++++++*.......+....+...+++++++++++++++++++++++++++++++++++++++*..................+....+..+......+...+......+.+...+......+...+........+...+..........+.....+......+..........+.....++++++
+#0 0.219 ....+++++++++++++++++++++++++++++++++++++++*....+....+..+.+..................+..............+...+.......+..............................+..+...+++++++++++++++++++++++++++++++++++++++*...+.....+...+....+.....+.............+..+.......+......+..+.......+...+........+...+....+.....+...+.......+......+.................+...+.+...+...++++++
+#0 0.252 -----
 #30 DONE 0.3s
 
-#31 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
-#0 1.083 (1/16) Installing php82-common (8.2.19-r0)
-#0 1.281 (2/16) Installing argon2-libs (20190702-r5)
-#0 1.325 (3/16) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#0 1.408 (4/16) Installing libncursesw (6.4_p20231125-r0)
-#0 1.521 (5/16) Installing libedit (20230828.3.1-r3)
-#0 1.585 (6/16) Installing pcre2 (10.42-r2)
-#0 1.697 (7/16) Installing xz-libs (5.4.5-r0)
-#0 1.770 (8/16) Installing libxml2 (2.11.8-r0)
-#0 2.073 (9/16) Installing php82 (8.2.19-r0)
-#0 2.483 (10/16) Installing php82-openssl (8.2.19-r0)
-#0 2.551 (11/16) Installing php82-mysqlnd (8.2.19-r0)
-#0 2.595 (12/16) Installing php82-mysqli (8.2.19-r0)
-#0 2.637 (13/16) Installing php82-session (8.2.19-r0)
-#0 2.683 (14/16) Installing libunistring (1.1-r2)
-#0 2.813 (15/16) Installing libidn2 (2.3.4-r4)
-#0 2.869 (16/16) Installing wget (1.21.4-r0)
-#0 2.925 Executing busybox-1.36.1-r18.trigger
-#0 2.933 OK: 21 MiB in 31 packages
-#31 DONE 3.2s
+#31 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
+image name : nginx , currStep : 6, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+6
+3
+0
+3
+2
+0
+3
+0
+{===============}
+ratio : 2
+perc : 34
+pre_spaces : 16
+bar_count : 20
+bar_pos : 6
+bar_spaces : 14
+fill : ▇▇▇▇▇▇
+ship_spaces : 33
+nginx : 6 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 0 , 5
+#31 DONE 0.0s
 
-#29 [mariadb 3/8] RUN apk add curl mariadb mariadb-client openrc
-#29 3.255 (20/29) Installing libxml2 (2.11.8-r0)
-#29 3.342 (21/29) Installing zstd-libs (1.5.5-r8)
-#29 3.417 (22/29) Installing mariadb (10.11.6-r0)
-#29 3.476 Executing mariadb-10.11.6-r0.pre-install
-#29 ...
+#24 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+image name : wordpress , currStep : 3, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 5
+{===============}
+{start steps:}
+NADA
+6
+3
+0
+3
+2
+0
+3
+0
+{===============}
+ratio : 2
+perc : 34
+pre_spaces : 16
+bar_count : 20
+bar_pos : 6
+bar_spaces : 14
+fill : ▇▇▇▇▇▇
+ship_spaces : 33
+nginx : 6 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 0 , 5
+#24 2.568 (17/25) Installing php82 (8.2.20-r0)
+#24 ...
 
-#32 [adminer 4/5] RUN mkdir -p /var/www/html/
-#32 DONE 0.4s
+#26 [nginx] exporting to image
+#26 exporting layers 0.0s done
+#26 writing image sha256:ba65028cd7abff8001f09d2bdf771aa7626c5ce83c6e0b56430975550d8181c1 done
+#26 naming to docker.io/library/nginx done
+#26 DONE 0.1s
 
-#33 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
-#0 0.374 .......+++++++++++++++++++++++++++++++++++++++*...........+...+..+...+.......+........+.......+........+.+...+..+.+.....+....+...........+.........+....+......+...+......+..+++++++++++++++++++++++++++++++++++++++*.........+...............+.......+..............+............+.......+......+.....++++++
-#0 0.393 ....+...+.................+.......+..+......+.........+.+++++++++++++++++++++++++++++++++++++++*..................+...+....+..+...+.+..+.......+..+++++++++++++++++++++++++++++++++++++++*........+...+.........+.+.........+..+....+......+.....+...+...............+...+.......+..+......+...+......+.+.........+.........+.........+.....+......+.+..............+.......+.................+......+......................+.....+.......+..+...+......++++++
-#0 0.474 -----
-#33 DONE 0.6s
+#32 [static-site 3/10] RUN apk add npm apache2
+image name : static-site , currStep : 3, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+3
+0
+3
+2
+0
+3
+3
+{===============}
+ratio : 2
+perc : 40
+pre_spaces : 19
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 30
+nginx : 6 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 0 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#0 0.805 (1/18) Installing libuuid (2.39.3-r0)
+#0 1.041 (2/18) Installing apr (1.7.5-r0)
+#0 1.148 (3/18) Installing libexpat (2.6.3-r0)
+#0 1.209 (4/18) Installing apr-util (1.6.3-r1)
+#0 1.276 (5/18) Installing pcre2 (10.42-r2)
+#0 1.409 (6/18) Installing apache2 (2.4.62-r0)
+#0 1.494 Executing apache2-2.4.62-r0.pre-install
+#0 1.692 (7/18) Installing ca-certificates (20240226-r0)
+#0 1.786 (8/18) Installing libgcc (13.2.1_git20231014-r0)
+#0 1.841 (9/18) Installing libstdc++ (13.2.1_git20231014-r0)
+#0 2.073 (10/18) Installing ada-libs (2.7.4-r0)
+#0 2.139 (11/18) Installing brotli-libs (1.1.0-r1)
+#0 2.259 (12/18) Installing c-ares (1.27.0-r0)
+#0 2.312 (13/18) Installing icu-data-en (74.1-r0)
+#0 2.524 Executing icu-data-en-74.1-r0.post-install
+#0 2.526 Makefile README.md WhaleScript.bash debugFile srcs
+#0 2.526 Makefile README.md WhaleScript.bash debugFile srcs If you need ICU with non-English locales and legacy charset support, install
+#0 2.526 Makefile README.md WhaleScript.bash debugFile srcs package icu-data-full.
+#0 2.526 Makefile README.md WhaleScript.bash debugFile srcs
+#0 2.527 (14/18) Installing icu-libs (74.1-r0)
+#32 2.844 (15/18) Installing nghttp2-libs (1.58.0-r0)
+#32 2.894 (16/18) Installing libuv (1.47.0-r0)
+#32 2.946 (17/18) Installing nodejs-current (21.7.2-r0)
+#32 ...
 
-#34 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
-#0 1.193 (1/25) Installing ca-certificates (20240226-r0)
-#0 1.527 (2/25) Installing brotli-libs (1.1.0-r1)
-#0 1.671 (3/25) Installing c-ares (1.27.0-r0)
-#0 1.721 (4/25) Installing libunistring (1.1-r2)
-#0 2.074 (5/25) Installing libidn2 (2.3.4-r4)
-#0 2.190 (6/25) Installing nghttp2-libs (1.58.0-r0)
-#0 2.254 (7/25) Installing libcurl (8.5.0-r0)
-#0 2.348 (8/25) Installing curl (8.5.0-r0)
-#0 2.429 (9/25) Installing php82-common (8.2.19-r0)
-#0 2.473 (10/25) Installing argon2-libs (20190702-r5)
-#0 2.538 (11/25) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#0 2.580 (12/25) Installing libncursesw (6.4_p20231125-r0)
-#0 2.632 (13/25) Installing libedit (20230828.3.1-r3)
-#0 2.684 (14/25) Installing pcre2 (10.42-r2)
-#0 2.763 (15/25) Installing xz-libs (5.4.5-r0)
-#0 2.821 (16/25) Installing libxml2 (2.11.8-r0)
-#0 2.918 (17/25) Installing php82 (8.2.19-r0)
-#0 3.138 (18/25) Installing libacl (2.3.1-r4)
-#0 3.180 (19/25) Installing php82-fpm (8.2.19-r0)
-#0 3.385 (20/25) Installing oniguruma (6.9.9-r0)
-#0 3.449 (21/25) Installing php82-mbstring (8.2.19-r0)
-#0 3.605 (22/25) Installing php82-openssl (8.2.19-r0)
-#0 3.664 (23/25) Installing php82-mysqlnd (8.2.19-r0)
-#0 3.720 (24/25) Installing php82-mysqli (8.2.19-r0)
-#34 ...
+#33 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
+image name : adminer , currStep : 3, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+3
+0
+3
+2
+3
+3
+3
+{===============}
+ratio : 2
+perc : 46
+pre_spaces : 22
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 27
+nginx : 6 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 3 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#0 0.886 (1/16) Installing php82-common (8.2.20-r0)
+#0 1.111 (2/16) Installing argon2-libs (20190702-r5)
+#0 1.165 (3/16) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#0 1.287 (4/16) Installing libncursesw (6.4_p20231125-r0)
+#0 1.484 (5/16) Installing libedit (20230828.3.1-r3)
+#0 1.611 (6/16) Installing pcre2 (10.42-r2)
+#0 1.823 (7/16) Installing xz-libs (5.4.5-r0)
+#0 1.926 (8/16) Installing libxml2 (2.11.8-r0)
+#0 2.192 (9/16) Installing php82 (8.2.20-r0)
+#0 2.753 (10/16) Installing php82-openssl (8.2.20-r0)
+#0 2.813 (11/16) Installing php82-mysqlnd (8.2.20-r0)
+#0 2.871 (12/16) Installing php82-mysqli (8.2.20-r0)
+#0 2.921 (13/16) Installing php82-session (8.2.20-r0)
+#0 2.972 (14/16) Installing libunistring (1.1-r2)
+#0 3.161 (15/16) Installing libidn2 (2.3.4-r4)
+#0 3.233 (16/16) Installing wget (1.21.4-r0)
+#0 3.325 Executing busybox-1.36.1-r19.trigger
+#0 3.336 OK: 21 MiB in 31 packages
+#33 DONE 3.5s
 
-#35 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
-#35 DONE 0.0s
+#24 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+image name : wordpress , currStep : 3, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+3
+0
+3
+2
+3
+3
+3
+{===============}
+ratio : 2
+perc : 46
+pre_spaces : 22
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 27
+nginx : 6 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 3 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#24 2.859 (18/25) Installing libacl (2.3.1-r4)
+#24 2.905 (19/25) Installing php82-fpm (8.2.20-r0)
+#24 3.325 (20/25) Installing oniguruma (6.9.9-r0)
+#24 3.451 (21/25) Installing php82-mbstring (8.2.20-r0)
+#24 3.629 (22/25) Installing php82-openssl (8.2.20-r0)
+#24 3.686 (23/25) Installing php82-mysqlnd (8.2.20-r0)
+#24 3.748 (24/25) Installing php82-mysqli (8.2.20-r0)
+#24 ...
 
-#36 [ftp 3/6] RUN apk add openrc vim lftp vsftpd
-#0 0.893 (1/17) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#0 1.112 (2/17) Installing libncursesw (6.4_p20231125-r0)
-#0 1.239 (3/17) Installing readline (8.2.1-r2)
-#0 1.296 (4/17) Installing libgcc (13.2.1_git20231014-r0)
-#0 1.378 (5/17) Installing libstdc++ (13.2.1_git20231014-r0)
-#0 1.588 (6/17) Installing lftp (4.9.2-r6)
-#0 1.771 (7/17) Installing ifupdown-ng (0.12.1-r4)
-#0 1.829 (8/17) Installing libcap2 (2.69-r1)
-#0 1.883 (9/17) Installing openrc (0.52.1-r2)
-#0 2.150 Executing openrc-0.52.1-r2.post-install
-#0 2.158 (10/17) Installing vim-common (9.0.2127-r0)
-#0 3.000 (11/17) Installing xxd (9.0.2127-r0)
-#0 3.043 (12/17) Installing vim (9.0.2127-r0)
-#0 3.294 (13/17) Installing skalibs (2.14.0.1-r0)
-#0 3.347 (14/17) Installing utmps-libs (0.1.2.2-r0)
-#0 3.391 (15/17) Installing linux-pam (1.5.3-r7)
-#0 3.468 (16/17) Installing vsftpd (3.0.5-r2)
-#0 3.528 Executing vsftpd-3.0.5-r2.pre-install
-#0 3.574 (17/17) Installing vsftpd-openrc (3.0.5-r2)
-#0 3.619 Executing busybox-1.36.1-r18.trigger
-#0 3.633 OK: 47 MiB in 32 packages
-#36 DONE 3.8s
+#34 [adminer 4/5] RUN mkdir -p /var/www/html/
+image name : adminer , currStep : 4, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+3
+0
+3
+2
+4
+3
+3
+{===============}
+ratio : 2
+perc : 48
+pre_spaces : 23
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 26
+nginx : 6 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 4 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#34 DONE 0.3s
 
-#34 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
-#34 3.769 (25/25) Installing php82-phar (8.2.19-r0)
-#34 3.836 Executing busybox-1.36.1-r18.trigger
-#34 ...
+#24 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+image name : wordpress , currStep : 3, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+3
+0
+3
+2
+4
+3
+3
+{===============}
+ratio : 2
+perc : 48
+pre_spaces : 23
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 26
+nginx : 6 , 6
+wordpress : 3 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 4 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#24 3.803 (25/25) Installing php82-phar (8.2.20-r0)
+#24 3.874 Executing busybox-1.36.1-r19.trigger
+#24 3.885 Executing ca-certificates-20240226-r0.trigger
+#24 3.933 OK: 34 MiB in 40 packages
+#24 DONE 4.1s
 
-#27 [nginx] exporting to image
-#27 exporting layers 0.1s done
-#27 writing image sha256:dba8a85e7b800b615079791a46c3f7bcfb80c9ff38fc0039f555e863d4b0a953 done
-#27 naming to docker.io/library/nginx done
-#27 DONE 0.2s
+#35 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
+image name : wordpress , currStep : 4, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+4
+0
+3
+2
+4
+3
+3
+{===============}
+ratio : 2
+perc : 50
+pre_spaces : 24
+bar_count : 20
+bar_pos : 10
+bar_spaces : 10
+fill : ▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 25
+nginx : 6 , 6
+wordpress : 4 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 4 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#35 DONE 0.3s
 
-#34 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
-#34 3.844 Executing ca-certificates-20240226-r0.trigger
-#34 3.905 OK: 34 MiB in 40 packages
-#34 DONE 4.1s
+#36 [wordpress 5/9] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+image name : wordpress , currStep : 5, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+5
+0
+3
+2
+4
+3
+3
+{===============}
+ratio : 2
+perc : 52
+pre_spaces : 25
+bar_count : 20
+bar_pos : 10
+bar_spaces : 10
+fill : ▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 24
+nginx : 6 , 6
+wordpress : 5 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 2 , 6
+adminer : 4 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#36 0.250 % Total % Received % Xferd Average Speed Time Time Time Current
+#36 0.251 Dload Upload Total Spent Left Speed
+#36 0.252  0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 26 6882k 26 1823k 0 0 3053k 0 0:00:02 --:--:-- 0:00:02 3050k
+#36 ...
 
-#37 [ftp 4/6] RUN adduser -D tofa7a
-#37 DONE 0.3s
+#37 [ftp 3/6] RUN apk add openrc vim lftp vsftpd
+image name : ftp , currStep : 3, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+5
+0
+3
+3
+4
+3
+3
+{===============}
+ratio : 2
+perc : 54
+pre_spaces : 26
+bar_count : 20
+bar_pos : 10
+bar_spaces : 10
+fill : ▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 23
+nginx : 6 , 6
+wordpress : 5 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 3 , 6
+adminer : 4 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#0 1.027 (1/17) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#0 1.293 (2/17) Installing libncursesw (6.4_p20231125-r0)
+#0 1.501 (3/17) Installing readline (8.2.1-r2)
+#0 1.665 (4/17) Installing libgcc (13.2.1_git20231014-r0)
+#0 1.756 (5/17) Installing libstdc++ (13.2.1_git20231014-r0)
+#0 2.266 (6/17) Installing lftp (4.9.2-r6)
+#0 2.599 (7/17) Installing ifupdown-ng (0.12.1-r4)
+#0 2.650 (8/17) Installing libcap2 (2.69-r1)
+#0 2.699 (9/17) Installing openrc (0.52.1-r2)
+#0 2.808 Executing openrc-0.52.1-r2.post-install
+#0 2.810 (10/17) Installing vim-common (9.0.2127-r0)
+#0 4.472 (11/17) Installing xxd (9.0.2127-r0)
+#0 4.515 (12/17) Installing vim (9.0.2127-r0)
+#0 4.797 (13/17) Installing skalibs (2.14.0.1-r0)
+#0 4.856 (14/17) Installing utmps-libs (0.1.2.2-r0)
+#0 4.902 (15/17) Installing linux-pam (1.5.3-r7)
+#0 5.000 (16/17) Installing vsftpd (3.0.5-r2)
+#0 5.060 Executing vsftpd-3.0.5-r2.pre-install
+#0 5.072 (17/17) Installing vsftpd-openrc (3.0.5-r2)
+#0 5.117 Executing busybox-1.36.1-r19.trigger
+#0 5.132 OK: 47 MiB in 32 packages
+#37 DONE 5.3s
 
-#38 [ftp 5/6] RUN echo tofa7a:133742 | chpasswd
-#38 0.428 chpasswd: password for 'tofa7a' changed
-#38 DONE 0.4s
+#38 [adminer 5/5] RUN wget "http://www.adminer.org/latest.php" -O /var/www/html/adminer.php
+image name : adminer , currStep : 5, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+5
+0
+3
+3
+5
+3
+3
+{===============}
+ratio : 2
+perc : 56
+pre_spaces : 27
+bar_count : 20
+bar_pos : 11
+bar_spaces : 9
+fill : ▇▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 22
+nginx : 6 , 6
+wordpress : 5 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 3 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#0 0.401 --2024-10-12 19:33:33-- http://www.adminer.org/latest.php
+#0 0.401 Resolving www.adminer.org (www.adminer.org)... 95.168.218.179, 2a01:28:ca:112::1:907
+#0 0.405 Connecting to www.adminer.org (www.adminer.org)|95.168.218.179|:80... connected.
+#0 0.479 HTTP request sent, awaiting response... 301 Moved Permanently
+#0 0.555 Location: https://www.adminer.org/latest.php [following]
+#0 0.555 --2024-10-12 19:33:34-- https://www.adminer.org/latest.php
+#0 0.581 Connecting to www.adminer.org (www.adminer.org)|95.168.218.179|:443... connected.
+#0 0.872 HTTP request sent, awaiting response... 302 Found
+#0 0.976 Location: static/download/4.8.1/adminer-4.8.1.php [following]
+#0 0.976 --2024-10-12 19:33:34-- https://www.adminer.org/static/download/4.8.1/adminer-4.8.1.php
+#0 0.976 Reusing existing connection to www.adminer.org:443.
+#0 0.976 HTTP request sent, awaiting response... 200 OK
+#0 1.054 Length: 476603 (465K) [application/octet-stream]
+#0 1.054 Saving to: '/var/www/html/adminer.php'
+#0 1.130
+#0 1.130 0K .......... .......... .......... .......... .......... 10% 313K 1s
+#0 1.214 50K .......... .......... .......... .......... .......... 21% 646K 1s
+#0 1.291 100K .......... .......... .......... .......... .......... 32% 671K 1s
+#0 1.366 150K .......... .......... .......... .......... .......... 42% 657K 1s
+#0 1.442 200K .......... .......... .......... .......... .......... 53% 691K 0s
+#0 1.514 250K .......... .......... .......... .......... .......... 64% 3.72M 0s
+#0 1.527 300K .......... .......... .......... .......... .......... 75% 664K 0s
+#0 1.603 350K .......... .......... .......... .......... .......... 85% 700K 0s
+#0 1.679 400K .......... .......... .......... .......... .......... 96% 431K 0s
+#38 1.790 450K .......... ..... 100% 42.1M=0.7s
+#38 1.790
+#38 1.791 2024-10-12 19:33:35 (632 KB/s) - '/var/www/html/adminer.php' saved [476603/476603]
+#38 1.791
+#38 DONE 1.8s
 
-#39 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
-#39 DONE 0.4s
+#39 [ftp 4/6] RUN adduser -D tofa7a
+image name : ftp , currStep : 4, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+5
+0
+3
+4
+5
+3
+3
+{===============}
+ratio : 2
+perc : 58
+pre_spaces : 28
+bar_count : 20
+bar_pos : 11
+bar_spaces : 9
+fill : ▇▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 21
+nginx : 6 , 6
+wordpress : 5 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 4 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#39 DONE 0.3s
 
-#40 [ftp 6/6] RUN echo "listen=YES" > /etc/vsftpd/vsftpd.conf; echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "write_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "anonymous_enable=NO" >> /etc/vsftpd/vsftpd.conf; echo "chroot_local_user=YES" >> /etc/vsftpd/vsftpd.conf; echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf; echo "seccomp_sandbox=NO" >> /etc/vsftpd/vsftpd.conf; echo "pasv_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "pasv_min_port=41337" >> /etc/vsftpd/vsftpd.conf; echo "pasv_max_port=41337" >> /etc/vsftpd/vsftpd.conf;
+#26 [adminer] exporting to image
+#26 exporting layers 0.1s done
+#26 writing image sha256:9193d5abd3f22edf7e23b1086ca27d4b17af18538c698dfbefa0c2ec2ead81f9 done
+#26 naming to docker.io/library/adminer done
+#26 DONE 0.2s
+
+#40 [ftp 5/6] RUN echo tofa7a:133742 | chpasswd
+image name : ftp , currStep : 5, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+5
+0
+3
+5
+5
+3
+3
+{===============}
+ratio : 2
+perc : 60
+pre_spaces : 29
+bar_count : 20
+bar_pos : 12
+bar_spaces : 8
+fill : ▇▇▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 20
+nginx : 6 , 6
+wordpress : 5 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 5 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#40 0.340 chpasswd: password for 'tofa7a' changed
+#40 DONE 0.4s
+
+#41 [ftp 6/6] RUN echo "listen=YES" > /etc/vsftpd/vsftpd.conf; echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "write_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "anonymous_enable=NO" >> /etc/vsftpd/vsftpd.conf; echo "chroot_local_user=YES" >> /etc/vsftpd/vsftpd.conf; echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf; echo "seccomp_sandbox=NO" >> /etc/vsftpd/vsftpd.conf; echo "pasv_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "pasv_min_port=41337" >> /etc/vsftpd/vsftpd.conf; echo "pasv_max_port=41337" >> /etc/vsftpd/vsftpd.conf;
+image name : ftp , currStep : 6, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+5
+0
+3
+6
+5
+3
+3
+{===============}
+ratio : 2
+perc : 62
+pre_spaces : 30
+bar_count : 20
+bar_pos : 12
+bar_spaces : 8
+fill : ▇▇▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 19
+nginx : 6 , 6
+wordpress : 5 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#41 ...
+
+#36 [wordpress 5/9] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+image name : wordpress , currStep : 5, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 5
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+5
+0
+3
+6
+5
+3
+3
+{===============}
+ratio : 2
+perc : 62
+pre_spaces : 30
+bar_count : 20
+bar_pos : 12
+bar_spaces : 8
+fill : ▇▇▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 19
+nginx : 6 , 6
+wordpress : 5 , 9
+mariadb : 0 , 5
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#36 0.252  0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 26 6882k 26 1823k 0 0 3053k 0 0:00:02 --:--:-- 0:00:02 3050k100 6882k 100 6882k 0 0 4662k 0 0:00:01 0:00:01 --:--:-- 4663k
+#36 DONE 1.8s
+
+#42 [mariadb 3/8] RUN apk add curl mariadb mariadb-client openrc
+image name : mariadb , currStep : 3, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+5
+3
+3
+6
+5
+3
+3
+{===============}
+ratio : 1
+perc : 34
+pre_spaces : 16
+bar_count : 20
+bar_pos : 6
+bar_spaces : 14
+fill : ▇▇▇▇▇▇
+ship_spaces : 33
+nginx : 6 , 6
+wordpress : 5 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#0 1.009 (1/29) Installing ca-certificates (20240226-r0)
+#0 1.384 (2/29) Installing brotli-libs (1.1.0-r1)
+#0 1.659 (3/29) Installing c-ares (1.27.0-r0)
+#0 1.723 (4/29) Installing libunistring (1.1-r2)
+#0 1.991 (5/29) Installing libidn2 (2.3.4-r4)
+#0 2.054 (6/29) Installing nghttp2-libs (1.58.0-r0)
+#0 2.108 (7/29) Installing libcurl (8.9.1-r1)
+#0 2.239 (8/29) Installing curl (8.9.1-r1)
+#0 2.378 (9/29) Installing mariadb-common (10.11.6-r0)
+#0 2.570 (10/29) Installing libaio (0.3.113-r2)
+#0 2.609 (11/29) Installing libgcc (13.2.1_git20231014-r0)
+#0 2.659 (12/29) Installing xz-libs (5.4.5-r0)
+#0 2.720 (13/29) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#0 2.776 (14/29) Installing libncursesw (6.4_p20231125-r0)
+#0 2.846 (15/29) Installing skalibs (2.14.0.1-r0)
+#0 2.897 (16/29) Installing utmps-libs (0.1.2.2-r0)
+#0 2.935 (17/29) Installing linux-pam (1.5.3-r7)
+#0 3.022 (18/29) Installing pcre2 (10.42-r2)
+#0 3.124 (19/29) Installing libstdc++ (13.2.1_git20231014-r0)
+#0 3.342 (20/29) Installing libxml2 (2.11.8-r0)
+#0 3.471 (21/29) Installing zstd-libs (1.5.5-r8)
+#0 3.642 (22/29) Installing mariadb (10.11.6-r0)
+#0 3.702 Executing mariadb-10.11.6-r0.pre-install
+#42 ...
+
+#41 [ftp 6/6] RUN echo "listen=YES" > /etc/vsftpd/vsftpd.conf; echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "write_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "anonymous_enable=NO" >> /etc/vsftpd/vsftpd.conf; echo "chroot_local_user=YES" >> /etc/vsftpd/vsftpd.conf; echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf; echo "seccomp_sandbox=NO" >> /etc/vsftpd/vsftpd.conf; echo "pasv_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "pasv_min_port=41337" >> /etc/vsftpd/vsftpd.conf; echo "pasv_max_port=41337" >> /etc/vsftpd/vsftpd.conf;
+image name : ftp , currStep : 6, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+5
+3
+3
+6
+5
+3
+3
+{===============}
+ratio : 1
+perc : 34
+pre_spaces : 16
+bar_count : 20
+bar_pos : 6
+bar_spaces : 14
+fill : ▇▇▇▇▇▇
+ship_spaces : 33
+nginx : 6 , 6
+wordpress : 5 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#41 DONE 1.0s
+
+#43 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
+image name : wordpress , currStep : 6, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+6
+3
+3
+6
+5
+3
+3
+{===============}
+ratio : 1
+perc : 35
+pre_spaces : 17
+bar_count : 20
+bar_pos : 7
+bar_spaces : 13
+fill : ▇▇▇▇▇▇▇
+ship_spaces : 32
+nginx : 6 , 6
+wordpress : 6 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#43 DONE 0.9s
+
+#26 [ftp] exporting to image
+#26 ...
+
+#32 [static-site 3/10] RUN apk add npm apache2
+image name : static-site , currStep : 3, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+6
+3
+3
+6
+5
+3
+3
+{===============}
+ratio : 1
+perc : 35
+pre_spaces : 17
+bar_count : 20
+bar_pos : 7
+bar_spaces : 13
+fill : ▇▇▇▇▇▇▇
+ship_spaces : 32
+nginx : 6 , 6
+wordpress : 6 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 3 , 10
+#32 5.928 (18/18) Installing npm (10.2.5-r0)
+#32 6.801 Executing busybox-1.36.1-r19.trigger
+#32 6.816 Executing ca-certificates-20240226-r0.trigger
+#32 6.971 OK: 83 MiB in 33 packages
+#32 DONE 7.2s
+
+#44 [static-site 4/10] WORKDIR /var/www/localhost/htdocs
+image name : static-site , currStep : 4, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+6
+3
+3
+6
+5
+3
+4
+{===============}
+ratio : 1
+perc : 36
+pre_spaces : 17
+bar_count : 20
+bar_pos : 7
+bar_spaces : 13
+fill : ▇▇▇▇▇▇▇
+ship_spaces : 32
+nginx : 6 , 6
+wordpress : 6 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 4 , 10
+#44 DONE 0.0s
+
+#45 [static-site 5/10] COPY ./tools .
+image name : static-site , currStep : 5, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+6
+3
+3
+6
+5
+3
+5
+{===============}
+ratio : 1
+perc : 37
+pre_spaces : 18
+bar_count : 20
+bar_pos : 7
+bar_spaces : 13
+fill : ▇▇▇▇▇▇▇
+ship_spaces : 31
+nginx : 6 , 6
+wordpress : 6 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 5 , 10
+#45 DONE 0.1s
+
+#46 [static-site 6/10] RUN chmod -R 755 .
+image name : static-site , currStep : 6, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+6
+3
+3
+6
+5
+3
+6
+{===============}
+ratio : 1
+perc : 38
+pre_spaces : 18
+bar_count : 20
+bar_pos : 7
+bar_spaces : 13
+fill : ▇▇▇▇▇▇▇
+ship_spaces : 31
+nginx : 6 , 6
+wordpress : 6 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 6 , 10
+#46 ...
+
+#26 [ftp] exporting to image
+#26 exporting layers 0.5s done
+#26 writing image sha256:99733d30764b4fd30d7e14c98bcc4ffa689163bbdef3ab0a325ce862e820a807 done
+#26 naming to docker.io/library/ftp done
+#26 DONE 0.7s
+
+#47 [wordpress 7/9] RUN mkdir -p /var/www/html/
+image name : wordpress , currStep : 7, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+7
+3
+3
+6
+5
+3
+6
+{===============}
+ratio : 1
+perc : 39
+pre_spaces : 19
+bar_count : 20
+bar_pos : 7
+bar_spaces : 13
+fill : ▇▇▇▇▇▇▇
+ship_spaces : 30
+nginx : 6 , 6
+wordpress : 7 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 6 , 10
+#47 DONE 0.6s
+
+#48 [wordpress 8/9] COPY tools/exe.sh /tmp/
+image name : wordpress , currStep : 8, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+8
+3
+3
+6
+5
+3
+6
+{===============}
+ratio : 1
+perc : 40
+pre_spaces : 19
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 30
+nginx : 6 , 6
+wordpress : 8 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 6 , 10
+#48 DONE 0.0s
+
+#46 [static-site 6/10] RUN chmod -R 755 .
+image name : static-site , currStep : 6, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+8
+3
+3
+6
+5
+3
+6
+{===============}
+ratio : 1
+perc : 40
+pre_spaces : 19
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 30
+nginx : 6 , 6
+wordpress : 8 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 6 , 10
+#46 DONE 0.4s
+
+#49 [static-site 7/10] RUN npm install vanilla-tilt@1.8.1
+image name : static-site , currStep : 7, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+8
+3
+3
+6
+5
+3
+7
+{===============}
+ratio : 1
+perc : 41
+pre_spaces : 20
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 29
+nginx : 6 , 6
+wordpress : 8 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 7 , 10
+#49 ...
+
+#50 [wordpress 9/9] RUN chmod +x /tmp/exe.sh
+image name : wordpress , currStep : 9, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+3
+3
+6
+5
+3
+7
+{===============}
+ratio : 1
+perc : 42
+pre_spaces : 20
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 29
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 3 , 5
+static-site : 7 , 10
+#50 DONE 0.7s
+
+#26 [wordpress] exporting to image
+#26 exporting layers 0.3s done
+#26 writing image sha256:4139036ed8ea10cdf76529e9d4a172ffbaaeb95ab930ea365335ae91046c0d7d done
+#26 naming to docker.io/library/wordpress done
+#26 DONE 1.0s
+
+#51 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
+image name : portainer , currStep : 4, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+3
+3
+6
+5
+4
+7
+{===============}
+ratio : 1
+perc : 43
+pre_spaces : 21
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 28
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 7 , 10
+#0 0.199 Connecting to github.com (140.82.121.3:443)
+#0 0.523 Connecting to objects.githubusercontent.com (185.199.109.133:443)
+#0 1.099 saving to 'portainer-2.19.5-linux-amd64.tar.gz'
+#0 1.626 portainer-2.19.5-lin 2% | | 2264k 0:00:36 ETA
+#0 2.629 portainer-2.19.5-lin 8% |** | 7452k 0:00:20 ETA
+#0 3.629 portainer-2.19.5-lin 15% |***** | 12.9M 0:00:16 ETA
+#0 4.641 portainer-2.19.5-lin 23% |******* | 19.3M 0:00:12 ETA
+#0 5.626 portainer-2.19.5-lin 35% |*********** | 28.8M 0:00:09 ETA
+#0 6.626 portainer-2.19.5-lin 46% |************** | 37.9M 0:00:07 ETA
+#51 7.626 portainer-2.19.5-lin 58% |****************** | 47.9M 0:00:05 ETA
+#51 ...
+
+#42 [mariadb 3/8] RUN apk add curl mariadb mariadb-client openrc
+image name : mariadb , currStep : 3, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+3
+3
+6
+5
+4
+7
+{===============}
+ratio : 1
+perc : 43
+pre_spaces : 21
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 28
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 7 , 10
+#42 9.587 (23/29) Installing libbz2 (1.0.8-r6)
+#42 ...
+
+#49 [static-site 7/10] RUN npm install vanilla-tilt@1.8.1
+image name : static-site , currStep : 7, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+3
+3
+6
+5
+4
+7
+{===============}
+ratio : 1
+perc : 43
+pre_spaces : 21
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 28
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 7 , 10
+#49 1.779
+#49 1.779 added 1 package in 848ms
+#49 DONE 1.9s
+
+#42 [mariadb 3/8] RUN apk add curl mariadb mariadb-client openrc
+image name : mariadb , currStep : 3, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+3
+3
+6
+5
+4
+7
+{===============}
+ratio : 1
+perc : 43
+pre_spaces : 21
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 28
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 7 , 10
+#42 9.650 (24/29) Installing perl (5.38.2-r0)
+#42 10.79 (25/29) Installing mariadb-client (10.11.6-r0)
+#42 ...
+
+#52 [static-site 8/10] RUN apk add --no-cache gettext # Install envsubst
+image name : static-site , currStep : 8, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+3
+3
+6
+5
+4
+8
+{===============}
+ratio : 1
+perc : 44
+pre_spaces : 21
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 28
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 8 , 10
+#0 0.274 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#0 0.633 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#0 1.178 (1/10) Installing libintl (0.22.3-r0)
+#0 1.222 (2/10) Installing gettext-envsubst (0.22.3-r0)
+#0 1.261 (3/10) Installing libgomp (13.2.1_git20231014-r0)
+#0 1.324 (4/10) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+#0 1.367 (5/10) Installing libncursesw (6.4_p20231125-r0)
+#0 1.428 (6/10) Installing libunistring (1.1-r2)
+#0 1.565 (7/10) Installing gettext-libs (0.22.3-r0)
+#0 1.669 (8/10) Installing xz-libs (5.4.5-r0)
+#0 1.736 (9/10) Installing libxml2 (2.11.8-r0)
+#0 1.886 (10/10) Installing gettext (0.22.3-r0)
+#0 2.086 Executing busybox-1.36.1-r19.trigger
+#0 2.102 OK: 90 MiB in 43 packages
+#52 DONE 2.3s
+
+#42 [mariadb 3/8] RUN apk add curl mariadb mariadb-client openrc
+image name : mariadb , currStep : 3, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+3
+3
+6
+5
+4
+8
+{===============}
+ratio : 1
+perc : 44
+pre_spaces : 21
+bar_count : 20
+bar_pos : 8
+bar_spaces : 12
+fill : ▇▇▇▇▇▇▇▇
+ship_spaces : 28
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 8 , 10
+#42 11.88 (26/29) Installing ifupdown-ng (0.12.1-r4)
+#42 11.92 (27/29) Installing libcap2 (2.69-r1)
+#42 11.96 (28/29) Installing openrc (0.52.1-r2)
+#42 12.04 Executing openrc-0.52.1-r2.post-install
+#42 12.05 (29/29) Installing mariadb-openrc (10.11.6-r0)
+#42 12.09 Executing busybox-1.36.1-r19.trigger
+#42 12.10 Executing ca-certificates-20240226-r0.trigger
+#42 12.24 OK: 262 MiB in 44 packages
+#42 DONE 12.7s
+
+#53 [static-site 9/10] RUN envsubst < index.html > index_env_subst.html
+image name : static-site , currStep : 9, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+3
+3
+6
+5
+4
+9
+{===============}
+ratio : 1
+perc : 45
+pre_spaces : 22
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 27
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 3 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 9 , 10
+#53 DONE 0.7s
+
+#54 [mariadb 4/8] COPY tools/exe.sh /tmp/
+image name : mariadb , currStep : 4, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+4
+3
+6
+5
+4
+9
+{===============}
+ratio : 1
+perc : 46
+pre_spaces : 22
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 27
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 4 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 9 , 10
+#54 DONE 0.1s
+
+#55 [static-site 10/10] RUN rm index.html && mv index_env_subst.html index.html
+image name : static-site , currStep : 10, lastStep: 10
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+4
+3
+6
+5
+4
+10
+{===============}
+ratio : 1
+perc : 47
+pre_spaces : 23
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 26
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 4 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 10 , 10
+#55 DONE 1.1s
+
+#51 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
+image name : portainer , currStep : 4, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+4
+3
+6
+5
+4
+10
+{===============}
+ratio : 1
+perc : 47
+pre_spaces : 23
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 26
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 4 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 10 , 10
+#51 8.625 portainer-2.19.5-lin 73% |*********************** | 60.4M 0:00:02 ETA
+#51 9.626 portainer-2.19.5-lin 83% |************************** | 69.0M 0:00:01 ETA
+#51 10.64 portainer-2.19.5-lin 97% |******************************* | 80.1M 0:00:00 ETA
+#51 10.90 portainer-2.19.5-lin 100% |********************************| 82.4M 0:00:00 ETA
+#51 10.90 'portainer-2.19.5-linux-amd64.tar.gz' saved
+#51 10.91 portainer/
+#51 ...
+
+#56 [mariadb 5/8] RUN chmod +x /tmp/exe.sh
+image name : mariadb , currStep : 5, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+5
+3
+6
+5
+4
+10
+{===============}
+ratio : 1
+perc : 48
+pre_spaces : 23
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 26
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 5 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 10 , 10
+#56 DONE 1.0s
+
+#26 [static-site] exporting to image
+#26 exporting layers
+#26 ...
+
+#57 [mariadb 6/8] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+image name : mariadb , currStep : 6, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+6
+3
+6
+5
+4
+10
+{===============}
+ratio : 1
+perc : 49
+pre_spaces : 24
+bar_count : 20
+bar_pos : 9
+bar_spaces : 11
+fill : ▇▇▇▇▇▇▇▇▇
+ship_spaces : 25
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 6 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 10 , 10
+#57 DONE 1.4s
+
+#26 [static-site] exporting to image
+#26 exporting layers 1.4s done
+#26 writing image sha256:6ae957d2eb1ebfa878b097ea51d823a3552b466227c3894d1285d070a652e958
+#26 writing image sha256:6ae957d2eb1ebfa878b097ea51d823a3552b466227c3894d1285d070a652e958 done
+#26 naming to docker.io/library/static-site done
+#26 DONE 2.5s
+
+#58 [mariadb 7/8] RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
+image name : mariadb , currStep : 7, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+7
+3
+6
+5
+4
+10
+{===============}
+ratio : 1
+perc : 50
+pre_spaces : 24
+bar_count : 20
+bar_pos : 10
+bar_spaces : 10
+fill : ▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 25
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 7 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 10 , 10
+#58 DONE 0.9s
+
+#59 [mariadb 8/8] RUN openrc && touch /run/openrc/softlevel && rc-service mariadb setup
+image name : mariadb , currStep : 8, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+8
+3
+6
+5
+4
+10
+{===============}
+ratio : 1
+perc : 51
+pre_spaces : 24
+bar_count : 20
+bar_pos : 10
+bar_spaces : 10
+fill : ▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 25
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 10 , 10
+#59 ...
+
+#51 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
+image name : portainer , currStep : 4, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+8
+3
+6
+5
+4
+10
+{===============}
+ratio : 1
+perc : 51
+pre_spaces : 24
+bar_count : 20
+bar_pos : 10
+bar_spaces : 10
+fill : ▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 25
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 10 , 10
+#51 15.26 portainer/helm
+#51 15.26 portainer/docker
+#51 15.26 portainer/portainer
+#51 15.26 portainer/mustache-templates/
+#51 15.26 portainer/mustache-templates/upgrade-docker.yml.mustache
+#51 15.26 portainer/docker-compose
+#51 15.26 portainer/kubectl
+#51 15.26 portainer/public/
+#51 15.26 portainer/public/060b2710bdbbe3dfe48b.svg
+#51 15.26 portainer/public/c2c179f41199d25e0055.png
+#51 15.26 portainer/public/2b3c7053dcd54989a6f5.png
+#51 15.26 portainer/public/51906a7e4bd0e1d9e771.png
+#51 15.26 portainer/public/d3a18c5002453f58c8b9.png
+#51 15.26 portainer/public/19c2b168a8d85994e14e.png
+#51 15.26 portainer/public/6d50eaeb9f128c130ed9.xml
+#51 15.26 portainer/public/main.7d6053e1c574421c1788.css
+#51 15.26 portainer/public/main.7d6053e1c574421c1788.css.map
+#51 15.26 portainer/public/vendor.c6c227160a59d929ec43.js.LICENSE.txt
+#51 15.26 portainer/public/runtime.942fa683274b3d3c26cf.js
+#51 15.26 portainer/public/7e697c5bab4f819328df.svg
+#51 15.26 portainer/public/63a301f0574f1a696ce6.png
+#51 15.26 portainer/public/index.html
+#51 15.26 portainer/public/main.712d6f30396f42406a3d.js.LICENSE.txt
+#51 15.26 portainer/public/63c1259abd88a9d2cebc.svg
+#51 15.26 portainer/public/main.712d6f30396f42406a3d.js.map
+#51 15.26 portainer/public/vendor.c6c227160a59d929ec43.js.map
+#51 15.26 portainer/public/vendor.b4533442c1cbb18b98a1.css.map
+#51 15.35 portainer/public/locales/
+#51 15.35 portainer/public/locales/en/
+#51 15.35 portainer/public/locales/en/translation.json
+#51 15.35 portainer/public/timeout.html
+#51 15.35 portainer/public/main.712d6f30396f42406a3d.js
+#51 15.35 portainer/public/runtime.942fa683274b3d3c26cf.js.map
+#51 15.35 portainer/public/9d07a3ace464cfd6e27c.png
+#51 15.35 portainer/public/112a479c093f4729251d.png
+#51 15.35 portainer/public/vendor.b4533442c1cbb18b98a1.css
+#51 15.35 portainer/public/vendor.c6c227160a59d929ec43.js
+#51 15.35 portainer/public/2dcfc527d067d4ae3424.png
+#51 DONE 16.5s
+
+#59 [mariadb 8/8] RUN openrc && touch /run/openrc/softlevel && rc-service mariadb setup
+image name : mariadb , currStep : 8, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+8
+3
+6
+5
+4
+10
+{===============}
+ratio : 1
+perc : 51
+pre_spaces : 24
+bar_count : 20
+bar_pos : 10
+bar_spaces : 10
+fill : ▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 25
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 4 , 5
+static-site : 10 , 10
+#59 2.186 Service `hwdrivers' needs non existent service `dev'
+#59 2.186 Service `machine-id' needs non existent service `dev'
+#59 2.188 Makefile README.md WhaleScript.bash debugFile srcs Caching service dependencies ... [ ok ]
+#59 2.203 Makefile README.md WhaleScript.bash debugFile srcs Creating a new MySQL database ...Installing MariaDB/MySQL system tables in '/var/lib/mysql' ...
+#59 ...
+
+#60 [portainer 5/5] RUN echo -n "uWu1337uWu,BecausePortainerRequiresStrongPass" > /tmp/portainer_password
+image name : portainer , currStep : 5, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 5
+> static-site : 10
+{===============}
+{start steps:}
+NADA
+6
+9
+8
+3
+6
+5
+5
+10
+{===============}
+ratio : 1
+perc : 100
+pre_spaces : 49
+bar_count : 20
+bar_pos : 20
+bar_spaces : 0
+fill : ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 0
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 5 , 5
+static-site : 10 , 10
+#60 DONE 0.4s
+
+#26 [portainer] exporting to image
+#26 ...
+
+#59 [mariadb 8/8] RUN openrc && touch /run/openrc/softlevel && rc-service mariadb setup
+#59 3.390 OK
+#59 3.390
+#59 3.390 To start mariadbd at boot time you have to copy
+#59 3.390 support-files/mariadb.service to the right place for your system
+#59 3.390
+#59 3.390
+#59 3.390 Two all-privilege accounts were created.
+#59 3.390 One is root@localhost, it has no password, but you need to
+#59 3.390 be system 'root' user to connect. Use, for example, sudo mysql
+#59 3.390 The second is mysql@localhost, it has no password either, but
+#59 3.390 you need to be the system 'mysql' user to connect.
+#59 3.390 After connecting you can set the password, if you would need to be
+#59 3.390 able to connect as any of these users with a password and without sudo
+#59 3.390
+#59 3.390 See the MariaDB Knowledgebase at https://mariadb.com/kb
+#59 3.390
+#59 3.390 You can start the MariaDB daemon with:
+#59 3.390 cd '/usr' ; /usr/bin/mariadb-safe --datadir='/var/lib/mysql'
+#59 3.390
+#59 3.390 You can test the MariaDB daemon with mysql-test-run.pl
+#59 3.390 cd '/usr/mysql-test' ; perl mariadb-test-run.pl
+#59 3.390
+#59 3.390 Please report any problems at https://mariadb.org/jira
+#59 3.390
+#59 3.390 The latest information about MariaDB is available at https://mariadb.org/.
+#59 3.390
+#59 3.390 Consider joining MariaDB's strong and vibrant community:
+#59 3.390 https://mariadb.org/get-involved/
+#59 3.390
+#59 3.391 [ ok ]
+#59 DONE 3.4s
+
+#26 [mariadb] exporting to image
+#26 exporting layers 2.5s done
+#26 writing image sha256:717b65d7a486a6018f8b53e2f2adc34cc6c6eae915e66803b95673ae855e2d13 done
+#26 naming to docker.io/library/portainer done
+#26 exporting layers 2.3s done
+#26 writing image sha256:8f0397b3362c2e4ee6a1ad7d999ad1a4ea25dadd9e4eab0113f27144654171b8 done
+#26 naming to docker.io/library/mariadb done
+#26 DONE 5.7s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
