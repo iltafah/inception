@@ -122,6 +122,8 @@ services:
     image: static-site
     build:
       context: requirements/bonus/static-site/
+      args:
+        - BASE_URL=${DomainName}
     container_name: static-site
     restart: always
     environment:
