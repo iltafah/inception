@@ -1,198 +1,183 @@
 
---progress is a global compose flag, better use `docker compose --progress xx build ...
-#0 building with "default" instance using docker driver
-
-#1 [static-site internal] load build definition from Dockerfile
-#1 transferring dockerfile: 509B 0.0s done
+#1 [adminer internal] load build definition from Dockerfile
+#1 transferring dockerfile: 32B done
 #1 DONE 0.0s
 
-#2 [adminer internal] load build definition from Dockerfile
-#2 transferring dockerfile: 357B 0.0s done
+#2 [static-site internal] load build definition from Dockerfile
+#2 transferring dockerfile: 32B done
 #2 DONE 0.0s
 
-#3 [portainer internal] load build definition from Dockerfile
-#3 transferring dockerfile: 604B 0.0s done
-#3 DONE 0.0s
+#3 [nginx internal] load build definition from Dockerfile
+#3 transferring dockerfile: 32B done
+#3 DONE 0.1s
 
-#4 [redis internal] load build definition from Dockerfile
-#4 transferring dockerfile: 162B 0.0s done
-#4 DONE 0.0s
+#4 [ftp internal] load build definition from Dockerfile
+#4 transferring dockerfile: 32B done
+#4 DONE 0.1s
 
-#5 [mariadb internal] load build definition from Dockerfile
-#5 transferring dockerfile: 607B 0.0s done
-#5 DONE 0.0s
+#5 [portainer internal] load build definition from Dockerfile
+#5 transferring dockerfile: 32B done
+#5 DONE 0.1s
 
-#6 [ftp internal] load build definition from Dockerfile
-#6 transferring dockerfile: 1.16kB 0.0s done
+#6 [mariadb internal] load build definition from Dockerfile
+#6 transferring dockerfile: 584B done
 #6 DONE 0.0s
 
-#7 [mariadb internal] load metadata for docker.io/library/alpine:3.19
-#7 DONE 0.5s
+#7 [redis internal] load build definition from Dockerfile
+#7 transferring dockerfile: 31B done
+#7 DONE 0.0s
 
-#8 [portainer internal] load .dockerignore
-#8 transferring context: 34B 0.0s done
-#8 DONE 0.1s
+#8 [wordpress internal] load build definition from Dockerfile
+#8 transferring dockerfile: 32B done
+#8 DONE 0.0s
 
-#9 [redis internal] load .dockerignore
-#9 transferring context: 34B 0.0s done
+#9 [adminer internal] load .dockerignore
+#9 transferring context: 32B done
 #9 DONE 0.0s
 
-#10 [mariadb internal] load .dockerignore
-#10 transferring context: 34B 0.0s done
-#10 DONE 0.1s
+#10 [static-site internal] load .dockerignore
+#10 transferring context: 32B done
+#10 DONE 0.0s
 
-#11 [ftp internal] load .dockerignore
-#11 transferring context: 34B 0.0s done
-#11 DONE 0.1s
+#11 [nginx internal] load .dockerignore
+#11 transferring context: 32B done
+#11 DONE 0.0s
 
-#12 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
-image name : portainer , currStep : 4, lastStep: 5
+#12 [ftp internal] load .dockerignore
+#12 transferring context: 32B done
+#12 DONE 0.0s
+
+#13 [portainer internal] load .dockerignore
+#13 transferring context: 32B done
+#13 DONE 0.0s
+
+#14 [redis internal] load .dockerignore
+#14 transferring context: 32B done
+#14 DONE 0.0s
+
+#15 [mariadb internal] load .dockerignore
+#15 transferring context: 32B done
+#15 DONE 0.0s
+
+#16 [wordpress internal] load .dockerignore
+#16 transferring context: 2B done
+#16 DONE 0.0s
+
+#17 [adminer internal] load metadata for docker.io/library/alpine:3.19
+#17 DONE 1.7s
+
+#18 [redis 3/3] RUN apk add redis
+image name : redis , currStep : 3, lastStep: 3
 {Img arr:}
 > NADA : NADA
 > nginx : 37
 > wordpress : 37
 > mariadb : 37
-> redis : 37
+> redis : 3
 > ftp : 37
 > adminer : 37
-> portainer : 5
+> portainer : 37
 > static-site : 37
 {===============}
 {start steps:}
 NADA
-0
-0
-0
-0
-0
-0
-4
-0
-{===============}
-ratio : 50
-perc : 50
-pre_spaces : 24
-bar_count : 20
-bar_pos : 10
-bar_spaces : 10
-fill : ▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 25
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 0 , 37
-ftp : 0 , 37
-adminer : 0 , 37
-portainer : 4 , 5
-static-site : 0 , 37
-#12 CACHED
-
-#13 [portainer 3/5] RUN apk add apache2-utils
-image name : portainer , currStep : 3, lastStep: 5
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 37
-> ftp : 37
-> adminer : 37
-> portainer : 5
-> static-site : 37
-{===============}
-{start steps:}
-NADA
-0
-0
-0
-0
-0
-0
-4
-0
-{===============}
-ratio : 50
-perc : 50
-pre_spaces : 24
-bar_count : 20
-bar_pos : 10
-bar_spaces : 10
-fill : ▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 25
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 0 , 37
-ftp : 0 , 37
-adminer : 0 , 37
-portainer : 4 , 5
-static-site : 0 , 37
-#13 CACHED
-
-#14 [portainer 5/5] RUN echo -n "uWu1337uWu,BecausePortainerRequiresStrongPass" > /tmp/portainer_password
-image name : portainer , currStep : 5, lastStep: 5
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 37
-> ftp : 37
-> adminer : 37
-> portainer : 5
-> static-site : 37
-{===============}
-{start steps:}
-NADA
-0
-0
-0
-0
-0
-0
-5
-0
-{===============}
-ratio : 62
-perc : 62
-pre_spaces : 30
-bar_count : 20
-bar_pos : 12
-bar_spaces : 8
-fill : ▇▇▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 19
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 0 , 37
-ftp : 0 , 37
-adminer : 0 , 37
-portainer : 5 , 5
-static-site : 0 , 37
-#14 CACHED
-
-#15 [ftp 3/6] RUN apk add openrc vim lftp vsftpd
-image name : ftp , currStep : 3, lastStep: 6
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 37
-> ftp : 6
-> adminer : 37
-> portainer : 5
-> static-site : 37
-{===============}
-{start steps:}
-NADA
-0
 0
 0
 0
 3
 0
-5
+0
+0
+0
+{===============}
+ratio : 50
+perc : 50
+pre_spaces : 24
+bar_count : 20
+bar_pos : 10
+bar_spaces : 10
+fill : ▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 25
+nginx : 0 , 37
+wordpress : 0 , 37
+mariadb : 0 , 37
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 0 , 37
+portainer : 0 , 37
+static-site : 0 , 37
+#18 CACHED
+
+#19 [mariadb internal] load build context
+#19 DONE 0.0s
+
+#20 [static-site internal] load build context
+#20 DONE 0.0s
+
+#21 [wordpress 1/3] FROM docker.io/library/alpine:3.19@sha256:ae65dbf8749a7d4527648ccee1fa3deb6bfcae34cbc30fc67aa45c44dcaa90ee
+image name : wordpress , currStep : 1, lastStep: 3
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 37
+> redis : 3
+> ftp : 37
+> adminer : 37
+> portainer : 37
+> static-site : 37
+{===============}
+{start steps:}
+NADA
+0
+1
+0
+3
+0
+0
+0
+0
+{===============}
+ratio : 1
+perc : 1
+pre_spaces : 0
+bar_count : 20
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 49
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 0 , 37
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 0 , 37
+portainer : 0 , 37
+static-site : 0 , 37
+#21 DONE 0.0s
+
+#22 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
+image name : adminer , currStep : 3, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 37
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 37
+{===============}
+{start steps:}
+NADA
+0
+1
+0
+3
+0
+3
+0
 0
 {===============}
 ratio : 3
@@ -204,79 +189,79 @@ bar_spaces : 19
 fill : ▇
 ship_spaces : 48
 nginx : 0 , 37
-wordpress : 0 , 37
+wordpress : 1 , 3
 mariadb : 0 , 37
-redis : 0 , 37
-ftp : 3 , 6
-adminer : 0 , 37
-portainer : 5 , 5
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 3 , 5
+portainer : 0 , 37
 static-site : 0 , 37
-#15 CACHED
+#22 CACHED
 
-#16 [ftp 4/6] RUN adduser -D tofa7a
-image name : ftp , currStep : 4, lastStep: 6
+#23 [adminer 2/3] RUN apk upgrade && apk update
+image name : adminer , currStep : 2, lastStep: 3
 {Img arr:}
 > NADA : NADA
 > nginx : 37
-> wordpress : 37
+> wordpress : 3
 > mariadb : 37
-> redis : 37
-> ftp : 6
-> adminer : 37
-> portainer : 5
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
 > static-site : 37
 {===============}
 {start steps:}
 NADA
 0
+1
+0
+3
+0
+3
 0
 0
+{===============}
+ratio : 3
+perc : 3
+pre_spaces : 1
+bar_count : 20
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 48
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 0 , 37
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 3 , 5
+portainer : 0 , 37
+static-site : 0 , 37
+#23 CACHED
+
+#24 [adminer 4/5] RUN mkdir -p /var/www/html/
+image name : adminer , currStep : 4, lastStep: 5
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 37
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 37
+{===============}
+{start steps:}
+NADA
+0
+1
+0
+3
 0
 4
 0
-5
-0
-{===============}
-ratio : 3
-perc : 3
-pre_spaces : 1
-bar_count : 20
-bar_pos : 1
-bar_spaces : 19
-fill : ▇
-ship_spaces : 48
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 0 , 37
-ftp : 4 , 6
-adminer : 0 , 37
-portainer : 5 , 5
-static-site : 0 , 37
-#16 CACHED
-
-#17 [ftp 5/6] RUN echo tofa7a:133742 | chpasswd
-image name : ftp , currStep : 5, lastStep: 6
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 37
-> ftp : 6
-> adminer : 37
-> portainer : 5
-> static-site : 37
-{===============}
-{start steps:}
-NADA
-0
-0
-0
-0
-5
-0
-5
 0
 {===============}
 ratio : 4
@@ -288,269 +273,13 @@ bar_spaces : 19
 fill : ▇
 ship_spaces : 48
 nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 0 , 37
-ftp : 5 , 6
-adminer : 0 , 37
-portainer : 5 , 5
-static-site : 0 , 37
-#17 CACHED
-
-#18 [redis 3/3] RUN apk add redis
-image name : redis , currStep : 3, lastStep: 3
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 3
-> ftp : 6
-> adminer : 37
-> portainer : 5
-> static-site : 37
-{===============}
-{start steps:}
-NADA
-0
-0
-0
-3
-5
-0
-5
-0
-{===============}
-ratio : 6
-perc : 6
-pre_spaces : 2
-bar_count : 20
-bar_pos : 1
-bar_spaces : 19
-fill : ▇
-ship_spaces : 47
-nginx : 0 , 37
-wordpress : 0 , 37
+wordpress : 1 , 3
 mariadb : 0 , 37
 redis : 3 , 3
-ftp : 5 , 6
-adminer : 0 , 37
-portainer : 5 , 5
-static-site : 0 , 37
-#18 CACHED
-
-#19 [adminer internal] load .dockerignore
-#19 transferring context: 34B 0.0s done
-#19 DONE 0.1s
-
-#20 [ftp 6/6] RUN echo "listen=YES" > /etc/vsftpd/vsftpd.conf; echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "write_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "anonymous_enable=NO" >> /etc/vsftpd/vsftpd.conf; echo "chroot_local_user=YES" >> /etc/vsftpd/vsftpd.conf; echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf; echo "seccomp_sandbox=NO" >> /etc/vsftpd/vsftpd.conf; echo "pasv_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "pasv_min_port=41337" >> /etc/vsftpd/vsftpd.conf; echo "pasv_max_port=41337" >> /etc/vsftpd/vsftpd.conf;
-image name : ftp , currStep : 6, lastStep: 6
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 3
-> ftp : 6
-> adminer : 37
-> portainer : 5
-> static-site : 37
-{===============}
-{start steps:}
-NADA
-0
-0
-0
-3
-6
-0
-5
-0
-{===============}
-ratio : 7
-perc : 7
-pre_spaces : 3
-bar_count : 20
-bar_pos : 1
-bar_spaces : 19
-fill : ▇
-ship_spaces : 46
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 0 , 37
-portainer : 5 , 5
-static-site : 0 , 37
-#20 CACHED
-
-#21 [static-site 1/3] FROM docker.io/library/alpine:3.19@sha256:ae65dbf8749a7d4527648ccee1fa3deb6bfcae34cbc30fc67aa45c44dcaa90ee
-image name : static-site , currStep : 1, lastStep: 3
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 3
-> ftp : 6
-> adminer : 37
-> portainer : 5
-> static-site : 3
-{===============}
-{start steps:}
-NADA
-0
-0
-0
-3
-6
-0
-5
-1
-{===============}
-ratio : 9
-perc : 9
-pre_spaces : 4
-bar_count : 20
-bar_pos : 1
-bar_spaces : 19
-fill : ▇
-ship_spaces : 45
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 0 , 37
-portainer : 5 , 5
-static-site : 1 , 3
-#21 DONE 0.0s
-
-#22 [ftp 2/3] RUN apk upgrade && apk update
-image name : ftp , currStep : 2, lastStep: 3
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 3
-> ftp : 6
-> adminer : 37
-> portainer : 5
-> static-site : 3
-{===============}
-{start steps:}
-NADA
-0
-0
-0
-3
-6
-0
-5
-1
-{===============}
-ratio : 9
-perc : 9
-pre_spaces : 4
-bar_count : 20
-bar_pos : 1
-bar_spaces : 19
-fill : ▇
-ship_spaces : 45
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 0 , 37
-portainer : 5 , 5
-static-site : 1 , 3
-#22 CACHED
-
-#23 [adminer 4/5] RUN mkdir -p /var/www/html/
-image name : adminer , currStep : 4, lastStep: 5
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 3
-{===============}
-{start steps:}
-NADA
-0
-0
-0
-3
-6
-4
-5
-1
-{===============}
-ratio : 14
-perc : 14
-pre_spaces : 6
-bar_count : 20
-bar_pos : 2
-bar_spaces : 18
-fill : ▇▇
-ship_spaces : 43
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 4 , 5
-portainer : 5 , 5
-static-site : 1 , 3
-#23 CACHED
-
-#24 [adminer 3/5] RUN apk add wget php82 php82-mysqli php82-session
-image name : adminer , currStep : 3, lastStep: 5
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 37
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 3
-{===============}
-{start steps:}
-NADA
-0
-0
-0
-3
-6
-4
-5
-1
-{===============}
-ratio : 14
-perc : 14
-pre_spaces : 6
-bar_count : 20
-bar_pos : 2
-bar_spaces : 18
-fill : ▇▇
-ship_spaces : 43
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 0 , 37
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 4 , 5
-portainer : 5 , 5
-static-site : 1 , 3
+portainer : 0 , 37
+static-site : 0 , 37
 #24 CACHED
 
 #25 [adminer 5/5] RUN wget "https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php" -O /var/www/html/adminer.php
@@ -558,830 +287,592 @@ image name : adminer , currStep : 5, lastStep: 5
 {Img arr:}
 > NADA : NADA
 > nginx : 37
-> wordpress : 37
+> wordpress : 3
 > mariadb : 37
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
-> static-site : 3
+> portainer : 37
+> static-site : 37
 {===============}
 {start steps:}
 NADA
 0
-0
+1
 0
 3
-6
+0
 5
-5
-1
+0
+0
 {===============}
-ratio : 15
-perc : 15
-pre_spaces : 7
+ratio : 4
+perc : 4
+pre_spaces : 1
 bar_count : 20
-bar_pos : 3
-bar_spaces : 17
-fill : ▇▇▇
-ship_spaces : 42
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 48
 nginx : 0 , 37
-wordpress : 0 , 37
+wordpress : 1 , 3
 mariadb : 0 , 37
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
-static-site : 1 , 3
+portainer : 0 , 37
+static-site : 0 , 37
 #25 CACHED
 
-#26 [static-site internal] load .dockerignore
-#26 transferring context: 34B 0.0s done
+#26 [redis] exporting to image
+#26 exporting layers done
+#26 writing image sha256:c3b10ecad59fcc9f2f3762eb127f32eb246c659adc7de6dc0b0a40dd723ccf44
+#26 exporting layers done
+#26 writing image sha256:c3b10ecad59fcc9f2f3762eb127f32eb246c659adc7de6dc0b0a40dd723ccf44 done
+#26 naming to docker.io/library/redis done
+#26 writing image sha256:56a4ce6952911482ffd4c256d63e96425cb6ce3437f921b0f7952b7e9c8ad1f7 done
+#26 naming to docker.io/library/adminer done
+#26 writing image sha256:8714efd8d48a9cfee63b966cddb21dc71bb7d6afd08c3d5aba5d5b62103c406b done
+#26 naming to docker.io/library/portainer done
+#26 writing image sha256:f4e1415298585ec4ad9ffb4bffd2badf9631bdad0a7c41f7e7f05da31c3f1153 done
+#26 naming to docker.io/library/ftp done
+#26 writing image sha256:fddaf9c3cee806518eca8dabebeaf8103a19b725fc18b2ecfb8c11e4bf767759 done
+#26 naming to docker.io/library/nginx done
+#26 writing image sha256:dead8093e5980990668e594b80abfb3bc92d32860d110a43ccb61391c0a0b698 done
+#26 naming to docker.io/library/mariadb done
+#26 writing image sha256:0289881f2560c63978ce08604fff0363aab25f952edd2f30e301e4849f5b4d7a done
+#26 naming to docker.io/library/static-site done
+#26 writing image sha256:c9e55d8fee17e8bd6d7c20855ef11688406200c4262009526dc2fd7c50b2a8a2 done
+#26 naming to docker.io/library/wordpress done
 #26 DONE 0.1s
 
-#27 [redis] exporting to image
-#27 exporting layers done
-#27 writing image sha256:d4389a59b39622f1c94e42b5f4a001c732d0e4ed747bb48cdca57149494c39db done
-#27 naming to docker.io/library/redis 0.0s done
-#27 DONE 0.0s
+#19 [mariadb internal] load build context
+#19 transferring context: 59B done
+#19 DONE 0.0s
 
-#28 [mariadb internal] load build context
-#28 transferring context: 828B 0.0s done
-#28 DONE 0.1s
-
-#29 [ftp] exporting to image
-#29 exporting layers done
-#29 writing image sha256:7c16fc005bd9425b6c3d1dab00cf37ec79d9f8f5bee1b51049c2b069cd3f2e3b 0.0s done
-#29 naming to docker.io/library/ftp 0.0s done
-#29 DONE 0.1s
-
-#30 [portainer] exporting to image
-#30 exporting layers done
-#30 writing image sha256:b4a1459a9b09bb0f56ada8fade3f9bd3d24528f08597063cf5a385217d079c56 0.0s done
-#30 naming to docker.io/library/portainer 0.0s done
-#30 DONE 0.1s
-
-#31 [adminer] exporting to image
-#31 exporting layers done
-#31 writing image sha256:82c5d8a39c71eb7760851054439258580fa8fd18514a534210ea692d3d4c12bf 0.0s done
-#31 naming to docker.io/library/adminer 0.0s done
-#31 DONE 0.1s
-
-#32 [static-site internal] load build context
-#32 ...
-
-#22 [mariadb 2/3] RUN apk upgrade && apk update
-image name : mariadb , currStep : 2, lastStep: 3
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 3
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 3
-{===============}
-{start steps:}
-NADA
-0
-0
-2
-3
-6
-5
-5
-1
-{===============}
-ratio : 22
-perc : 22
-pre_spaces : 10
-bar_count : 20
-bar_pos : 4
-bar_spaces : 16
-fill : ▇▇▇▇
-ship_spaces : 39
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 2 , 3
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 1 , 3
-#22 CACHED
-
-#33 [mariadb 6/8] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
-image name : mariadb , currStep : 6, lastStep: 8
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 3
-{===============}
-{start steps:}
-NADA
-0
-0
-6
-3
-6
-5
-5
-1
-{===============}
-ratio : 25
-perc : 25
-pre_spaces : 12
-bar_count : 20
-bar_pos : 5
-bar_spaces : 15
-fill : ▇▇▇▇▇
-ship_spaces : 37
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 6 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 1 , 3
-#33 CACHED
-
-#34 [mariadb 5/8] RUN chmod +x /tmp/exe.sh
-image name : mariadb , currStep : 5, lastStep: 8
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 3
-{===============}
-{start steps:}
-NADA
-0
-0
-6
-3
-6
-5
-5
-1
-{===============}
-ratio : 25
-perc : 25
-pre_spaces : 12
-bar_count : 20
-bar_pos : 5
-bar_spaces : 15
-fill : ▇▇▇▇▇
-ship_spaces : 37
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 6 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 1 , 3
-#34 CACHED
-
-#35 [mariadb 3/8] RUN apk add curl mariadb mariadb-client openrc
-image name : mariadb , currStep : 3, lastStep: 8
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 3
-{===============}
-{start steps:}
-NADA
-0
-0
-6
-3
-6
-5
-5
-1
-{===============}
-ratio : 25
-perc : 25
-pre_spaces : 12
-bar_count : 20
-bar_pos : 5
-bar_spaces : 15
-fill : ▇▇▇▇▇
-ship_spaces : 37
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 6 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 1 , 3
-#35 CACHED
-
-#36 [mariadb 7/8] RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
+#27 [mariadb 7/8] RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
 image name : mariadb , currStep : 7, lastStep: 8
 {Img arr:}
 > NADA : NADA
 > nginx : 37
-> wordpress : 37
+> wordpress : 3
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
-> static-site : 3
+> portainer : 37
+> static-site : 37
 {===============}
 {start steps:}
 NADA
 0
-0
+1
 7
 3
-6
+0
 5
-5
-1
+0
+0
 {===============}
-ratio : 25
-perc : 25
-pre_spaces : 12
+ratio : 9
+perc : 9
+pre_spaces : 4
 bar_count : 20
-bar_pos : 5
-bar_spaces : 15
-fill : ▇▇▇▇▇
-ship_spaces : 37
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 45
 nginx : 0 , 37
-wordpress : 0 , 37
+wordpress : 1 , 3
 mariadb : 7 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
-static-site : 1 , 3
-#36 CACHED
+portainer : 0 , 37
+static-site : 0 , 37
+#27 CACHED
 
-#37 [mariadb 4/8] COPY ./tools/exe.sh /tmp/
+#28 [mariadb 3/8] RUN apk add curl mariadb mariadb-client openrc
+image name : mariadb , currStep : 3, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 37
+{===============}
+{start steps:}
+NADA
+0
+1
+7
+3
+0
+5
+0
+0
+{===============}
+ratio : 9
+perc : 9
+pre_spaces : 4
+bar_count : 20
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 45
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 7 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 0 , 37
+#28 CACHED
+
+#29 [mariadb 4/8] COPY ./tools/exe.sh /tmp/
 image name : mariadb , currStep : 4, lastStep: 8
 {Img arr:}
 > NADA : NADA
 > nginx : 37
-> wordpress : 37
+> wordpress : 3
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
-> static-site : 3
+> portainer : 37
+> static-site : 37
 {===============}
 {start steps:}
 NADA
 0
-0
+1
 7
 3
-6
+0
 5
-5
-1
+0
+0
 {===============}
-ratio : 25
-perc : 25
-pre_spaces : 12
+ratio : 9
+perc : 9
+pre_spaces : 4
 bar_count : 20
-bar_pos : 5
-bar_spaces : 15
-fill : ▇▇▇▇▇
-ship_spaces : 37
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 45
 nginx : 0 , 37
-wordpress : 0 , 37
+wordpress : 1 , 3
 mariadb : 7 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
-static-site : 1 , 3
-#37 CACHED
+portainer : 0 , 37
+static-site : 0 , 37
+#29 CACHED
 
-#38 [mariadb 8/8] RUN openrc && touch /run/openrc/softlevel && rc-service mariadb setup
+#30 [mariadb 5/8] RUN chmod +x /tmp/exe.sh
+image name : mariadb , currStep : 5, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 37
+{===============}
+{start steps:}
+NADA
+0
+1
+7
+3
+0
+5
+0
+0
+{===============}
+ratio : 9
+perc : 9
+pre_spaces : 4
+bar_count : 20
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 45
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 7 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 0 , 37
+#30 CACHED
+
+#31 [mariadb 6/8] RUN sed -i "s|#bind-address=0.0.0.0|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+image name : mariadb , currStep : 6, lastStep: 8
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 37
+{===============}
+{start steps:}
+NADA
+0
+1
+7
+3
+0
+5
+0
+0
+{===============}
+ratio : 9
+perc : 9
+pre_spaces : 4
+bar_count : 20
+bar_pos : 1
+bar_spaces : 19
+fill : ▇
+ship_spaces : 45
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 7 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 0 , 37
+#31 CACHED
+
+#32 [mariadb 8/8] RUN openrc && touch /run/openrc/softlevel && rc-service mariadb setup
 image name : mariadb , currStep : 8, lastStep: 8
 {Img arr:}
 > NADA : NADA
 > nginx : 37
-> wordpress : 37
+> wordpress : 3
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
-> static-site : 3
+> portainer : 37
+> static-site : 37
 {===============}
 {start steps:}
 NADA
 0
-0
+1
 8
 3
-6
+0
 5
-5
-1
+0
+0
 {===============}
-ratio : 26
-perc : 26
-pre_spaces : 12
+ratio : 10
+perc : 10
+pre_spaces : 4
 bar_count : 20
-bar_pos : 5
-bar_spaces : 15
-fill : ▇▇▇▇▇
-ship_spaces : 37
+bar_pos : 2
+bar_spaces : 18
+fill : ▇▇
+ship_spaces : 45
 nginx : 0 , 37
-wordpress : 0 , 37
+wordpress : 1 , 3
 mariadb : 8 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
-static-site : 1 , 3
-#38 CACHED
+portainer : 0 , 37
+static-site : 0 , 37
+#32 CACHED
 
-#39 [mariadb] exporting to image
-#39 exporting layers done
-#39 writing image sha256:37dc0ba70d469c88188b2f3ffd8ac897718da34af93e21f89c9f6003d2ed3de5 done
-#39 naming to docker.io/library/mariadb done
-#39 DONE 0.0s
+#20 [static-site internal] load build context
+#20 transferring context: 1.11kB done
+#20 DONE 0.0s
 
-#32 [static-site internal] load build context
-#32 transferring context: 1.11kB 0.3s done
-#32 DONE 0.3s
+#33 [wordpress internal] load build context
+#33 transferring context: 59B done
+#33 DONE 0.0s
 
-#22 [static-site 2/3] RUN apk upgrade && apk update
-image name : static-site , currStep : 2, lastStep: 3
+#34 [static-site 8/11] RUN apk add --no-cache gettext # Install envsubst
+image name : static-site , currStep : 8, lastStep: 11
 {Img arr:}
 > NADA : NADA
 > nginx : 37
-> wordpress : 37
+> wordpress : 3
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
-> static-site : 3
+> portainer : 37
+> static-site : 11
 {===============}
 {start steps:}
 NADA
 0
-0
+1
 8
 3
-6
+0
 5
-5
-2
+0
+8
 {===============}
-ratio : 27
-perc : 27
-pre_spaces : 13
+ratio : 17
+perc : 17
+pre_spaces : 8
 bar_count : 20
-bar_pos : 5
-bar_spaces : 15
-fill : ▇▇▇▇▇
-ship_spaces : 36
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 41
 nginx : 0 , 37
-wordpress : 0 , 37
+wordpress : 1 , 3
 mariadb : 8 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
-static-site : 2 , 3
-#22 CACHED
+portainer : 0 , 37
+static-site : 8 , 11
+#34 CACHED
+
+#35 [static-site 10/11] RUN envsubst < index.html > index_env_subst.html
+image name : static-site , currStep : 10, lastStep: 11
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+1
+8
+3
+0
+5
+0
+10
+{===============}
+ratio : 19
+perc : 19
+pre_spaces : 9
+bar_count : 20
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 40
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 10 , 11
+#35 CACHED
+
+#36 [static-site 5/11] COPY ./tools .
+image name : static-site , currStep : 5, lastStep: 11
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+1
+8
+3
+0
+5
+0
+10
+{===============}
+ratio : 19
+perc : 19
+pre_spaces : 9
+bar_count : 20
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 40
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 10 , 11
+#36 CACHED
+
+#37 [static-site 3/11] RUN apk add npm apache2
+image name : static-site , currStep : 3, lastStep: 11
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+1
+8
+3
+0
+5
+0
+10
+{===============}
+ratio : 19
+perc : 19
+pre_spaces : 9
+bar_count : 20
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 40
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 10 , 11
+#37 CACHED
+
+#38 [static-site 4/11] WORKDIR /var/www/localhost/htdocs
+image name : static-site , currStep : 4, lastStep: 11
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+1
+8
+3
+0
+5
+0
+10
+{===============}
+ratio : 19
+perc : 19
+pre_spaces : 9
+bar_count : 20
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 40
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 10 , 11
+#38 CACHED
+
+#39 [static-site 6/11] RUN chmod -R 755 .
+image name : static-site , currStep : 6, lastStep: 11
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 3
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+1
+8
+3
+0
+5
+0
+10
+{===============}
+ratio : 19
+perc : 19
+pre_spaces : 9
+bar_count : 20
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 40
+nginx : 0 , 37
+wordpress : 1 , 3
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 10 , 11
+#39 CACHED
 
 #40 [static-site 7/11] RUN npm install vanilla-tilt@1.8.1
 image name : static-site , currStep : 7, lastStep: 11
 {Img arr:}
 > NADA : NADA
 > nginx : 37
-> wordpress : 37
+> wordpress : 3
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-0
-0
-8
-3
-6
-5
-5
-7
-{===============}
-ratio : 30
-perc : 30
-pre_spaces : 14
-bar_count : 20
-bar_pos : 6
-bar_spaces : 14
-fill : ▇▇▇▇▇▇
-ship_spaces : 35
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 7 , 11
-#40 CACHED
-
-#41 [static-site 6/11] RUN chmod -R 755 .
-image name : static-site , currStep : 6, lastStep: 11
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-0
-0
-8
-3
-6
-5
-5
-7
-{===============}
-ratio : 30
-perc : 30
-pre_spaces : 14
-bar_count : 20
-bar_pos : 6
-bar_spaces : 14
-fill : ▇▇▇▇▇▇
-ship_spaces : 35
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 7 , 11
-#41 CACHED
-
-#42 [static-site 8/11] RUN apk add --no-cache gettext # Install envsubst
-image name : static-site , currStep : 8, lastStep: 11
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-0
-0
-8
-3
-6
-5
-5
-8
-{===============}
-ratio : 31
-perc : 31
-pre_spaces : 15
-bar_count : 20
-bar_pos : 6
-bar_spaces : 14
-fill : ▇▇▇▇▇▇
-ship_spaces : 34
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 8 , 11
-#42 CACHED
-
-#43 [static-site 9/11] RUN echo BASE_URL during build phase: iltafah.42.fr
-image name : static-site , currStep : 9, lastStep: 11
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-0
-0
-8
-3
-6
-5
-5
-9
-{===============}
-ratio : 32
-perc : 32
-pre_spaces : 15
-bar_count : 20
-bar_pos : 6
-bar_spaces : 14
-fill : ▇▇▇▇▇▇
-ship_spaces : 34
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 9 , 11
-#43 CACHED
-
-#44 [static-site 5/11] COPY ./tools .
-image name : static-site , currStep : 5, lastStep: 11
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-0
-0
-8
-3
-6
-5
-5
-9
-{===============}
-ratio : 32
-perc : 32
-pre_spaces : 15
-bar_count : 20
-bar_pos : 6
-bar_spaces : 14
-fill : ▇▇▇▇▇▇
-ship_spaces : 34
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 9 , 11
-#44 CACHED
-
-#45 [static-site 10/11] RUN envsubst < index.html > index_env_subst.html
-image name : static-site , currStep : 10, lastStep: 11
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-0
-0
-8
-3
-6
-5
-5
-10
-{===============}
-ratio : 33
-perc : 33
-pre_spaces : 16
-bar_count : 20
-bar_pos : 6
-bar_spaces : 14
-fill : ▇▇▇▇▇▇
-ship_spaces : 33
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 10 , 11
-#45 CACHED
-
-#46 [static-site 3/11] RUN apk add npm apache2
-image name : static-site , currStep : 3, lastStep: 11
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-0
-0
-8
-3
-6
-5
-5
-10
-{===============}
-ratio : 33
-perc : 33
-pre_spaces : 16
-bar_count : 20
-bar_pos : 6
-bar_spaces : 14
-fill : ▇▇▇▇▇▇
-ship_spaces : 33
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 10 , 11
-#46 CACHED
-
-#47 [static-site 4/11] WORKDIR /var/www/localhost/htdocs
-image name : static-site , currStep : 4, lastStep: 11
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-0
-0
-8
-3
-6
-5
-5
-10
-{===============}
-ratio : 33
-perc : 33
-pre_spaces : 16
-bar_count : 20
-bar_pos : 6
-bar_spaces : 14
-fill : ▇▇▇▇▇▇
-ship_spaces : 33
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 10 , 11
-#47 CACHED
-
-#48 [static-site 11/11] RUN rm index.html && mv index_env_subst.html index.html
-image name : static-site , currStep : 11, lastStep: 11
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 37
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-0
-0
-8
-3
-6
-5
-5
-11
-{===============}
-ratio : 33
-perc : 33
-pre_spaces : 16
-bar_count : 20
-bar_pos : 6
-bar_spaces : 14
-fill : ▇▇▇▇▇▇
-ship_spaces : 33
-nginx : 0 , 37
-wordpress : 0 , 37
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 11 , 11
-#48 CACHED
-
-#49 [static-site] exporting to image
-#49 exporting layers done
-#49 writing image sha256:c107b429a821239ded82c68f92710761356383f3a525743428298b4e166cfafd done
-#49 naming to docker.io/library/static-site done
-#49 DONE 0.0s
-
-#50 [wordpress internal] load build definition from Dockerfile
-#50 transferring dockerfile: 539B 0.0s done
-#50 DONE 0.0s
-
-#7 [wordpress internal] load metadata for docker.io/library/alpine:3.19
-#7 DONE 0.7s
-
-#51 [wordpress internal] load .dockerignore
-#51 transferring context: 2B done
-#51 DONE 0.0s
-
-#21 [wordpress 1/9] FROM docker.io/library/alpine:3.19@sha256:ae65dbf8749a7d4527648ccee1fa3deb6bfcae34cbc30fc67aa45c44dcaa90ee
-image name : wordpress , currStep : 1, lastStep: 9
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 9
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
+> portainer : 37
 > static-site : 11
 {===============}
 {start steps:}
@@ -1390,202 +881,114 @@ NADA
 1
 8
 3
-6
+0
 5
-5
-11
+0
+10
 {===============}
-ratio : 46
-perc : 46
-pre_spaces : 22
+ratio : 19
+perc : 19
+pre_spaces : 9
 bar_count : 20
-bar_pos : 9
-bar_spaces : 11
-fill : ▇▇▇▇▇▇▇▇▇
-ship_spaces : 27
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 40
 nginx : 0 , 37
-wordpress : 1 , 9
+wordpress : 1 , 3
 mariadb : 8 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
-static-site : 11 , 11
-#21 DONE 0.0s
+portainer : 0 , 37
+static-site : 10 , 11
+#40 CACHED
 
-#52 [wordpress internal] load build context
-#52 transferring context: 940B 0.0s done
-#52 DONE 0.0s
-
-#53 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
-image name : wordpress , currStep : 6, lastStep: 9
+#41 [static-site 9/11] RUN echo BASE_URL during build phase: iltafah.42.fr
+image name : static-site , currStep : 9, lastStep: 11
 {Img arr:}
 > NADA : NADA
 > nginx : 37
-> wordpress : 9
+> wordpress : 3
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
+> portainer : 37
 > static-site : 11
 {===============}
 {start steps:}
 NADA
 0
-6
+1
 8
 3
-6
+0
 5
-5
-11
+0
+10
 {===============}
-ratio : 52
-perc : 52
-pre_spaces : 25
+ratio : 19
+perc : 19
+pre_spaces : 9
 bar_count : 20
-bar_pos : 10
-bar_spaces : 10
-fill : ▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 24
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 40
 nginx : 0 , 37
-wordpress : 6 , 9
+wordpress : 1 , 3
 mariadb : 8 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
-static-site : 11 , 11
-#53 CACHED
+portainer : 0 , 37
+static-site : 10 , 11
+#41 CACHED
 
-#54 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
-image name : wordpress , currStep : 3, lastStep: 9
+#42 [static-site 11/11] RUN rm index.html && mv index_env_subst.html index.html
+image name : static-site , currStep : 11, lastStep: 11
 {Img arr:}
 > NADA : NADA
 > nginx : 37
-> wordpress : 9
+> wordpress : 3
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
+> portainer : 37
 > static-site : 11
 {===============}
 {start steps:}
 NADA
 0
-6
+1
 8
 3
-6
-5
-5
-11
-{===============}
-ratio : 52
-perc : 52
-pre_spaces : 25
-bar_count : 20
-bar_pos : 10
-bar_spaces : 10
-fill : ▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 24
-nginx : 0 , 37
-wordpress : 6 , 9
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 11 , 11
-#54 CACHED
-
-#55 [wordpress 7/9] RUN mkdir -p /var/www/html/
-image name : wordpress , currStep : 7, lastStep: 9
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 9
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
 0
-7
-8
-3
-6
 5
-5
-11
-{===============}
-ratio : 53
-perc : 53
-pre_spaces : 25
-bar_count : 20
-bar_pos : 10
-bar_spaces : 10
-fill : ▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 24
-nginx : 0 , 37
-wordpress : 7 , 9
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 11 , 11
-#55 CACHED
-
-#56 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
-image name : wordpress , currStep : 4, lastStep: 9
-{Img arr:}
-> NADA : NADA
-> nginx : 37
-> wordpress : 9
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
 0
-7
-8
-3
-6
-5
-5
 11
 {===============}
-ratio : 53
-perc : 53
-pre_spaces : 25
+ratio : 19
+perc : 19
+pre_spaces : 9
 bar_count : 20
-bar_pos : 10
-bar_spaces : 10
-fill : ▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 24
+bar_pos : 3
+bar_spaces : 17
+fill : ▇▇▇
+ship_spaces : 40
 nginx : 0 , 37
-wordpress : 7 , 9
+wordpress : 1 , 3
 mariadb : 8 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
+portainer : 0 , 37
 static-site : 11 , 11
-#56 CACHED
+#42 CACHED
 
-#57 [wordpress 8/9] COPY tools/exe.sh /tmp/
+#43 [wordpress 8/9] COPY tools/exe.sh /tmp/
 image name : wordpress , currStep : 8, lastStep: 9
 {Img arr:}
 > NADA : NADA
@@ -1593,9 +996,9 @@ image name : wordpress , currStep : 8, lastStep: 9
 > wordpress : 9
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
+> portainer : 37
 > static-site : 11
 {===============}
 {start steps:}
@@ -1604,30 +1007,114 @@ NADA
 8
 8
 3
-6
+0
 5
-5
+0
 11
 {===============}
-ratio : 54
-perc : 54
-pre_spaces : 26
+ratio : 23
+perc : 23
+pre_spaces : 11
 bar_count : 20
-bar_pos : 10
-bar_spaces : 10
-fill : ▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 23
+bar_pos : 4
+bar_spaces : 16
+fill : ▇▇▇▇
+ship_spaces : 38
 nginx : 0 , 37
 wordpress : 8 , 9
 mariadb : 8 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
+portainer : 0 , 37
 static-site : 11 , 11
-#57 CACHED
+#43 CACHED
 
-#58 [wordpress 5/9] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+#44 [wordpress 4/9] RUN sed -i "s|127.0.0.1:9000|0.0.0.0:9000|g" /etc/php82/php-fpm.d/www.conf
+image name : wordpress , currStep : 4, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+8
+8
+3
+0
+5
+0
+11
+{===============}
+ratio : 23
+perc : 23
+pre_spaces : 11
+bar_count : 20
+bar_pos : 4
+bar_spaces : 16
+fill : ▇▇▇▇
+ship_spaces : 38
+nginx : 0 , 37
+wordpress : 8 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#44 CACHED
+
+#45 [wordpress 6/9] RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
+image name : wordpress , currStep : 6, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+8
+8
+3
+0
+5
+0
+11
+{===============}
+ratio : 23
+perc : 23
+pre_spaces : 11
+bar_count : 20
+bar_pos : 4
+bar_spaces : 16
+fill : ▇▇▇▇
+ship_spaces : 38
+nginx : 0 , 37
+wordpress : 8 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#45 CACHED
+
+#46 [wordpress 5/9] RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 image name : wordpress , currStep : 5, lastStep: 9
 {Img arr:}
 > NADA : NADA
@@ -1635,9 +1122,9 @@ image name : wordpress , currStep : 5, lastStep: 9
 > wordpress : 9
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
+> portainer : 37
 > static-site : 11
 {===============}
 {start steps:}
@@ -1646,40 +1133,40 @@ NADA
 8
 8
 3
-6
+0
 5
-5
+0
 11
 {===============}
-ratio : 54
-perc : 54
-pre_spaces : 26
+ratio : 23
+perc : 23
+pre_spaces : 11
 bar_count : 20
-bar_pos : 10
-bar_spaces : 10
-fill : ▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 23
+bar_pos : 4
+bar_spaces : 16
+fill : ▇▇▇▇
+ship_spaces : 38
 nginx : 0 , 37
 wordpress : 8 , 9
 mariadb : 8 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
+portainer : 0 , 37
 static-site : 11 , 11
-#58 CACHED
+#46 CACHED
 
-#22 [wordpress 2/9] RUN apk upgrade && apk update
-image name : wordpress , currStep : 2, lastStep: 9
+#47 [wordpress 7/9] RUN mkdir -p /var/www/html/
+image name : wordpress , currStep : 7, lastStep: 9
 {Img arr:}
 > NADA : NADA
 > nginx : 37
 > wordpress : 9
 > mariadb : 8
 > redis : 3
-> ftp : 6
+> ftp : 37
 > adminer : 5
-> portainer : 5
+> portainer : 37
 > static-site : 11
 {===============}
 {start steps:}
@@ -1688,30 +1175,72 @@ NADA
 8
 8
 3
-6
+0
 5
-5
+0
 11
 {===============}
-ratio : 54
-perc : 54
-pre_spaces : 26
+ratio : 23
+perc : 23
+pre_spaces : 11
 bar_count : 20
-bar_pos : 10
-bar_spaces : 10
-fill : ▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 23
+bar_pos : 4
+bar_spaces : 16
+fill : ▇▇▇▇
+ship_spaces : 38
 nginx : 0 , 37
 wordpress : 8 , 9
 mariadb : 8 , 8
 redis : 3 , 3
-ftp : 6 , 6
+ftp : 0 , 37
 adminer : 5 , 5
-portainer : 5 , 5
+portainer : 0 , 37
 static-site : 11 , 11
-#22 CACHED
+#47 CACHED
 
-#59 [wordpress 9/9] RUN chmod +x /tmp/exe.sh
+#48 [wordpress 3/9] RUN apk add curl php82 php82-fpm php82-mysqli php82-phar php82-mbstring
+image name : wordpress , currStep : 3, lastStep: 9
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+8
+8
+3
+0
+5
+0
+11
+{===============}
+ratio : 23
+perc : 23
+pre_spaces : 11
+bar_count : 20
+bar_pos : 4
+bar_spaces : 16
+fill : ▇▇▇▇
+ship_spaces : 38
+nginx : 0 , 37
+wordpress : 8 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#48 CACHED
+
+#49 [wordpress 9/9] RUN chmod +x /tmp/exe.sh
 image name : wordpress , currStep : 9, lastStep: 9
 {Img arr:}
 > NADA : NADA
@@ -1719,9 +1248,181 @@ image name : wordpress , currStep : 9, lastStep: 9
 > wordpress : 9
 > mariadb : 8
 > redis : 3
+> ftp : 37
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+9
+8
+3
+0
+5
+0
+11
+{===============}
+ratio : 24
+perc : 24
+pre_spaces : 11
+bar_count : 20
+bar_pos : 4
+bar_spaces : 16
+fill : ▇▇▇▇
+ship_spaces : 38
+nginx : 0 , 37
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 0 , 37
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#49 CACHED
+
+#50 [nginx internal] load build context
+#50 transferring context: 63B done
+#50 DONE 0.0s
+
+#51 [ftp 4/6] RUN adduser -D tofa7a
+image name : ftp , currStep : 4, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 9
+> mariadb : 8
+> redis : 3
 > ftp : 6
 > adminer : 5
-> portainer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+9
+8
+3
+4
+5
+0
+11
+{===============}
+ratio : 34
+perc : 34
+pre_spaces : 16
+bar_count : 20
+bar_pos : 6
+bar_spaces : 14
+fill : ▇▇▇▇▇▇
+ship_spaces : 33
+nginx : 0 , 37
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 4 , 6
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#51 CACHED
+
+#52 [ftp 5/6] RUN echo tofa7a:133742 | chpasswd
+image name : ftp , currStep : 5, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+9
+8
+3
+5
+5
+0
+11
+{===============}
+ratio : 35
+perc : 35
+pre_spaces : 17
+bar_count : 20
+bar_pos : 7
+bar_spaces : 13
+fill : ▇▇▇▇▇▇▇
+ship_spaces : 32
+nginx : 0 , 37
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 5 , 6
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#52 CACHED
+
+#53 [ftp 3/6] RUN apk add openrc vim lftp vsftpd
+image name : ftp , currStep : 3, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+0
+9
+8
+3
+5
+5
+0
+11
+{===============}
+ratio : 35
+perc : 35
+pre_spaces : 17
+bar_count : 20
+bar_pos : 7
+bar_spaces : 13
+fill : ▇▇▇▇▇▇▇
+ship_spaces : 32
+nginx : 0 , 37
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 5 , 6
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#53 CACHED
+
+#54 [ftp 6/6] RUN echo "listen=YES" > /etc/vsftpd/vsftpd.conf; echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "write_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "anonymous_enable=NO" >> /etc/vsftpd/vsftpd.conf; echo "chroot_local_user=YES" >> /etc/vsftpd/vsftpd.conf; echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf; echo "seccomp_sandbox=NO" >> /etc/vsftpd/vsftpd.conf; echo "pasv_enable=YES" >> /etc/vsftpd/vsftpd.conf; echo "pasv_min_port=41337" >> /etc/vsftpd/vsftpd.conf; echo "pasv_max_port=41337" >> /etc/vsftpd/vsftpd.conf;
+image name : ftp , currStep : 6, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 37
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 37
 > static-site : 11
 {===============}
 {start steps:}
@@ -1732,7 +1433,91 @@ NADA
 3
 6
 5
+0
+11
+{===============}
+ratio : 36
+perc : 36
+pre_spaces : 17
+bar_count : 20
+bar_pos : 7
+bar_spaces : 13
+fill : ▇▇▇▇▇▇▇
+ship_spaces : 32
+nginx : 0 , 37
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#54 CACHED
+
+#55 [nginx 3/6] RUN apk add nginx && apk add openssl
+image name : nginx , currStep : 3, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+3
+9
+8
+3
+6
 5
+0
+11
+{===============}
+ratio : 52
+perc : 52
+pre_spaces : 25
+bar_count : 20
+bar_pos : 10
+bar_spaces : 10
+fill : ▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 24
+nginx : 3 , 6
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#55 CACHED
+
+#56 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+image name : nginx , currStep : 5, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+5
+9
+8
+3
+6
+5
+0
 11
 {===============}
 ratio : 55
@@ -1743,122 +1528,17 @@ bar_pos : 11
 bar_spaces : 9
 fill : ▇▇▇▇▇▇▇▇▇▇▇
 ship_spaces : 23
-nginx : 0 , 37
+nginx : 5 , 6
 wordpress : 9 , 9
 mariadb : 8 , 8
 redis : 3 , 3
 ftp : 6 , 6
 adminer : 5 , 5
-portainer : 5 , 5
+portainer : 0 , 37
 static-site : 11 , 11
-#59 CACHED
+#56 CACHED
 
-#60 [wordpress] exporting to image
-#60 exporting layers done
-#60 writing image sha256:ccd19170ed2df20bbab468d67f4d3f08f41f240ed1aafa2209017bcb2ed5e920 done
-#60 naming to docker.io/library/wordpress done
-#60 DONE 0.0s
-
-#61 [nginx internal] load build definition from Dockerfile
-#61 transferring dockerfile: 496B 0.0s done
-#61 DONE 0.0s
-
-#7 [nginx internal] load metadata for docker.io/library/alpine:3.19
-#7 DONE 0.9s
-
-#62 [nginx internal] load .dockerignore
-#62 transferring context: 34B 0.0s done
-#62 DONE 0.0s
-
-#21 [nginx 1/6] FROM docker.io/library/alpine:3.19@sha256:ae65dbf8749a7d4527648ccee1fa3deb6bfcae34cbc30fc67aa45c44dcaa90ee
-image name : nginx , currStep : 1, lastStep: 6
-{Img arr:}
-> NADA : NADA
-> nginx : 6
-> wordpress : 9
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-1
-9
-8
-3
-6
-5
-5
-11
-{===============}
-ratio : 90
-perc : 90
-pre_spaces : 44
-bar_count : 20
-bar_pos : 18
-bar_spaces : 2
-fill : ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 5
-nginx : 1 , 6
-wordpress : 9 , 9
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 11 , 11
-#21 DONE 0.0s
-
-#63 [nginx internal] load build context
-#63 transferring context: 704B 0.0s done
-#63 DONE 0.1s
-
-#64 [nginx 3/6] RUN apk add nginx && apk add openssl
-image name : nginx , currStep : 3, lastStep: 6
-{Img arr:}
-> NADA : NADA
-> nginx : 6
-> wordpress : 9
-> mariadb : 8
-> redis : 3
-> ftp : 6
-> adminer : 5
-> portainer : 5
-> static-site : 11
-{===============}
-{start steps:}
-NADA
-3
-9
-8
-3
-6
-5
-5
-11
-{===============}
-ratio : 94
-perc : 94
-pre_spaces : 46
-bar_count : 20
-bar_pos : 18
-bar_spaces : 2
-fill : ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 3
-nginx : 3 , 6
-wordpress : 9 , 9
-mariadb : 8 , 8
-redis : 3 , 3
-ftp : 6 , 6
-adminer : 5 , 5
-portainer : 5 , 5
-static-site : 11 , 11
-#64 CACHED
-
-#65 [nginx 4/6] RUN mkdir /var/www/html
+#57 [nginx 4/6] RUN mkdir /var/www/html
 image name : nginx , currStep : 4, lastStep: 6
 {Img arr:}
 > NADA : NADA
@@ -1868,40 +1548,82 @@ image name : nginx , currStep : 4, lastStep: 6
 > redis : 3
 > ftp : 6
 > adminer : 5
-> portainer : 5
+> portainer : 37
 > static-site : 11
 {===============}
 {start steps:}
 NADA
-4
+5
 9
 8
 3
 6
 5
-5
+0
 11
 {===============}
-ratio : 96
-perc : 96
-pre_spaces : 47
+ratio : 55
+perc : 55
+pre_spaces : 26
 bar_count : 20
-bar_pos : 19
-bar_spaces : 1
-fill : ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
-ship_spaces : 2
-nginx : 4 , 6
+bar_pos : 11
+bar_spaces : 9
+fill : ▇▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 23
+nginx : 5 , 6
 wordpress : 9 , 9
 mariadb : 8 , 8
 redis : 3 , 3
 ftp : 6 , 6
 adminer : 5 , 5
-portainer : 5 , 5
+portainer : 0 , 37
 static-site : 11 , 11
-#65 CACHED
+#57 CACHED
 
-#22 [nginx 2/6] RUN apk upgrade && apk update
-image name : nginx , currStep : 2, lastStep: 6
+#58 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
+image name : nginx , currStep : 6, lastStep: 6
+{Img arr:}
+> NADA : NADA
+> nginx : 6
+> wordpress : 9
+> mariadb : 8
+> redis : 3
+> ftp : 6
+> adminer : 5
+> portainer : 37
+> static-site : 11
+{===============}
+{start steps:}
+NADA
+6
+9
+8
+3
+6
+5
+0
+11
+{===============}
+ratio : 56
+perc : 56
+pre_spaces : 27
+bar_count : 20
+bar_pos : 11
+bar_spaces : 9
+fill : ▇▇▇▇▇▇▇▇▇▇▇
+ship_spaces : 22
+nginx : 6 , 6
+wordpress : 9 , 9
+mariadb : 8 , 8
+redis : 3 , 3
+ftp : 6 , 6
+adminer : 5 , 5
+portainer : 0 , 37
+static-site : 11 , 11
+#58 CACHED
+
+#59 [portainer 3/5] RUN apk add apache2-utils
+image name : portainer , currStep : 3, lastStep: 5
 {Img arr:}
 > NADA : NADA
 > nginx : 6
@@ -1915,13 +1637,13 @@ image name : nginx , currStep : 2, lastStep: 6
 {===============}
 {start steps:}
 NADA
-4
+6
 9
 8
 3
 6
 5
-5
+3
 11
 {===============}
 ratio : 96
@@ -1932,18 +1654,18 @@ bar_pos : 19
 bar_spaces : 1
 fill : ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 ship_spaces : 2
-nginx : 4 , 6
+nginx : 6 , 6
 wordpress : 9 , 9
 mariadb : 8 , 8
 redis : 3 , 3
 ftp : 6 , 6
 adminer : 5 , 5
-portainer : 5 , 5
+portainer : 3 , 5
 static-site : 11 , 11
-#22 CACHED
+#59 CACHED
 
-#66 [nginx 5/6] RUN openssl req -x509 -nodes -days 365 -subj "/C=CA/ST=QC/O=Company, Inc./CN=mydomain.com" -addext "subjectAltName=DNS:mydomain.com" -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
-image name : nginx , currStep : 5, lastStep: 6
+#60 [portainer 4/5] RUN wget "https://github.com/portainer/portainer/releases/download/2.19.5/portainer-2.19.5-linux-amd64.tar.gz" && tar -xvzf portainer-2.19.5-linux-amd64.tar.gz
+image name : portainer , currStep : 4, lastStep: 5
 {Img arr:}
 > NADA : NADA
 > nginx : 6
@@ -1957,13 +1679,13 @@ image name : nginx , currStep : 5, lastStep: 6
 {===============}
 {start steps:}
 NADA
-5
+6
 9
 8
 3
 6
 5
-5
+4
 11
 {===============}
 ratio : 98
@@ -1974,18 +1696,18 @@ bar_pos : 19
 bar_spaces : 1
 fill : ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
 ship_spaces : 1
-nginx : 5 , 6
+nginx : 6 , 6
 wordpress : 9 , 9
 mariadb : 8 , 8
 redis : 3 , 3
 ftp : 6 , 6
 adminer : 5 , 5
-portainer : 5 , 5
+portainer : 4 , 5
 static-site : 11 , 11
-#66 CACHED
+#60 CACHED
 
-#67 [nginx 6/6] COPY conf/default.conf /etc/nginx/http.d/
-image name : nginx , currStep : 6, lastStep: 6
+#61 [portainer 5/5] RUN echo -n "uWu1337uWu,BecausePortainerRequiresStrongPass" > /tmp/portainer_password
+image name : portainer , currStep : 5, lastStep: 5
 {Img arr:}
 > NADA : NADA
 > nginx : 6
@@ -2024,10 +1746,9 @@ ftp : 6 , 6
 adminer : 5 , 5
 portainer : 5 , 5
 static-site : 11 , 11
-#67 CACHED
+#61 CACHED
 
-#68 [nginx] exporting to image
-#68 exporting layers done
-#68 writing image sha256:97cbf026299e4b3b4d2cfe0bc60d62499c7b0f3175d1b447a2c0f16a7580183d done
-#68 naming to docker.io/library/nginx done
-#68 DONE 0.0s
+#23 [wordpress 2/3] RUN apk upgrade && apk update
+#23 CACHED
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them

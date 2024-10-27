@@ -20,8 +20,8 @@ up:
 	@rm .env.mk
 
 build:
-	@(docker compose -f $(COMPOSE_FILE_PATH) build  --progress plain 2>&1 | ./WhaleScript.bash $(COMPOSE_FILE_PATH)) || echo "ERR=42" > .env.mk
-# --no-cache
+	@(docker compose -f $(COMPOSE_FILE_PATH) build --no-cache --progress plain 2>&1 | ./WhaleScript.bash $(COMPOSE_FILE_PATH)) || echo "ERR=42" > .env.mk
+
 create:
 	@docker compose -f $(COMPOSE_FILE_PATH) up -d
 
