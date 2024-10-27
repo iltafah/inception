@@ -93,10 +93,16 @@ function add_image () {
         then
             # Those focking shi2 r not stable, that's y I update them
             # They r the reason for the waves in the ocean that make my poor whale back off
-            start_steps_arr[$i]=$start_step
-            end_steps_arr[$i]=$end_step
+            if [[ $start_step -gt $(( ${start_steps_arr[$i]} )) ]]; then
+                start_steps_arr[$i]=$start_step
+            fi
+
+            if [[ $end_step -gt $(( ${end_steps_arr[$i]} )) || ${end_steps_arr[$i]} -eq 37 ]]; then
+                end_steps_arr[$i]=$end_step
+            fi
+
             return 1
-        fi
+        fi;
     done
     img_arr+=( $new_img )
     start_steps_arr+=( $start_step )
@@ -129,7 +135,7 @@ function dockerfile_loadbar () {
             if [[ ${BASH_REMATCH[1]} != "#" ]];
             then
                 imgs_count=$(($imgs_count + 1))
-                add_image ${BASH_REMATCH[3]} 0 5 #(img_name, curr_step, end_step) # ^-^ Hard Coded, The whole script is Hard Coded
+                add_image ${BASH_REMATCH[3]} 0 37 #(img_name, curr_step, end_step) # ^-^ Hard Coded, The whole script is Hard Coded
             fi
         fi
     done <<< "$imgs"
@@ -155,8 +161,8 @@ print_image_arr
                 get_end_steps
                 end=$?
 
-	            ratio=$((100 / end))
-                if [ $start -ne $end ]; then perc=$((start * ratio)); else perc=100; fi;
+	            ratio=$((start * 100 / end))
+                if [ $start -ne $end ]; then perc=$((ratio)); else perc=100; fi;
                 pre_spaces=$(($perc * 49 / 100)) # 49 is the number of spaces between the whale and the ship
                 bar_count=$((100 / 5)) # 20 bar ▇ to draw
                 bar_pos=$(($perc * $bar_count /100))
@@ -194,8 +200,8 @@ echo ship_spaces : $ship_spaces >> debugFile
                 printf "\n${lineclr}${white}${curr_step_line}${nc}\n\n" # <<<= note new lines for separating
 
                 for (( indx=1; indx<${#img_arr[@]}; indx++ )); do
-                    bar_count=$(( ${end_steps_arr[$indx]}  ))
-                    bar_pos=$(( ${start_steps_arr[$indx]}  ))
+                    bar_count=$(( ${end_steps_arr[$indx]} > 10 ? 10 : ${end_steps_arr[$indx]} ))   #well since bar_count can contain 1337 dots, I need to round things
+                    bar_pos=$(( ${start_steps_arr[$indx]} > 10 ? 10 : ${start_steps_arr[$indx]} ))
                     bar_spaces=$((bar_count - bar_pos))
                     if [[ $bar_pos -ne 0 ]]; then fill=$(printf  ".%.0s" $(seq 1 $bar_pos)); else fill=""; fi;
                     
