@@ -7,9 +7,7 @@ end_steps_arr=NADA
 start=0
 end=100
 exit_code=1
-
 nc='\033[0m'
-
 # Bold High Intensity
 blc='\033[1;90m'      # Black, I am no sure exactly where I'll use it
 red='\033[1;91m'        # Red
@@ -130,6 +128,7 @@ function dockerfile_loadbar () {
 
     while IFS= read -r line
     do
+        line="${line//$'\r'/}" # For some focking reason on wsl in windows the line below takes `\r` le't focking remove it
         if [[ "$line" =~ (#+)*\ +(image:)\ +(.+) ]];
         then
             if [[ ${BASH_REMATCH[1]} != "#" ]];
@@ -250,4 +249,5 @@ printf "${hideCurs}"
 dockerfile_loadbar $1
 printf "${restoreCurs}"
 if [[ $perc -ne 100 ]]; then printf "${red}Bro Go And Turn On The Docker Deamon\nOr\nI am Dumb and the script is not treating some specific cases\n${yel}Check Docker Compose Syntax or run your commands manually to know where the error is${nc}\n"; exit 1; fi
+
 
